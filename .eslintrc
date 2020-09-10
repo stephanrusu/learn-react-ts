@@ -1,0 +1,45 @@
+{
+  "extends": [
+    "react-app",
+    "prettier",
+    "prettier/@typescript-eslint",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions":  {
+    "ecmaVersion":  2018,
+    "sourceType":  "module",
+    "ecmaFeatures":  {
+      "jsx":  true
+    }
+  },
+  "plugins": [
+    "react-hooks", "@typescript-eslint", "prettier"],
+  "globals": {
+    "context": "readonly"
+  },
+
+  "rules": {
+    "prettier/prettier": [
+      "warn",
+      {
+        "singleQuote": true,
+        "semi": false
+      }
+    ],
+    "no-unused-vars": "off",
+    "no-undef": "off",
+    "no-console": "warn",
+    "jsx-a11y/href-no-hash": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/explicit-member-accessibility": "off",
+    "@typescript-eslint/ban-ts-ignore": "off"
+  }
+}
