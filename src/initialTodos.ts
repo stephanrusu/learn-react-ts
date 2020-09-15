@@ -1,4 +1,4 @@
-export const initialTodos: Array<Todo> = [
+const initialTodos: Array<Todo> = [
   {
     text: "Walk the dog",
     complete: true,
@@ -10,3 +10,5 @@ export const initialTodos: Array<Todo> = [
     uuid: "6ba6f75a-ecaa-4a50-86ce-38da5a8583f6"
   }
 ];
+
+export default initialTodos;

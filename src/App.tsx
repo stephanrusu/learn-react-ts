@@ -1,12 +1,19 @@
 import React from 'react';
 import TodoContainer from './todo/TodoContainer';
 
-const App: React.FC = () => {
+// function App():JSX.Element {
+function App() {
   return (
-    <section className='section'>
-      <TodoContainer />
+    <section className="section">
+      <div className="container">
+        <div className="columns">
+          <div className="column">
+            <TodoContainer />
+          </div>
+        </div>
+      </div>
     </section>
   );
-}
+};
 
 export default App;
