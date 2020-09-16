@@ -4,10 +4,8 @@ type Todo = {
   uuid: string
 };
 
-type TodoComplete = (selectedTodo: Todo) => void;
+type CompleteTodo = (selectedTodo: Todo) => void;
 type AddTodo = (newTodoText: string) => void;
 type EditTodo = (selectedTodo: Todo) => void;
 type RemoveTodo = (selectedTodo: Todo) => void;
-
-type FilterTodo = (complete: boolean) => Array;
-type AllTodo = () => Array;
+type FilterTodo = (display: boolean |string) => Array;

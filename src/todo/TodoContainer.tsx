@@ -8,7 +8,7 @@ import { v4 as uuidv4 } from 'uuid';
 function TodoContainer() {
   const [todos, setTodos] = useState<Todo[]>(initialTodos);
 
-  const todoComplete: TodoComplete = (selectedTodo: Todo) => {
+  const completeTodo: CompleteTodo = (selectedTodo) => {
     const updateTodos = todos.map((todo: Todo) => {
       if (todo === selectedTodo) {
         return { ...todo, complete: !todo.complete};
@@ -19,12 +19,18 @@ function TodoContainer() {
     setTodos(updateTodos);
   }
 
-  const addTodo: AddTodo = (newTodoText: string) => {
+  const addTodo: AddTodo = (newTodoText) => {
     setTodos([...todos, {
       text: newTodoText,
       complete: false,
       uuid: uuidv4()
     }]);
+  }
+
+  const removeTodo: RemoveTodo = (selectedTodo) => {
+    const updateTodos = todos.filter((todo: Todo) => todo !== selectedTodo);
+
+    setTodos(updateTodos);
   }
 
   return (
@@ -33,7 +39,7 @@ function TodoContainer() {
         <TodoForm addTodo={addTodo} />
       </header>
       <div className="card-content">
-        <TodoList todos={todos} todoComplete={todoComplete} />
+        <TodoList todos={todos} completeTodo={completeTodo} removeTodo={removeTodo}/>
       </div>
       <footer className="card-footer">
         <TodoControls />

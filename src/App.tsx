@@ -8,6 +8,7 @@ function App() {
       <div className="container">
         <div className="columns is-centered">
           <div className="column is-half">
+            <h4 className="is-size-4 has-text-weight-medium mb-3">Todo App React + Typescript</h4>
             <TodoContainer />
           </div>
         </div>

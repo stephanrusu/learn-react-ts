@@ -6,16 +6,26 @@ interface TodoFormProps {
 
 function TodoForm(props: TodoFormProps) {
   const [todoText, setTodoText] = useState<string>('');
+  const [errorText, setErrorText] = useState<boolean>(false);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setTodoText(e.target.value);
+    if (e.target.value.trim() !== '') {
+      setErrorText(false);
+    } else {
+      setErrorText(true);
+    }
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    props.addTodo(todoText);
-    setTodoText('');
+    if (todoText.trim() !== '') {
+      props.addTodo(todoText);
+      setTodoText('');
+    } else {
+      setErrorText(true);
+    }
   }
 
   return (
@@ -23,8 +33,10 @@ function TodoForm(props: TodoFormProps) {
       <form className="is-full-width" onSubmit={handleSubmit}>
         <div className="field is-grouped">
           <div className="control is-expanded">
-            <input className="input" type="text" placeholder="What do you need to do?"value={todoText} onChange={handleChange} />
-            <p className="help is-danger is-hidden">This is a help text</p>
+            <input className={`input ${errorText ? 'is-danger' : ''}`} type="text" placeholder="What do you need to do?"value={todoText} onChange={handleChange} />
+            {
+              errorText && <p className="help is-danger">This field is required</p>
+            }
           </div>
           <div className="control">
             <button type='submit' className="button">

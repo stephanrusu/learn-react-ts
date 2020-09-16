@@ -3,15 +3,16 @@ import TodoItem from './TodoItem';
 
 interface TodoListProps {
   todos: Array<Todo>,
-  todoComplete: TodoComplete
+  completeTodo: CompleteTodo
+  removeTodo: RemoveTodo
 };
 
 function TodoList(props: TodoListProps) {
-  const { todos, todoComplete } = props;
+  const { todos, completeTodo, removeTodo } = props;
   return (
     <div className='list'>
       {
-        todos.map(todo => <TodoItem key={todo.uuid} todo={todo} todoComplete={todoComplete} />)
+        todos.map(todo => <TodoItem key={todo.uuid} todo={todo} completeTodo={completeTodo} removeTodo={removeTodo} />)
       }
     </div>
   )
