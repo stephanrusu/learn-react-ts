@@ -3,16 +3,6 @@ html,
 body
   background-color: #fafafa
 
-
-.card
-  &-header
-    box-shadow: none
-    border-bottom: 1px solid #ededed
-
-  &-content
-    padding: 0
-
-
 .list
   background-color: white
   border-radius: 4px
@@ -53,13 +43,38 @@ body
   &-full-width
     width: 100%
 
+  &-justify-content
+    &-start
+      justify-content: flex-start
+    &-center
+      justify-content: center
+    &-end
+      justify-content: flex-end
+
 .input
   box-shadow: none
+  transition: all .5s ease
+
+  &:focus
+    box-shadow: none
 
 .button
-  padding:
-    left: 0.5rem
-    right: 0.5rem
+  padding: 0.5rem
+  border: 1px solid #dbdbdb
+  color: #dbdbdb
+  transition: all 0.25s ease
+
+  .feather
+    width: 16px
+    height: 16px
+
+  &:hover, &:focus, &:active
+    background-color: #ffffff
+    border-color: #5c3df5
+    color: #5c3df5
+
+  &.has-height-auto
+    height: auto
 
 .item-check
   display: none
@@ -68,7 +83,8 @@ body
   & + .item-label
     padding-left: 2rem
     position: relative
-    transition: color 150ms ease
+    transition: color .15s ease
+    cursor: pointer
 
     &::before,
     &::after
@@ -77,35 +93,37 @@ body
       content: ''
 
     &::before
-      left: 0
       top: 0
+      left: 0
       height: 24px
       width: 24px
       margin-right: .5rem
-      border: 1px solid #dedeed
+      border: 1px solid #dbdbdb
+      border-radius: 4px
 
     &::after
-      left: 6px
       top: 6px
+      left: 6px
+      opacity: 0
       height: 8px
       width: 12px
+      border:
+        left: 2px solid #5c3df5
+        bottom: 2px solid #5c3df5
       margin-right: .5rem
-      border-left: 2px solid #5c3df5
-      border-bottom: 2px solid #5c3df5
-      transform: rotate(-45deg) scale(0.5)
       transform-origin: 50% 50%
-      opacity: 0
-      transition: 150ms ease-in-out
+      transition: .15s ease-in-out
+      transform: rotate(-45deg) scale(0.5)
 
     & .item-strike
-      position: absolute
-      display: block
-      height: 2px
+      top: 50%
       right: 0
       left: 2rem
-      top: 50%
+      height: 2px
+      display: block
+      position: absolute
       background: #5c3df5
-      transition: 450ms ease
+      transition: .45s ease
       transform: scaleX(0)
       transform-origin: left
 
@@ -115,6 +133,27 @@ body
     & .item-strike
       transform: scaleX(1)
 
+    &::before
+      border-color: #5c3df5
+
     &::after
       opacity: 1
       transform: rotate(-45deg) scale(1)
+
+.card
+  &-header
+    box-shadow: none
+    border-bottom: 1px solid #ededed
+
+  &-content
+    padding: 0
+
+  &-footer
+    .buttons
+      margin:
+        bottom: 0
+    .button
+      color: #4a4a4a
+
+      &:hover, &:focus, &:active
+        color: #5c3df5
