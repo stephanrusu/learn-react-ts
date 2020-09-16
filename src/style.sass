@@ -24,6 +24,7 @@ body
     display: flex
     flex-direction: row
     justify-content: space-between
+    align-items: center
     padding: 0.5em 1em
 
     &:not(a)
@@ -44,6 +45,76 @@ body
       p
         opacity: 0.5
 
-    a#{&}
+    &a
       background-color: whitesmoke
       cursor: pointer
+
+.is
+  &-full-width
+    width: 100%
+
+.input
+  box-shadow: none
+
+.button
+  padding:
+    left: 0.5rem
+    right: 0.5rem
+
+.item-check
+  display: none
+  position: relative
+
+  & + .item-label
+    padding-left: 2rem
+    position: relative
+    transition: color 150ms ease
+
+    &::before,
+    &::after
+      display: block
+      position: absolute
+      content: ''
+
+    &::before
+      left: 0
+      top: 0
+      height: 24px
+      width: 24px
+      margin-right: .5rem
+      border: 1px solid #dedeed
+
+    &::after
+      left: 6px
+      top: 6px
+      height: 8px
+      width: 12px
+      margin-right: .5rem
+      border-left: 2px solid #5c3df5
+      border-bottom: 2px solid #5c3df5
+      transform: rotate(-45deg) scale(0.5)
+      transform-origin: 50% 50%
+      opacity: 0
+      transition: 150ms ease-in-out
+
+    & .item-strike
+      position: absolute
+      display: block
+      height: 2px
+      right: 0
+      left: 2rem
+      top: 50%
+      background: #5c3df5
+      transition: 450ms ease
+      transform: scaleX(0)
+      transform-origin: left
+
+  &:checked + .item-label
+    color: #ccc
+
+    & .item-strike
+      transform: scaleX(1)
+
+    &::after
+      opacity: 1
+      transform: rotate(-45deg) scale(1)

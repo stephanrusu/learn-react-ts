@@ -5,7 +5,7 @@ type Todo = {
 };
 
 type TodoComplete = (selectedTodo: Todo) => void;
-type AddTodo = (newTodo: Todo) => void;
+type AddTodo = (newTodoText: string) => void;
 type EditTodo = (selectedTodo: Todo) => void;
 type RemoveTodo = (selectedTodo: Todo) => void;
 
