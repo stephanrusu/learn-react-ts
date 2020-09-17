@@ -64,7 +64,7 @@ function TodoContainer() {
   }, [todos, activeFilter]);
 
   useEffect(() => {
-    const listOfTodos: Todo[] = filterTodo(activeFilter);
+    const listOfTodos: Todo[] = filterTodo();
     setFilteredTodos(listOfTodos);
     // eslint-disable-next-line
   }, [todos, activeFilter]);
