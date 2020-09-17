@@ -33,7 +33,7 @@ function TodoForm(props: TodoFormProps) {
       <form className="is-full-width" onSubmit={handleSubmit}>
         <div className="field is-grouped">
           <div className="control is-expanded">
-            <input className={`input ${errorText ? 'is-danger' : ''}`} type="text" placeholder="What do you need to do?"value={todoText} onChange={handleChange} />
+            <input className={`input ${errorText ? 'is-danger' : ''}`} type="text" placeholder="What do you need to do?" value={todoText} onChange={handleChange} />
             {
               errorText && <p className="help is-danger">This field is required</p>
             }

@@ -1,15 +1,40 @@
-import React from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
 
-function TodoControls() {
+interface TodoControlsProps {
+  totalTodos: number,
+  completedTodos: number,
+  activeFilter: string,
+  setActiveFilter: Dispatch<SetStateAction<string>>
+}
+
+interface FilterButtons {
+  all: string,
+  active: string,
+  completed: string,
+  [key: string]: string
+}
+
+function TodoControls(props: TodoControlsProps) {
+  const { totalTodos, completedTodos, activeFilter, setActiveFilter } = props;
+  const filterButtons:FilterButtons = { all: 'All todos', active: 'Active', completed: 'Completed'};
   return (
     <>
       <div className="buttons card-footer-item is-justify-content-start">
-        <button className="button">All todos</button>
-        <button className="button">Active</button>
-        <button className="button">Completed</button>
+        {
+          Object.keys(filterButtons).map((value: string, index: number) => {
+            return (
+              <button key={index}
+                className={`button ${value === activeFilter ? 'is-active' : ''}`}
+                onClick={() => setActiveFilter(value)}
+              >
+                { filterButtons[value] }
+              </button>
+            )
+          })
+        }
       </div>
       <div className="completed-info card-footer-item is-justify-content-end">
-        0/2 Completed
+        {`${completedTodos}/${totalTodos} Completed`}
       </div>
     </>
   )
