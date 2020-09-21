@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import TodoControls from './TodoControls';
 import TodoForm from './TodoForm';
 import TodoList from './TodoList';
-import initialTodos from '../initialTodos';
+import initialTodos from '../constants/initialTodos';
 import { v4 as uuidv4 } from 'uuid';
 
 function TodoContainer() {
@@ -70,6 +70,8 @@ function TodoContainer() {
   }, [todos, activeFilter]);
 
   return (
+    <>
+    <h4 className="is-size-4 has-text-weight-medium mb-3">Todo List</h4>
     <div className="card">
       <header className="card-header">
         <TodoForm addTodo={addTodo} />
@@ -86,6 +88,7 @@ function TodoContainer() {
         />
       </footer>
     </div>
+    </>
   );
 }
 
