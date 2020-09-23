@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import TodoControls from './TodoControls';
 import TodoForm from './TodoForm';
 import TodoList from './TodoList';
-import initialTodos from '../constants/initialTodos';
+import initialTodos from '../../constants/initialTodos';
 import { v4 as uuidv4 } from 'uuid';
 
 function TodoContainer() {
@@ -71,23 +71,23 @@ function TodoContainer() {
 
   return (
     <>
-    <h4 className="is-size-4 has-text-weight-medium mb-3">Todo List</h4>
-    <div className="card">
-      <header className="card-header">
-        <TodoForm addTodo={addTodo} />
-      </header>
-      <div className="card-content">
-        <TodoList todos={filteredTodos} completeTodo={completeTodo} removeTodo={removeTodo} />
+      <h4 className="is-size-4 has-text-weight-medium mb-3">Todo List</h4>
+      <div className="card">
+        <header className="card-header">
+          <TodoForm addTodo={addTodo} />
+        </header>
+        <div className="card-content">
+          <TodoList todos={filteredTodos} completeTodo={completeTodo} removeTodo={removeTodo} />
+        </div>
+        <footer className="card-footer">
+          <TodoControls
+            totalTodos={todos.length}
+            completedTodos={displayTodo(true).length}
+            activeFilter={activeFilter}
+            setActiveFilter={setActiveFilter}
+          />
+        </footer>
       </div>
-      <footer className="card-footer">
-        <TodoControls
-          totalTodos={todos.length}
-          completedTodos={displayTodo(true).length}
-          activeFilter={activeFilter}
-          setActiveFilter={setActiveFilter}
-        />
-      </footer>
-    </div>
     </>
   );
 }

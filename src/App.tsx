@@ -1,18 +1,26 @@
 import React from 'react';
-import TodoContainer from './todo/TodoContainer';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+
+import TodoPage from './components/TodoPage';
+import HomePage from './components/HomePage';
 
 // function App():JSX.Element {
 function App() {
   return (
-    <section className="section">
-      <div className="container">
-        <div className="columns is-centered">
-          <div className="column is-half">
-            <TodoContainer />
-          </div>
-        </div>
-      </div>
-    </section>
+    <Router>
+      <Switch>
+        <Route exact path='/todo'>
+          <TodoPage />
+        </Route>
+        <Route exact path='/'>
+          <HomePage />
+        </Route>
+      </Switch>
+    </Router>
   );
 };
 
