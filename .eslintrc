@@ -3,6 +3,7 @@
     "react-app",
     "prettier",
     "prettier/@typescript-eslint",
+    "plugin:jsx-a11y/recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended"
@@ -16,7 +17,7 @@
     }
   },
   "plugins": [
-    "react-hooks", "@typescript-eslint", "prettier"],
+    "react-hooks", "@typescript-eslint", "prettier", "jsx-a11y"],
   "globals": {
     "context": "readonly"
   },
