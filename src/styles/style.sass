@@ -1,7 +1,7 @@
 @import "~bulma/bulma"
-html,
-body
-  background-color: #fafafa
+
+html, body
+  background-color: #f9f9f9
 
 .list
   background-color: white
@@ -142,12 +142,23 @@ body
       transform: rotate(-45deg) scale(1)
 
 .card
+  box-shadow: 0 8px 28px -12px rgba(150,170,180,0.4)
+  border-radius: 0.5rem
+
   &-header
     box-shadow: none
     border-bottom: 1px solid #ededed
 
+    &-title
+      padding: 0.75rem
+
   &-content
     padding: 0
+
+    & .list
+      &-item
+        padding: 0.75rem
+        border-color: #ededed
 
   &-footer
     .buttons
