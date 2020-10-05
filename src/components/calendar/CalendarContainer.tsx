@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { addMonths, addDays, format } from 'date-fns';
+import { addMonths, format } from 'date-fns';
 import Week from './Week';
 import Days from './Days';
 
@@ -13,13 +13,6 @@ function CalendarContainer() {
     setShown(newShown);
   };
 
-  const quickPick: QuickPick = (days) => {
-    const newPick = addDays(new Date(), days);
-
-    setShown(newPick);
-    setPicked(newPick);
-  };
-
   const pick: PickDate = (date) => {
     setShown(date);
     setPicked(date);
@@ -29,25 +22,17 @@ function CalendarContainer() {
     <div className="date-picker">
       <div className="date-picker__head">
         <div>
-          <button className='button filled' onClick={() => showMonth(-1)}>
-            ‹
+          <button className='button' onClick={() => showMonth(-1)}>
+            <svg fill="none" height="24" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><polyline points="15 18 9 12 15 6"></polyline></svg>
           </button>
         </div>
+        <div className="date-picker__month">{format(shown,'MMMM')}</div>
         <div>
-          <button className='button filled'onClick={() => quickPick(0)}>
-            Today
-          </button>
-          <button  className='button filled' onClick={() => quickPick(1)}>
-            Tomorrow
-          </button>
-        </div>
-        <div>
-          <button className='button filled' onClick={() => showMonth(1)}>
-            ›
+          <button className='button' onClick={() => showMonth(1)}>
+            <svg fill="none" height="24" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"/></svg>
           </button>
         </div>
       </div>
-      <div className="date-picker__month">{format(shown,'MMMM')}</div>
       <Week />
       <Days shown={shown} picked={picked} onPick={(date: Date) => pick(date)} />
     </div>

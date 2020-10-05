@@ -1,10 +1,9 @@
 html, body
-  background-color: #f9f9f9
+  background-color: $background
 
 .list
   background-color: white
   border-radius: 4px
-  // box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1)
   display: flex
   flex-direction: column
 
@@ -16,7 +15,7 @@ html, body
     padding: 0.5em 1em
 
     &:not(a)
-      color: #4a4a4a
+      color: $grey-200
 
     &:first-child
       border-top-left-radius: 4px
@@ -27,7 +26,7 @@ html, body
       border-bottom-right-radius: 4px
 
     &:not(:last-child)
-      border-bottom: 1px solid #dbdbdb
+      border-bottom: 1px solid $grey-700
 
     &.is-complete
       p
@@ -58,8 +57,8 @@ html, body
 
 .button
   padding: 0.5rem
-  border: 1px solid #dbdbdb
-  color: #dbdbdb
+  border: 1px solid $grey-700
+  color: $grey-700
   transition: all 0.25s ease
 
   .feather
@@ -67,9 +66,9 @@ html, body
     height: 16px
 
   &:hover, &:focus, &:active, &.is-active
-    background-color: #ffffff
-    border-color: #5c3df5
-    color: #5c3df5
+    background-color: $white
+    border-color: $primary-color
+    color: $primary-color
     box-shadow: none
 
   &.has-height-auto
@@ -97,7 +96,7 @@ html, body
       height: 24px
       width: 24px
       margin-right: .5rem
-      border: 1px solid #dbdbdb
+      border: 1px solid $grey-700
       border-radius: 4px
 
     &::after
@@ -106,9 +105,8 @@ html, body
       opacity: 0
       height: 8px
       width: 12px
-      border:
-      left: 2px solid #5c3df5
-      bottom: 2px solid #5c3df5
+      border-left: 2px solid $primary-color
+      border-bottom: 2px solid $primary-color
       margin-right: .5rem
       transform-origin: 50% 50%
       transition: .15s ease-in-out
@@ -121,7 +119,7 @@ html, body
       height: 2px
       display: block
       position: absolute
-      background: #5c3df5
+      background: $primary-color
       transition: .45s ease
       transform: scaleX(0)
       transform-origin: left
@@ -133,19 +131,19 @@ html, body
       transform: scaleX(1)
 
     &::before
-      border-color: #5c3df5
+      border-color: $primary-color
 
     &::after
       opacity: 1
       transform: rotate(-45deg) scale(1)
 
 .card
-  box-shadow: 0 8px 28px -12px rgba(150,170,180,0.4)
+  box-shadow: 0 8px 24px -12px rgba(150,160,170,0.4)
   border-radius: 0.5rem
 
   &-header
     box-shadow: none
-    border-bottom: 1px solid #ededed
+    border-bottom: 1px solid $grey-800
 
     &-title
       padding: 0.75rem
@@ -156,18 +154,17 @@ html, body
     & .list
       &-item
         padding: 0.75rem
-        border-color: #ededed
+        border-color: $grey-800
 
   &-footer
     .buttons
-      margin:
-      bottom: 0
+      margin-bottom: 0
 
     .button
-      color: #4a4a4a
+      color: $grey-200
 
       &:hover, &:focus, &:active
-        color: #5c3df5
+        color: $primary-color
 
 .not-found-page
   color: #636b6f

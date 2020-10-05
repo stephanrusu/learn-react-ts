@@ -5,7 +5,7 @@ const startWeek = startOfWeek(new Date());
 const week = addDays(startWeek, -1);
 
 const days = [1, 2, 3, 4, 5, 6, 7].map((n: number) => (
-  <div key={n}>{format(addDays(week, n), "EEEEEE")}</div>
+  <div key={n}>{format(addDays(week, n), "EEE")}</div>
 ));
 
 const Week = () => {
