@@ -7,7 +7,11 @@ import RouteHandler from './router/RouteHandler';
 function App() {
   return (
     <Provider store={store}>
-      <RouteHandler />
+      <section className="section">
+        <div className="container">
+          <RouteHandler />
+        </div>
+      </section>
     </Provider>
   );
 }

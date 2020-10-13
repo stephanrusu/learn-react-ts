@@ -71,7 +71,6 @@ function TodoContainer() {
 
   return (
     <>
-      <h4 className="is-size-4 has-text-weight-medium mb-3">Todo List</h4>
       <div className="card">
         <header className="card-header">
           <TodoForm addTodo={addTodo} />

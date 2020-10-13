@@ -1,17 +1,15 @@
 import React from 'react';
+import ReturnHome from './common/ReturnHome';
 import TodoContainer from './todo/TodoContainer';
 
 function TodoPage() {
   return (
-    <section className="section">
-      <div className="container">
-        <div className="columns is-centered">
-          <div className="column is-half">
-            <TodoContainer />
-          </div>
-        </div>
+    <div className="columns is-centered">
+      <div className="column is-half">
+        <ReturnHome />
+        <TodoContainer />
       </div>
-    </section>
-  )
+    </div>
+  );
 }
-export default TodoPage
+export default TodoPage;
