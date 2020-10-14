@@ -1,4 +1,4 @@
-const initialTodos: Array<Todo> = [
+const initialTodos: Array<ITodo> = [
   {
     text: "Walk the dog",
     complete: true,

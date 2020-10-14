@@ -6,12 +6,12 @@ import initialTodos from '../../constants/initialTodos';
 import { v4 as uuidv4 } from 'uuid';
 
 function TodoContainer() {
-  const [todos, setTodos] = useState<Todo[]>(initialTodos);
-  const [filteredTodos, setFilteredTodos] = useState<Todo[]>([]);
+  const [todos, setTodos] = useState<ITodo[]>(initialTodos);
+  const [filteredTodos, setFilteredTodos] = useState<ITodo[]>([]);
   const [activeFilter, setActiveFilter] = useState<string>('all');
 
   const completeTodo: CompleteTodo = (selectedTodo) => {
-    const updateTodos = todos.map((todo: Todo) => {
+    const updateTodos = todos.map((todo: ITodo) => {
       if (todo === selectedTodo) {
         return { ...todo, complete: !todo.complete };
       }
@@ -33,13 +33,13 @@ function TodoContainer() {
   };
 
   const removeTodo: RemoveTodo = (selectedTodo) => {
-    const updateTodos = todos.filter((todo: Todo) => todo !== selectedTodo);
+    const updateTodos = todos.filter((todo: ITodo) => todo !== selectedTodo);
 
     setTodos(updateTodos);
   };
 
   const displayTodo: DisplayTodo = (completed) => {
-    const listTodos = todos.filter((todo: Todo) => todo.complete === completed);
+    const listTodos = todos.filter((todo: ITodo) => todo.complete === completed);
 
     return listTodos;
   };
@@ -64,7 +64,7 @@ function TodoContainer() {
   }, [todos, activeFilter]);
 
   useEffect(() => {
-    const listOfTodos: Todo[] = filterTodo();
+    const listOfTodos: ITodo[] = filterTodo();
     setFilteredTodos(listOfTodos);
     // eslint-disable-next-line
   }, [todos, activeFilter]);

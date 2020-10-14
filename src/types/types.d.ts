@@ -1,18 +1,39 @@
 // Todo types
 
-type Todo = {
+interface ITodo {
   text: string,
   complete: boolean,
   uuid: string
 };
 
-type CompleteTodo = (selectedTodo: Todo) => void;
-type AddTodo = (newTodoText: string) => void;
-type EditTodo = (selectedTodo: Todo) => void;
-type RemoveTodo = (selectedTodo: Todo) => void;
+type CompleteTodo = (args: ITodo) => void;
+type AddTodo = (args: string) => void;
+type EditTodo = (args: ITodo) => void;
+type RemoveTodo = (args: ITodo) => void;
 type FilterTodo = () => Array;
 type DisplayTodo = (completed: boolean) => Array;
 
-type ShowMonth = (months: number) => void;
-type QuickPick = (days: number) => void;
-type PickDate = (date: Date) => void;
+// Calendar types
+
+type ShowMonth = (args: number) => void;
+type QuickPick = (args: number) => void;
+type PickDate = (args: Date) => void;
+
+// Article types
+
+interface IArticle {
+  id: string,
+  title: string,
+  body: string
+}
+
+type InitialState = {
+  articles: IArticle[]
+}
+
+type ArticleAction = {
+  type: string,
+  article: IArticle
+}
+
+type DispatchType = (args: ArticleAction) => ArticleAction;

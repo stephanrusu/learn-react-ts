@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface TodoItemProps {
-  todo: Todo,
+  todo: ITodo,
   completeTodo: CompleteTodo,
   removeTodo: RemoveTodo
 }

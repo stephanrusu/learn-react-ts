@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ROUTE_CALENDAR, ROUTE_ROOT, ROUTE_TODO } from '../router/routes';
+import { ROUTE_ARTICLE, ROUTE_CALENDAR, ROUTE_ROOT, ROUTE_TODO } from '../router/routes';
 
 function HomePage() {
   return (
@@ -20,6 +20,9 @@ function HomePage() {
               </div>
               <div className="control">
                 <Link to={ROUTE_CALENDAR} className="button is-primary is-outlined">Calendar</Link>
+              </div>
+              <div className="control">
+                <Link to={ROUTE_ARTICLE} className="button is-primary is-outlined">Article</Link>
               </div>
             </div>
           </div>
