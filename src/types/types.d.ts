@@ -11,7 +11,7 @@ type AddTodo = (args: string) => void;
 type EditTodo = (args: ITodo) => void;
 type RemoveTodo = (args: ITodo) => void;
 type FilterTodo = () => Array;
-type DisplayTodo = (completed: boolean) => Array;
+type DisplayTodo = (args: boolean) => Array;
 
 // Calendar types
 
@@ -28,7 +28,7 @@ interface IArticle {
 }
 
 type InitialState = {
-  articles: IArticle[]
+  articles: Array<IArticle>
 }
 
 type ArticleAction = {

@@ -6,8 +6,8 @@ import initialTodos from '../../constants/initialTodos';
 import { v4 as uuidv4 } from 'uuid';
 
 function TodoContainer() {
-  const [todos, setTodos] = useState<ITodo[]>(initialTodos);
-  const [filteredTodos, setFilteredTodos] = useState<ITodo[]>([]);
+  const [todos, setTodos] = useState<Array<ITodo>>(initialTodos);
+  const [filteredTodos, setFilteredTodos] = useState<Array<ITodo>>([]);
   const [activeFilter, setActiveFilter] = useState<string>('all');
 
   const completeTodo: CompleteTodo = (selectedTodo) => {
@@ -64,7 +64,7 @@ function TodoContainer() {
   }, [todos, activeFilter]);
 
   useEffect(() => {
-    const listOfTodos: ITodo[] = filterTodo();
+    const listOfTodos: Array<ITodo> = filterTodo();
     setFilteredTodos(listOfTodos);
     // eslint-disable-next-line
   }, [todos, activeFilter]);

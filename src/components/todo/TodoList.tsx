@@ -2,7 +2,7 @@ import React from 'react';
 import TodoItem from './TodoItem';
 
 interface TodoListProps {
-  todos: ITodo[],
+  todos: Array<ITodo>,
   completeTodo: CompleteTodo
   removeTodo: RemoveTodo
 };

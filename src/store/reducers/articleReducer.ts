@@ -16,7 +16,7 @@ const articleReducer = (state: InitialState = intialState, action: ArticleAction
         articles: [...state.articles, newArticle]
       };
     case actionTypes.REMOVE_ARTICLE:
-      const updatedArticles: IArticle[] = state.articles.filter((article: IArticle) => article.id !== action.article.id);
+      const updatedArticles: Array<IArticle> = state.articles.filter((article: IArticle) => article.id !== action.article.id);
       return {
         ...state,
         articles: updatedArticles,
