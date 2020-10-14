@@ -70,24 +70,22 @@ function TodoContainer() {
   }, [todos, activeFilter]);
 
   return (
-    <>
-      <div className="card">
-        <header className="card-header">
-          <TodoForm addTodo={addTodo} />
-        </header>
-        <div className="card-content">
-          <TodoList todos={filteredTodos} completeTodo={completeTodo} removeTodo={removeTodo} />
-        </div>
-        <footer className="card-footer">
-          <TodoControls
-            totalTodos={todos.length}
-            completedTodos={displayTodo(true).length}
-            activeFilter={activeFilter}
-            setActiveFilter={setActiveFilter}
-          />
-        </footer>
+    <div className="card">
+      <header className="card-header">
+        <TodoForm addTodo={addTodo} />
+      </header>
+      <div className="card-content">
+        <TodoList todos={filteredTodos} completeTodo={completeTodo} removeTodo={removeTodo} />
       </div>
-    </>
+      <footer className="card-footer">
+        <TodoControls
+          totalTodos={todos.length}
+          completedTodos={displayTodo(true).length}
+          activeFilter={activeFilter}
+          setActiveFilter={setActiveFilter}
+        />
+      </footer>
+    </div>
   );
 }
 

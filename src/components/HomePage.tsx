@@ -13,9 +13,6 @@ function HomePage() {
           <div className="card-content">
             <div className="field is-grouped px-4 py-4">
               <div className="control">
-                <Link to={ROUTE_ROOT} className="button is-primary is-outlined">Home</Link>
-              </div>
-              <div className="control">
                 <Link to={ROUTE_TODO} className="button is-primary is-outlined">Todo</Link>
               </div>
               <div className="control">

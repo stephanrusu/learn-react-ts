@@ -24,10 +24,11 @@ type PickDate = (args: Date) => void;
 interface IArticle {
   id: string,
   title: string,
-  body: string
+  body: string,
+  created: date,
 }
 
-type InitialState = {
+type ArticleState = {
   articles: Array<IArticle>
 }
 

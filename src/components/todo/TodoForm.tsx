@@ -1,10 +1,10 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 
-interface TodoFormProps {
+type Props = {
   addTodo: AddTodo
 }
 
-function TodoForm(props: TodoFormProps) {
+function TodoForm(props: Props) {
   const [todoText, setTodoText] = useState<string>('');
   const [errorText, setErrorText] = useState<boolean>(false);
 
