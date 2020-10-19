@@ -127,7 +127,7 @@ html, body
       transform-origin: left
 
   &:checked + .item-label
-    color: #ccc
+    color: $grey-600
 
     & .item-strike
       transform: scaleX(1)
@@ -148,14 +148,18 @@ html, body
     border-bottom: 1px solid $grey-800
 
     &-title
-      padding: 0.75rem
+      font-weight: 500
+
+    &-icon
+      border: 0
+      background-color: transparent
 
   &-content
     padding: 0
 
     & .list
       &-item
-        padding: 0.75rem
+        padding: 0.75rem 1rem
         border-color: $grey-800
 
   &-footer
@@ -168,8 +172,11 @@ html, body
       &:hover, &:focus, &:active
         color: $primary-color
 
+    &-item
+      padding: 0.75rem 1rem
+
 .not-found-page
-  color: #636b6f
+  color: $not-found
   font-family: "Nunito", sans-serif
   font-weight: 100
   margin: 0

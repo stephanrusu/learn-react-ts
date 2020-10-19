@@ -16,9 +16,9 @@ interface DaysProps {
 
 const mapDates = ({ date, className, onClick }: MapDateProps) => (
   <div key={getUnixTime(date)}>
-    <button className={className} type="button" onClick={onClick}>
+    <div className={className} onClick={onClick}>
       {format(date, "d")}
-    </button>
+    </div>
   </div>
 );
 
