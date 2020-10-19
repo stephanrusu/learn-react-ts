@@ -18,23 +18,3 @@ type DisplayTodo = (args: boolean) => Array;
 type ShowMonth = (args: number) => void;
 type QuickPick = (args: number) => void;
 type PickDate = (args: Date) => void;
-
-// Article types
-
-interface IArticle {
-  id: string,
-  title: string,
-  body: string,
-  created: date,
-}
-
-type ArticleState = {
-  articles: Array<IArticle>
-}
-
-type ArticleAction = {
-  type: string,
-  article: IArticle
-}
-
-type DispatchType = (args: ArticleAction) => ArticleAction;

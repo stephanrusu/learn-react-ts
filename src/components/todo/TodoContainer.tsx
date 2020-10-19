@@ -70,6 +70,8 @@ function TodoContainer() {
   }, [todos, activeFilter]);
 
   return (
+    <>
+    <h4 className="mb-4">Simple local todo list</h4>
     <div className="card">
       <header className="card-header">
         <TodoForm addTodo={addTodo} />
@@ -86,6 +88,7 @@ function TodoContainer() {
         />
       </footer>
     </div>
+    </>
   );
 }
 
