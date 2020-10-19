@@ -10,7 +10,7 @@ function TodoItem(props: TodoItemProps) {
   const { todo, completeTodo, removeTodo } = props;
 
   return (
-    <div className={`list-item ${todo.complete ? 'is-complete' : '' }`}>
+    <div className={`list-item todo-list-item ${todo.complete ? 'is-complete' : '' }`}>
       <input id={todo.uuid} type="checkbox" className='item-check' checked={todo.complete}
         onChange={() => completeTodo(todo) }/>
       <label htmlFor={todo.uuid} className='item-label'>

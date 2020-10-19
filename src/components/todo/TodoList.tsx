@@ -10,7 +10,7 @@ interface TodoListProps {
 function TodoList(props: TodoListProps) {
   const { todos, completeTodo, removeTodo } = props;
   return (
-    <div className='list'>
+    <div className='list todo-list'>
       {
         todos.map(todo => <TodoItem key={todo.uuid} todo={todo} completeTodo={completeTodo} removeTodo={removeTodo} />)
       }

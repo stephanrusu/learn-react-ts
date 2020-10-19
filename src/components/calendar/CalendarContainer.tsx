@@ -1,5 +1,6 @@
 import React from 'react';
-import DatePicker from './DatePicker';
+import DatePicker from './datepicker/DatePicker';
+import EventList from './events/EventList';
 
 function CalendarContainer() {
   return (
@@ -15,7 +16,9 @@ function CalendarContainer() {
           <div className="column is-half">
             <DatePicker />
           </div>
-          <div className="column is-half"></div>
+          <div className="column is-half">
+            <EventList />
+          </div>
         </div>
       </div>
     </div>
