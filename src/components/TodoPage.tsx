@@ -1,15 +1,23 @@
 import React from 'react';
 import ReturnHome from './common/ReturnHome';
+import TodoRTKContainer from './rtk-todo/TodoRTKContainer';
 import TodoContainer from './todo/TodoContainer';
 
 function TodoPage() {
   return (
-    <div className="columns is-centered">
-      <div className="column is-half">
+    <>
+      <div>
         <ReturnHome />
-        <TodoContainer />
       </div>
-    </div>
+      <div className="columns is-centered">
+        <div className="column">
+          <TodoContainer />
+        </div>
+        <div className="column">
+          <TodoRTKContainer />
+        </div>
+      </div>
+    </>
   );
 }
 export default TodoPage;

@@ -3,11 +3,10 @@ import TodoControls from './TodoControls';
 import TodoForm from './TodoForm';
 import TodoList from './TodoList';
 import initialTodos from '../../constants/initialTodos';
-import { v4 as uuidv4 } from 'uuid';
 
 function TodoContainer() {
-  const [todos, setTodos] = useState<Array<ITodo>>(initialTodos);
-  const [filteredTodos, setFilteredTodos] = useState<Array<ITodo>>([]);
+  const [todos, setTodos] = useState<ITodo[]>(initialTodos);
+  const [filteredTodos, setFilteredTodos] = useState<ITodo[]>([]);
   const [activeFilter, setActiveFilter] = useState<string>('all');
 
   const completeTodo: CompleteTodo = (selectedTodo) => {
@@ -27,7 +26,7 @@ function TodoContainer() {
       {
         text: newTodoText,
         complete: false,
-        uuid: uuidv4(),
+        uuid: Math.random().toString(36).substr(2, 9),
       },
     ]);
   };
@@ -64,30 +63,30 @@ function TodoContainer() {
   }, [todos, activeFilter]);
 
   useEffect(() => {
-    const listOfTodos: Array<ITodo> = filterTodo();
+    const listOfTodos: ITodo[] = filterTodo();
     setFilteredTodos(listOfTodos);
     // eslint-disable-next-line
   }, [todos, activeFilter]);
 
   return (
     <>
-    <h4 className="mb-4">Simple local todo list</h4>
-    <div className="card">
-      <header className="card-header">
-        <TodoForm addTodo={addTodo} />
-      </header>
-      <div className="card-content">
-        <TodoList todos={filteredTodos} completeTodo={completeTodo} removeTodo={removeTodo} />
+      <h4 className="mb-4">Simple local todo list</h4>
+      <div className="card">
+        <header className="card-header">
+          <TodoForm addTodo={addTodo} />
+        </header>
+        <div className="card-content">
+          <TodoList todos={filteredTodos} completeTodo={completeTodo} removeTodo={removeTodo} />
+        </div>
+        <footer className="card-footer">
+          <TodoControls
+            totalTodos={todos.length}
+            completedTodos={displayTodo(true).length}
+            activeFilter={activeFilter}
+            setActiveFilter={setActiveFilter}
+          />
+        </footer>
       </div>
-      <footer className="card-footer">
-        <TodoControls
-          totalTodos={todos.length}
-          completedTodos={displayTodo(true).length}
-          activeFilter={activeFilter}
-          setActiveFilter={setActiveFilter}
-        />
-      </footer>
-    </div>
     </>
   );
 }
