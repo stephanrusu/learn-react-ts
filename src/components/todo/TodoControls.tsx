@@ -16,7 +16,7 @@ interface FilterButtons {
 
 function TodoControls(props: TodoControlsProps) {
   const { totalTodos, completedTodos, activeFilter, setActiveFilter } = props;
-  const filterButtons:FilterButtons = { all: 'All todos', active: 'Active', completed: 'Completed'};
+  const filterButtons:FilterButtons = { all: 'All', active: 'Active', completed: 'Completed'};
   return (
     <>
       <div className="buttons card-footer-item is-justify-content-start">

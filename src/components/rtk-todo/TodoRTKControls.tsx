@@ -1,42 +1,26 @@
-import React, { Dispatch, SetStateAction } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/rootReducer';
+import { VisibilityFilter} from '../../store/visibilityFilterSlice';
+import TodoRTKFilterButton from './TodoRTKFilterButton';
 
-interface TodoControlsProps {
-  totalTodos: number,
-  completedTodos: number,
-  activeFilter: string,
-  setActiveFilter: Dispatch<SetStateAction<string>>
-}
+function TodoRTKControls() {
+  const todos = useSelector(
+    (state: RootState) => state.todos
+  );
 
-interface FilterButtons {
-  all: string,
-  active: string,
-  completed: string,
-  [key: string]: string
-}
-
-function TodoControls(props: TodoControlsProps) {
-  const { totalTodos, completedTodos, activeFilter, setActiveFilter } = props;
-  const filterButtons:FilterButtons = { all: 'All todos', active: 'Active', completed: 'Completed'};
+  const completedTodos = todos.filter((todo: ITodo) => todo.complete);
   return (
     <>
       <div className="buttons card-footer-item is-justify-content-start">
-        {
-          Object.keys(filterButtons).map((value: string, index: number) => {
-            return (
-              <button key={index}
-                className={`button ${value === activeFilter ? 'is-active' : ''}`}
-                onClick={() => setActiveFilter(value)}
-              >
-                { filterButtons[value] }
-              </button>
-            )
-          })
-        }
+        <TodoRTKFilterButton visibilityFilter={VisibilityFilter.ShowAll} text={"All"} />
+        <TodoRTKFilterButton visibilityFilter={VisibilityFilter.ShowActive} text={"Active"} />
+        <TodoRTKFilterButton visibilityFilter={VisibilityFilter.ShowCompleted} text="Completed" />
       </div>
       <div className="completed-info card-footer-item is-justify-content-end">
-        {`${completedTodos}/${totalTodos} Completed`}
+        {`${completedTodos.length}/${todos.length} Completed`}
       </div>
     </>
   )
 }
-export default TodoControls;
+export default TodoRTKControls;

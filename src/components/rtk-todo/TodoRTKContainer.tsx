@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoRTKForm from './TodoRTKForm';
 import TodoRTKList from './TodoRTKList';
+import TodoRTKControls from './TodoRTKControls';
 
 function TodoRTKContainer() {
   return (
@@ -14,6 +15,7 @@ function TodoRTKContainer() {
           <TodoRTKList />
         </div>
         <footer className="card-footer">
+          <TodoRTKControls />
         </footer>
       </div>
     </>
