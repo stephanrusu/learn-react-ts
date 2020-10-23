@@ -1,21 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { addMonths, format } from 'date-fns';
+import { RootState } from '../../../store/rootReducer';
+import { setShown } from '../../../store/datePickerSlice';
+
 import Week from './Week';
 import Days from './Days';
+import { useDispatch, useSelector } from 'react-redux';
 
 function DatePicker() {
-  const [shown, setShown] = useState(new Date());
-  const [picked, setPicked] = useState(new Date());
+  const shown = useSelector(
+    (state: RootState) => state.datePicker.shown
+  );
+  const dispatch = useDispatch();
 
   const showMonth: ShowMonth = (months) => {
-    const newShown = addMonths(shown, months);
+    const newShown = addMonths(shown, months).getTime();
 
-    setShown(newShown);
-  };
-
-  const pick: PickDate = (date) => {
-    setShown(date);
-    setPicked(date);
+    dispatch(setShown(newShown));
   };
 
   return (
@@ -34,7 +35,7 @@ function DatePicker() {
         </div>
       </div>
       <Week />
-      <Days shown={shown} picked={picked} onPick={(date: Date) => pick(date)} />
+      <Days />
     </div>
   );
 }

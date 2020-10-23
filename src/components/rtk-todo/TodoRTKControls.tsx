@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/rootReducer';
-import { VisibilityFilter} from '../../store/visibilityFilterSlice';
+import { VisibilityFilter } from '../../store/visibilityFilterSlice';
 import TodoRTKFilterButton from './TodoRTKFilterButton';
 
 function TodoRTKControls() {

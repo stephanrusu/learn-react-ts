@@ -1,17 +1,14 @@
 import React from "react";
 import classNames from "classnames";
-import { addDays, format, getUnixTime, isSameDay, isSameMonth, startOfMonth, startOfWeek } from 'date-fns';
+import { RootState } from '../../../store/rootReducer';
+import { onPick } from '../../../store/datePickerSlice';
+import { addDays, format, getUnixTime, isSameDay, isSameMonth, isToday, startOfMonth, startOfWeek } from 'date-fns';
+import { useDispatch, useSelector } from "react-redux";
 
 interface MapDateProps {
   date: Date,
   className: string,
   onClick: () => void,
-}
-
-interface DaysProps {
-  shown: Date,
-  picked: Date,
-  onPick: (date: Date) => void,
 }
 
 const mapDates = ({ date, className, onClick }: MapDateProps) => (
@@ -22,10 +19,14 @@ const mapDates = ({ date, className, onClick }: MapDateProps) => (
   </div>
 );
 
-const Days = ({ shown, picked, onPick }: DaysProps) => {
+const Days = () => {
+  const {shown, picked} = useSelector(
+    (state: RootState) => state.datePicker
+  )
+  const dispatch = useDispatch();
   const days = startOfWeek(startOfMonth(shown));
 
-  const dates = [];
+  let dates = [];
 
   while (dates.length < 42) {
     const date = addDays(days, dates.length);
@@ -33,9 +34,11 @@ const Days = ({ shown, picked, onPick }: DaysProps) => {
     const className = classNames("date-picker__day", {
       "date-picker__day--out": !isSameMonth(date, shown),
       "date-picker__day--picked": isSameDay(date, picked),
+      "date-picker__day--today": isToday(date),
     });
 
-    const onClick = () => onPick(date);
+    const timeStamp = date.getTime();
+    const onClick = () => dispatch(onPick({ shown: timeStamp, picked: timeStamp }));
 
     dates.push({ date, className, onClick });
   }

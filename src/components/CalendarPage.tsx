@@ -4,12 +4,10 @@ import ReturnHome from './common/ReturnHome';
 
 function CalendarPage() {
   return (
-    <div className="columns is-centered">
-      <div className="column">
-        <ReturnHome />
-        <CalendarContainer />
-      </div>
-    </div>
+    <>
+      <ReturnHome />
+      <CalendarContainer />
+    </>
   );
 }
 export default CalendarPage;

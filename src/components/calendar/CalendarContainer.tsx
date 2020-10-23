@@ -13,10 +13,10 @@ function CalendarContainer() {
       </div>
       <div className="card-content">
         <div className="columns">
-          <div className="column is-half">
+          <div className="column">
             <DatePicker />
           </div>
-          <div className="column is-half">
+          <div className="column is-6">
             <EventList />
           </div>
         </div>
