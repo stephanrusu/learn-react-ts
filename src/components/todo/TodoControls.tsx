@@ -24,7 +24,7 @@ function TodoControls(props: TodoControlsProps) {
           Object.keys(filterButtons).map((value: string, index: number) => {
             return (
               <button key={index}
-                className={`button ${value === activeFilter ? 'is-active' : ''}`}
+                className={`button is-primary ${value === activeFilter ? 'is-active' : ''}`}
                 onClick={() => setActiveFilter(value)}
               >
                 { filterButtons[value] }

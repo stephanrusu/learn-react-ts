@@ -1,6 +1,6 @@
 import React from 'react';
 import DatePicker from './datepicker/DatePicker';
-import EventList from './events/EventList';
+import EventDisplay from './events/EventDisplay';
 
 function CalendarContainer() {
   return (
@@ -17,7 +17,7 @@ function CalendarContainer() {
             <DatePicker />
           </div>
           <div className="column is-6">
-            <EventList />
+            <EventDisplay />
           </div>
         </div>
       </div>

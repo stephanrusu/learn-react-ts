@@ -57,21 +57,14 @@ html, body
     box-shadow: none
 
 .button
-  padding: 0.5rem
+  padding: 0.5rem 1rem
   font-family: 'Work Sans', sans-serif
-  border: 1px solid $grey-700
-  color: $grey-700
   transition: all 0.25s ease
 
   .feather
+    stroke: $white
     width: 16px
     height: 16px
-
-  &:hover, &:focus, &:active, &.is-active
-    background-color: $white
-    border-color: $primary-color
-    color: $primary-color
-    box-shadow: none
 
   &.has-height-auto
     height: auto
@@ -165,12 +158,6 @@ html, body
   &-footer
     .buttons
       margin-bottom: 0
-
-    .button
-      color: $grey-200
-
-      &:hover, &:focus, &:active
-        color: $primary-color
 
     &-item
       padding: 0.75rem 1rem

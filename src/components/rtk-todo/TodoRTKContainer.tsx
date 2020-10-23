@@ -6,7 +6,11 @@ import TodoRTKControls from './TodoRTKControls';
 function TodoRTKContainer() {
   return (
     <>
-      <h4 className="mb-4">Redux Toolkit (RTK) todo list</h4>
+      <div className="card">
+        <div className="card-header">
+          <div className="card-header-title">Todo list (Redux Toolkit)</div>
+        </div>
+      </div>
       <div className="card">
         <header className="card-header">
           <TodoRTKForm />

@@ -70,7 +70,11 @@ function TodoContainer() {
 
   return (
     <>
-      <h4 className="mb-4">Simple local todo list</h4>
+      <div className="card">
+        <div className="card-header">
+          <div className="card-header-title">Todo list (local)</div>
+        </div>
+      </div>
       <div className="card">
         <header className="card-header">
           <TodoForm addTodo={addTodo} />

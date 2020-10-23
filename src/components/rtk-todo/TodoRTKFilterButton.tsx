@@ -16,7 +16,7 @@ function TodoRTKFilterButton({visibilityFilter, text} : Props) {
   );
 
   return (
-    <button type="button" className={`button ${currentvisibilityFilter === visibilityFilter ? 'is-active': ''}`}
+    <button type="button" className={`button is-primary ${currentvisibilityFilter === visibilityFilter ? 'is-active': ''}`}
       onClick={() => dispatch(setVisibilityFilter(visibilityFilter))}>
       {text}
     </button>

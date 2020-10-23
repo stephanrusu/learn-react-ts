@@ -23,14 +23,14 @@ function DatePicker() {
     <div className="date-picker">
       <div className="date-picker__head">
         <div>
-          <button type="button" className='button' onClick={() => showMonth(-1)}>
-            <svg fill="none" height="24" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          <button type="button" className='button is-primary' onClick={() => showMonth(-1)}>
+            <svg fill="none" height="24" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" className="feather"><polyline points="15 18 9 12 15 6"></polyline></svg>
           </button>
         </div>
-        <div className="date-picker__month">{format(shown,'MMMM')}</div>
+        <div className="date-picker__month">{format(shown,'MMMM yyyy')}</div>
         <div>
-          <button type="button" className='button' onClick={() => showMonth(1)}>
-            <svg fill="none" height="24" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"/></svg>
+          <button type="button" className='button is-primary' onClick={() => showMonth(1)}>
+            <svg fill="none" height="24" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" className="feather"><polyline points="9 18 15 12 9 6"/></svg>
           </button>
         </div>
       </div>
