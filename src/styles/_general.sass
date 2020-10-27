@@ -16,7 +16,7 @@ html, body
     padding: 0.5em 1em
 
     &:not(a)
-      color: $grey-200
+      color: $grey-300
 
     &:first-child
       border-top-left-radius: 4px
@@ -63,11 +63,18 @@ html, body
 
   .feather
     stroke: $white
-    width: 16px
-    height: 16px
+    width: 20px
+    height: 20px
 
   &.has-height-auto
     height: auto
+
+  &.is-clear
+    border: 0
+    color: $black
+
+    .feather
+      stroke: $black
 
 .item-check
   display: none

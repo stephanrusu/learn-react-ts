@@ -5,10 +5,20 @@ interface ITodo {
   complete: boolean,
   uuid: string
 };
+
 interface IPickDate {
-  shown: number,
-  picked: number
+  shown: number | date,
+  picked: number | date
 };
+
+interface IEvent {
+  startDate: number | string,
+  endDate: number | string,
+  uuid: string,
+  allDay: boolean,
+  title: string,
+  description: string
+}
 
 type CompleteTodo = (args: ITodo) => void;
 type AddTodo = (args: string) => void;
