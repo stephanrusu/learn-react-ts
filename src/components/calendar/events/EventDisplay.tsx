@@ -11,6 +11,7 @@ function EventDisplay() {
   )
   const dispatch = useDispatch();
   const today = new Date().getTime();
+
   return (
     <div>
       <div className='event-section-header'>
