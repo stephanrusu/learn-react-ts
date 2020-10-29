@@ -1,5 +1,4 @@
 import React from 'react';
-
 import ReturnHome from './common/ReturnHome';
 
 function HomePage() {
