@@ -6,6 +6,7 @@ import TodoPage from "../components/TodoPage";
 import HomePage from "../components/HomePage";
 import CalendarPage from '../components/CalendarPage';
 import NotFoundPage from '../components/NotFoundPage';
+import KanbanPage from '../components/KanbanPage';
 
 function RouterHandler() {
   return (
@@ -19,6 +20,9 @@ function RouterHandler() {
         </Route>
         <Route exact path={routes.ROUTE_ROOT}>
           <HomePage />
+        </Route>
+        <Route exact path={routes.ROUTE_KANBAN}>
+          <KanbanPage />
         </Route>
         <Route path='*'>
           <NotFoundPage />

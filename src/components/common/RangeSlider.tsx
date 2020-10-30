@@ -6,7 +6,7 @@ interface Props {
   step: number,
   min: number,
   max: number,
-  sliderChange: (args: number[]) => void,
+  sliderChange?: (args: number[]) => void,
 }
 function RangeSlider(propsParent: Props) {
   const [values, setValues] = useState<number[]>([...propsParent.default]);
@@ -17,7 +17,12 @@ function RangeSlider(propsParent: Props) {
         step={propsParent.step}
         min={propsParent.min}
         max={propsParent.max}
-        onChange={(values) => { setValues([...values]); propsParent.sliderChange([...values])} }
+        onChange={(values) => {
+          setValues([...values]);
+          if (propsParent.sliderChange) {
+             propsParent.sliderChange([...values])
+          }
+        }}
         renderTrack={({ props, children }) => (
           <div
             onMouseDown={props.onMouseDown}

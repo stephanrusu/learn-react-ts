@@ -3,7 +3,7 @@ import { RootState } from '../../../store/rootReducer';
 import { onPick } from '../../../store/datePickerSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { format } from 'date-fns';
-import RangeSlider from '../../common/RangeSlider';
+import TimePicker from './TimePicker';
 
 function EventForm() {
   const pickedDate = useSelector((state: RootState) => state.datePicker.picked);
@@ -11,10 +11,6 @@ function EventForm() {
   const today = new Date().getTime();
 
   const [allDay, setAllDay] = useState(false);
-  const [startHours, setStartHours] = useState(12);
-  const [startMins, setStartMins] = useState(0);
-  const [endHours, setEndHours] = useState(12);
-  const [endMins, setEndMins] = useState(0);
 
   return (
     <div className="event-form">
@@ -55,17 +51,15 @@ function EventForm() {
           !allDay && (
             <>
               <div className="field">
-                <label className="label" htmlFor="startDate">Start time <span>{`${startHours}:${startMins < 10 ? "0"+startMins : startMins}`}</span></label>
+                <label className="label" htmlFor="startDate">Start time</label>
                 <div className="control">
-                  <RangeSlider default={[12]} min={1} max={12} step={1} sliderChange={(values) => setStartHours(values[0])} />
-                  <RangeSlider default={[0]} min={0} max={59} step={1} sliderChange={(values) => setStartMins(values[0])} />
+                  <TimePicker />
                 </div>
               </div>
               <div className="field">
-                <label className="label" htmlFor="endDate">End time <span>{`${endHours}:${endMins < 10 ? "0"+endMins : endMins}`}</span></label>
+                <label className="label" htmlFor="endDate">End time</label>
                 <div className="control">
-                  <RangeSlider default={[12]} min={1} max={12} step={1} sliderChange={(values) => setEndHours(values[0])} />
-                  <RangeSlider default={[0]} min={0} max={59} step={1} sliderChange={(values) => setEndMins(values[0])} />
+                  <TimePicker />
                 </div>
               </div>
             </>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ROUTE_CALENDAR, ROUTE_ROOT, ROUTE_TODO } from '../../router/routes';
+import { ROUTE_CALENDAR, ROUTE_KANBAN, ROUTE_ROOT, ROUTE_TODO } from '../../router/routes';
 
 function ReturnHome() {
   return (
@@ -20,6 +20,11 @@ function ReturnHome() {
           <div className="control">
             <Link to={ROUTE_CALENDAR} className="button is-primary">
               Calendar
+            </Link>
+          </div>
+          <div className="control">
+            <Link to={ROUTE_KANBAN} className="button is-primary">
+              Kanban
             </Link>
           </div>
         </div>
