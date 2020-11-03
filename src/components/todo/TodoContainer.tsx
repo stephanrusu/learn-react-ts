@@ -75,7 +75,7 @@ function TodoContainer() {
           <div className="card-header-title">Todo list (local)</div>
         </div>
       </div>
-      <div className="card">
+      <div className="card todo-container">
         <header className="card-header">
           <TodoForm addTodo={addTodo} />
         </header>
