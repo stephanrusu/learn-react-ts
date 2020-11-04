@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import RangeSlider from "../../common/RangeSlider";
 
 interface Props {
   updateDate: (value: number) => void
 }
 
+enum MiddayType {
+  AM = "AM",
+  PM = "PM"
+}
+
 function TimePicker(_props: Props) {
+  const [typeMidday, setTypeMidday] = useState("");
+
+  console.info(typeMidday);
   return (
     <div className="time-picker">
       <div className="time-slider">
@@ -14,10 +22,20 @@ function TimePicker(_props: Props) {
       </div>
       <div className="time-am-pm">
         <div className="time-midday">
-          AM
+          <button type="button"
+            className={`button ${typeMidday === MiddayType.AM ? "is-primary" : "is-white"}`}
+            onClick={() => setTypeMidday(MiddayType.AM)}
+          >
+            AM
+          </button>
         </div>
         <div className="time-midday">
-          PM
+          <button type="button"
+            className={`button ${typeMidday === MiddayType.PM ? "is-primary" : "is-white"}`}
+            onClick={() => setTypeMidday(MiddayType.PM)}
+          >
+            PM
+          </button>
         </div>
       </div>
     </div>

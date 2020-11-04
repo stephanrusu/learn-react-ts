@@ -42,7 +42,7 @@ function EventForm() {
         <div className="field">
           <label className="label" htmlFor="eventDescription">Description</label>
           <div className="control">
-            <textarea className="textarea" id="eventDescription" placeholder="Sky's the limit" rows={3}></textarea>
+            <textarea className="textarea" id="eventDescription" placeholder="Sky's the limit" rows={2}></textarea>
           </div>
         </div>
         <div className="field is-flex-inline">
