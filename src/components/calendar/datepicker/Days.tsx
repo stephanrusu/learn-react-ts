@@ -19,9 +19,19 @@ const mapDates = ({ date, className, onClick }: MapDateProps) => (
   </div>
 );
 
+const hasEvents = (date: Date, events: IEvent[]) => {
+  let listEvents = events.filter(event => isSameDay(new Date(event.startDate), new Date(date)));
+
+  return listEvents.length > 0;
+}
+
 const Days = () => {
   const {shown, picked} = useSelector(
     (state: RootState) => state.datePicker
+  );
+
+  const events = useSelector(
+    (state: RootState) => state.events
   )
   const dispatch = useDispatch();
   const days = startOfWeek(startOfMonth(shown));
@@ -35,6 +45,7 @@ const Days = () => {
       "date-picker__day--out": !isSameMonth(date, shown),
       "date-picker__day--picked": isSameDay(date, picked),
       "date-picker__day--today": isToday(date),
+      "date-picker__day--events": hasEvents(date, events),
     });
 
     const timeStamp = date.getTime();

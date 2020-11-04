@@ -10,16 +10,13 @@ function KanbanCard() {
         <span className="tag is-primary is-light">Primary</span>
       </header>
       <div className="card-content">
-        <div className="content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-          <br />
-          <small>11:09 PM - 1 Jan 2016</small>
-        </div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+        <hr className="divider" />
+        <small>11:09 PM - 1 Jan 2016</small>
       </div>
       <footer className="card-footer">
-        {/* <a href="#" className="card-footer-item">Save</a>
-        <a href="#" className="card-footer-item">Edit</a>
-        <a href="#" className="card-footer-item">Delete</a> */}
+        <p className="card-footer-item">Previous</p>
+        <p className="card-footer-item">Next</p>
       </footer>
     </div>
   )

@@ -16,6 +16,7 @@ const getVisibleTodos = (todos: ITodo[], filter: VisibilityFilter) => {
       throw new Error("Unknown filter: " + filter);
   }
 }
+
 function TodoRTKList() {
   const todos = useSelector(
     (state: RootState) => getVisibleTodos(state.todos, state.visibilityFilter)

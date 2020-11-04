@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { RootState } from '../../../store/rootReducer';
 import { onPick } from '../../../store/datePickerSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import { format } from 'date-fns';
+import { format, startOfDay } from 'date-fns';
 import TimePicker from './TimePicker';
 
 function EventForm() {
@@ -11,6 +11,11 @@ function EventForm() {
   const today = new Date().getTime();
 
   const [allDay, setAllDay] = useState(false);
+
+  const [startDate, setStartDate] = useState(startOfDay(pickedDate).getTime());
+  const [endDate, setEndDate] = useState(startOfDay(pickedDate).getTime());
+
+  console.info(startDate, endDate);
 
   return (
     <div className="event-form">
@@ -53,13 +58,13 @@ function EventForm() {
               <div className="field">
                 <label className="label" htmlFor="startDate">Start time</label>
                 <div className="control">
-                  <TimePicker />
+                  <TimePicker updateDate={(value: number) => setStartDate(value)} />
                 </div>
               </div>
               <div className="field">
                 <label className="label" htmlFor="endDate">End time</label>
                 <div className="control">
-                  <TimePicker />
+                  <TimePicker updateDate={(value: number) => setEndDate(value)} />
                 </div>
               </div>
             </>

@@ -92,3 +92,28 @@
     &--picked
       color: $white
       background-color: $secondary-color
+
+    &--events
+      position: relative
+
+      &::after
+        position: absolute
+        content: ''
+        right: -12px
+        top: -12px
+        width: 24px
+        height: 24px
+        background-color: $secondary-color
+        border: 4px solid $white
+        border-radius: 12px
+
+.time-picker
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+
+  .time-slider
+    flex: 1
+    padding-right: 48px
+    padding-left: 12px
+
