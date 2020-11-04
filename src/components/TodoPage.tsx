@@ -9,11 +9,11 @@ function TodoPage() {
       <div>
         <ReturnHome />
       </div>
-      <div className="columns is-centered">
-        <div className="column">
+      <div className="columns is-multiline is-desktop">
+        <div className="column is-full-desktop is-half-widescreen">
           <TodoContainer />
         </div>
-        <div className="column">
+        <div className="column is-full-desktop is-half-widescreen">
           <TodoRTKContainer />
         </div>
       </div>

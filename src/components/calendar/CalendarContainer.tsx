@@ -4,7 +4,7 @@ import EventDisplay from './events/EventDisplay';
 import EventForm from './events/EventForm';
 
 function CalendarContainer() {
-  const [toggleForm, setToggleForm] = useState(false);
+  const [toggleForm, setToggleForm] = useState<boolean>(false);
 
   return (
     <div className="card">
@@ -20,11 +20,11 @@ function CalendarContainer() {
         </button>
       </div>
       <div className="card-content">
-        <div className="columns">
-          <div className="column">
+        <div className="columns is-multiline is-desktop">
+          <div className="column is-full-desktop is-half-widescreen datepicker-container">
             <DatePicker />
           </div>
-          <div className="column is-6 data-container">
+          <div className="column is-full desktop is-half-widescreen data-container">
             {
               toggleForm ? <EventForm /> : <EventDisplay />
             }

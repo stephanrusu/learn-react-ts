@@ -1,21 +1,66 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { RootState } from '../../../store/rootReducer';
 import { onPick } from '../../../store/datePickerSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import { format, startOfDay } from 'date-fns';
-import TimePicker from './TimePicker';
+import { format, getHours, getMinutes, getTime, set, startOfDay } from 'date-fns';
+import TimePicker, { AmPmType } from './TimePicker';
 
 function EventForm() {
   const pickedDate = useSelector((state: RootState) => state.datePicker.picked);
   const dispatch = useDispatch();
   const today = new Date().getTime();
 
-  const [allDay, setAllDay] = useState(false);
+  const [allDay, setAllDay] = useState<boolean>(false);
 
-  const [startDate, setStartDate] = useState(startOfDay(pickedDate).getTime());
-  const [endDate, setEndDate] = useState(startOfDay(pickedDate).getTime());
+  const [startDate, setStartDate] = useState<number>(startOfDay(pickedDate).getTime());
+  const [endDate, setEndDate] = useState<number>(startOfDay(pickedDate).getTime());
 
-  console.info(startDate, endDate);
+  useEffect(() => {
+    let newDate = updatePickedDate(startDate, pickedDate);
+    setStartDate(newDate);
+
+    newDate = updatePickedDate(endDate, pickedDate);
+    setEndDate(newDate);
+
+    // eslint-disable-next-line
+  }, [pickedDate]);
+
+  const updatePickedDate = (oldDate: number, pickDate: number) => {
+
+    let oldHours = getHours(oldDate);
+    let oldMinutes = getMinutes(oldDate);
+    let newDate = set(startOfDay(pickDate), { hours: oldHours, minutes: oldMinutes });
+
+    return newDate.getTime();
+  }
+
+  const handleDate = (date: TimeDate) => {
+    switch (date.type) {
+      case "start":
+        setStartDate(setDate(startDate, date));
+        break;
+      case "end":
+        setEndDate(setDate(endDate, date));
+        break;
+      default:
+        break;
+    }
+  }
+
+  const setDate = (baseDate: number, date: TimeDate) => {
+    let newHours = date.time.hours;
+
+    if (date.time.hours === 12 && date.time.ampm === AmPmType.AM) {
+      newHours = 0;
+    }
+
+    if (date.time.ampm === AmPmType.PM && date.time.hours < 12) {
+      newHours = date.time.hours + 12;
+    }
+
+    let newDate = set(baseDate, { hours: newHours, minutes: date.time.minutes});
+    return getTime(newDate);
+  }
 
   return (
     <div className="event-form">
@@ -58,13 +103,13 @@ function EventForm() {
               <div className="field">
                 <label className="label" htmlFor="startDate">Start time</label>
                 <div className="control">
-                  <TimePicker updateDate={(value: number) => setStartDate(value)} />
+                  <TimePicker updateDate={(value: TimeDate) => handleDate(value)} type="start" />
                 </div>
               </div>
               <div className="field">
                 <label className="label" htmlFor="endDate">End time</label>
                 <div className="control">
-                  <TimePicker updateDate={(value: number) => setEndDate(value)} />
+                  <TimePicker updateDate={(value: TimeDate) => handleDate(value)} type="end" />
                 </div>
               </div>
             </>

@@ -24,6 +24,9 @@ function RouterHandler() {
         <Route exact path={routes.ROUTE_KANBAN}>
           <KanbanPage />
         </Route>
+        <Route exact path={routes.ROUTE_KANBAN_TASK}>
+          <KanbanPage />
+        </Route>
         <Route path='*'>
           <NotFoundPage />
         </Route>

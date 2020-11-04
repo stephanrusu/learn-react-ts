@@ -11,6 +11,7 @@ function TodoRTKContainer() {
           <div className="card-header-title">Todo list (Redux Toolkit)</div>
         </div>
       </div>
+
       <div className="card todo-container">
         <header className="card-header">
           <TodoRTKForm />

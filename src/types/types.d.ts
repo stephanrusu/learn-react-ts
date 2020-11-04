@@ -20,6 +20,17 @@ interface IEvent {
   description: string
 }
 
+interface TimeSlider {
+  hours: number,
+  minutes: number,
+  ampm?: string
+}
+
+interface TimeDate {
+  type: string,
+  time: TimeSlider
+}
+
 type CompleteTodo = (args: ITodo) => void;
 type AddTodo = (args: string) => void;
 type EditTodo = (args: ITodo) => void;
