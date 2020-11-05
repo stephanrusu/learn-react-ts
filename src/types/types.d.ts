@@ -31,6 +31,28 @@ interface TimeDate {
   time: TimeSlider
 }
 
+interface Project {
+  uuid: number | string,
+  date: number | date,
+  name: string
+}
+
+interface Task {
+  uuid: number | string,
+  date: number | date,
+  title: string,
+  project: string
+  type: string
+  priority: string,
+}
+
+interface Board {
+  uuid: number | string,
+  date: number | date,
+  title: string,
+  tasks: Task[],
+}
+
 type CompleteTodo = (args: ITodo) => void;
 type AddTodo = (args: string) => void;
 type EditTodo = (args: ITodo) => void;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { FormEvent, useEffect, useState } from 'react';
 import { RootState } from '../../../store/rootReducer';
 import { onPick } from '../../../store/datePickerSlice';
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,6 +14,9 @@ function EventForm() {
 
   const [startDate, setStartDate] = useState<number>(startOfDay(pickedDate).getTime());
   const [endDate, setEndDate] = useState<number>(startOfDay(pickedDate).getTime());
+
+  const [title, setTitle] = useState<string>("");
+  const [description, setDescription] = useState<string>("");
 
   useEffect(() => {
     let newDate = updatePickedDate(startDate, pickedDate);
@@ -62,11 +65,14 @@ function EventForm() {
     return getTime(newDate);
   }
 
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  }
+
   return (
     <div className="event-form">
-      <form>
-        <div className="field">
-          <label className="label">Date</label>
+      <form onSubmit={handleSubmit}>
+        <div className="field mt-4">
           <div className="control date-control">
             <span>{format(pickedDate, 'PPPP')}</span>
             <button
@@ -81,13 +87,13 @@ function EventForm() {
         <div className="field">
           <label className="label" htmlFor="eventTitle">Title</label>
           <div className="control">
-            <input className="input" id="eventTitle" type="text" placeholder="Keep it short" />
+            <input className="input" id="eventTitle" type="text" placeholder="Keep it short" value={title} onChange={(e) => setTitle(e.target.value) }/>
           </div>
         </div>
         <div className="field">
           <label className="label" htmlFor="eventDescription">Description</label>
           <div className="control">
-            <textarea className="textarea" id="eventDescription" placeholder="Sky's the limit" rows={2}></textarea>
+            <textarea className="textarea" id="eventDescription" placeholder="Sky's the limit" rows={2} value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
           </div>
         </div>
         <div className="field is-flex-inline">
@@ -115,6 +121,13 @@ function EventForm() {
             </>
           )
         }
+        <div className="field">
+          <div className="control">
+            <button type='submit' className="button is-primary">
+              Save
+            </button>
+          </div>
+        </div>
       </form>
     </div>
   );

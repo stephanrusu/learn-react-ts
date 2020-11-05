@@ -14,6 +14,13 @@
 
     .card-content
       padding: 0.5rem 0.25rem
+      position: relative
+
+      &::before
+        content: ""
+        width: 0.25rem
+        height: 100%
+        background-color: $primary-color
 
       .divider
         margin: 0.5rem 0
