@@ -16,6 +16,11 @@
     &.is-success .kanban-card .card-side-border
       background-color: $success
 
+    & .panel-block
+      &.add-new-task
+        .button
+          font-weight: 500
+
   .kanban-card
     .card-header
       padding: 0.5rem 0.25rem 0.75rem 0.25rem
@@ -28,8 +33,11 @@
           font-weight: 500
           font-size: 0.875rem
 
-      .tags:last-child, .tags .tag
-        margin-bottom: 0
+      .tags
+
+        &:last-child,
+        & .tag
+          margin-bottom: 0
 
     .card-content
       padding: 0.75rem 0.25rem
@@ -54,6 +62,7 @@
       .card-body-title
         font-weight: 500
         margin-bottom: 1rem
+        line-height: 1.25
 
       .card-body-extra
         display: flex

@@ -1,29 +1,38 @@
 export enum TaskProprity {
-  blocker = 'BLOCKER',
-  critical = "CRITICAL",
-  major = "MAJOR",
-  minor = "MINOR",
-  trivial = "TRIVIAL"
+  blocker = 'Blocker',
+  critical = "Critical",
+  major = "Major",
+  minor = "Minor",
+  trivial = "Trivial",
 };
 
 export enum TaskType {
-  bug = "BUG",
-  task = "TASK",
-  design = "DESIGN"
+  bug = "Bug",
+  task = "Task",
+  design = "Design",
+}
+
+export enum Boards {
+  toDo = "To Do",
+  inProgress = "In Progress",
+  inReview = "In Review",
+  done = "Done",
 }
 
 const initialBoards: Board[] = [
   {
     uuid: 'ntq5y153g',
     date: 1604613600000,
-    title: 'To do',
+    title: Boards.toDo,
+    color: 'is-link',
+    allowNew: true,
     tasks: [
       {
         uuid: '8lvzs23uf',
         date: 1604613600000,
         title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         type: TaskType.task,
-        project: 'Kanban Demo',
+        project: 'Kanban',
         priority: TaskProprity.major,
       },
       {
@@ -31,7 +40,7 @@ const initialBoards: Board[] = [
         date: 1604613600000,
         title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         type: TaskType.design,
-        project: 'Kanban Demo',
+        project: 'Kanban',
         priority: TaskProprity.critical,
       },
       {
@@ -39,7 +48,7 @@ const initialBoards: Board[] = [
         date: 1604613600000,
         title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         type: TaskType.bug,
-        project: 'Kanban Demo',
+        project: 'Kanban',
         priority: TaskProprity.trivial,
       },
     ],
@@ -47,14 +56,15 @@ const initialBoards: Board[] = [
   {
     uuid: 'wewoprlx1',
     date: 1604613600000,
-    title: 'In progress',
+    title: Boards.inProgress,
+    color: 'is-info',
     tasks: [
       {
         uuid: '98t5ma5pg',
         date: 1604613600000,
         title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         type: TaskType.bug,
-        project: 'Kanban Demo',
+        project: 'Kanban',
         priority: TaskProprity.major,
       },
       {
@@ -62,7 +72,7 @@ const initialBoards: Board[] = [
         date: 1604613600000,
         title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         type: TaskType.design,
-        project: 'Kanban Demo',
+        project: 'Kanban',
         priority: TaskProprity.major,
       },
     ],
@@ -70,14 +80,15 @@ const initialBoards: Board[] = [
   {
     uuid: 'sl0mm9cem',
     date: 1604613600000,
-    title: 'In review',
+    title: Boards.inReview,
+    color: 'is-primary',
     tasks: [
       {
         uuid: 'otvgpj19o',
         date: 1604613600000,
         title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         type: TaskType.bug,
-        project: 'Kanban Demo',
+        project: 'Kanban',
         priority: TaskProprity.blocker,
       },
     ],
@@ -85,14 +96,15 @@ const initialBoards: Board[] = [
   {
     uuid: 'z73qbvdv1',
     date: 1604613600000,
-    title: 'Done',
+    title: Boards.done,
+    color: 'is-success',
     tasks: [
       {
         uuid: 'boc7qorhc',
         date: 1604613600000,
         title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         type: TaskType.task,
-        project: 'Kanban Demo',
+        project: 'Kanban',
         priority: TaskProprity.critical,
       },
     ],

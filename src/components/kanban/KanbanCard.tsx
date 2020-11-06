@@ -1,23 +1,28 @@
+import { format } from 'date-fns';
 import React from 'react';
 
-function KanbanCard() {
+interface Props {
+  task: Task,
+}
+
+function KanbanCard({ task }: Props) {
   return (
     <div className="card kanban-card no-shadow">
       <header className="card-header">
         <p className="card-header-title">
-          <span className="tag is-primary is-light">Component</span>
+          <span className="tag is-primary is-light">{`${task.project}-${task.uuid}`}</span>
         </p>
         <div className="tags has-addons">
-          <span className="tag is-info">Priority</span>
-          <span className="tag is-primary">Type</span>
+          <span className="tag is-info">{task.priority}</span>
+          <span className="tag is-primary">{task.type}</span>
         </div>
       </header>
       <div className="card-content">
         <div className="card-side-border"></div>
         <div className="card-content-body">
-          <div className="card-body-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.</div>
+          <div className="card-body-title">{task.title}</div>
           <div className="card-body-extra">
-            <div className="task-date small">1 Nov 2020</div>
+            <div className="task-date small">{format(new Date(task.date), "dd MMM yyyy")}</div>
             <div className="tag is-primary">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
             </div>

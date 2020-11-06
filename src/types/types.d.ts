@@ -50,6 +50,8 @@ interface Board {
   uuid: number | string,
   date: number | date,
   title: string,
+  color: string,
+  allowNew?: boolean,
   tasks: Task[],
 }
 

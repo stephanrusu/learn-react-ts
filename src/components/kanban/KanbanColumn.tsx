@@ -3,8 +3,9 @@ import KanbanCard from './KanbanCard';
 
 interface Props {
   title: string,
-  allowNew?: boolean
-  type?: string
+  tasks: Task[],
+  allowNew?: boolean,
+  type?: string,
 }
 
 function KanbanColumn(props: Props) {
@@ -12,16 +13,18 @@ function KanbanColumn(props: Props) {
     <div className="column">
       <div className={`panel has-background-white ${props.type ?? ''}`}>
         <p className="panel-heading">{props.title}</p>
-        <div className="panel-block">
-          <KanbanCard />
-        </div>
-        <div className="panel-block">
-          <KanbanCard />
-        </div>
+        {
+          props.tasks.map((task: Task) => (
+              <div className="panel-block" key={task.uuid}>
+                <KanbanCard task={task} />
+              </div>
+            )
+          )
+        }
         {
           props.allowNew && (
-            <div className="panel-block">
-              <button className="button is-primary is-outlined is-fullwidth">
+            <div className="panel-block add-new-task">
+              <button className="button is-link is-light is-fullwidth">
                 + Add new task
               </button>
             </div>

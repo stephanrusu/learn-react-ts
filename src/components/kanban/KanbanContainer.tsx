@@ -1,13 +1,22 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import KanbanColumn from './KanbanColumn';
+import { RootState } from '../../store/rootReducer';
 
 function KanbanContainer() {
+  const columns = useSelector(
+    (state: RootState) => state.kanban
+  )
   return (
     <div className="columns is-centered kanban-container">
-      <KanbanColumn title="To Do" allowNew={true} type="is-link"/>
-      <KanbanColumn title="In Progress" type="is-info" />
-      <KanbanColumn title="In Review" type="is-primary" />
-      <KanbanColumn title="Done" type="is-success" />
+      {
+        columns.map((column: Board) =>
+          <KanbanColumn key={column.uuid}
+            title={column.title} allowNew={column.allowNew}
+            type={column.color} tasks={column.tasks}
+          />
+        )
+      }
     </div>
   );
 }
