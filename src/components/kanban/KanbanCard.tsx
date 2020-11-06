@@ -5,6 +5,7 @@ interface Props {
   task: Task,
 }
 
+
 function KanbanCard({ task }: Props) {
   return (
     <div className="card kanban-card no-shadow">
@@ -13,8 +14,8 @@ function KanbanCard({ task }: Props) {
           <span className="tag is-primary is-light">{`${task.project}-${task.uuid}`}</span>
         </p>
         <div className="tags has-addons">
-          <span className="tag is-info">{task.priority}</span>
-          <span className="tag is-primary">{task.type}</span>
+          <span className={`tag is-info is-${task.priority.toLocaleLowerCase()}`}>{task.priority}</span>
+          <span className={`tag is-primary is-${task.type.toLowerCase()}`}>{task.type}</span>
         </div>
       </header>
       <div className="card-content">

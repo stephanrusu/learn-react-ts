@@ -12,7 +12,10 @@ function KanbanColumn(props: Props) {
   return (
     <div className="column">
       <div className={`panel has-background-white ${props.type ?? ''}`}>
-        <p className="panel-heading">{props.title}</p>
+        <div className="panel-heading">
+          <div>{props.title}</div>
+          <div className="tag is-white">{props.tasks.length}</div>
+        </div>
         {
           props.tasks.map((task: Task) => (
               <div className="panel-block" key={task.uuid}>

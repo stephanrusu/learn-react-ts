@@ -65,7 +65,7 @@ const initialBoards: Board[] = [
         title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         type: TaskType.bug,
         project: 'Kanban',
-        priority: TaskProprity.major,
+        priority: TaskProprity.minor,
       },
       {
         uuid: 'hc49m900w',
