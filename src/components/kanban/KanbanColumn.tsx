@@ -15,6 +15,9 @@ function KanbanColumn(props: Props) {
         <div className="panel-block">
           <KanbanCard />
         </div>
+        <div className="panel-block">
+          <KanbanCard />
+        </div>
         {
           props.allowNew && (
             <div className="panel-block">

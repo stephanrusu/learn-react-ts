@@ -7,8 +7,8 @@ export enum TaskProprity {
 };
 
 export enum TaskType {
-  task = "TASK",
   bug = "BUG",
+  task = "TASK",
   design = "DESIGN"
 }
 
@@ -21,7 +21,7 @@ const initialBoards: Board[] = [
       {
         uuid: '8lvzs23uf',
         date: 1604613600000,
-        title: 'Lorem ipsum dolor sit amet,',
+        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         type: TaskType.task,
         project: 'Kanban Demo',
         priority: TaskProprity.major,
@@ -29,30 +29,73 @@ const initialBoards: Board[] = [
       {
         uuid: '8e8v16b0a',
         date: 1604613600000,
-        title: 'Lorem ipsum dolor sit amet,',
+        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         type: TaskType.design,
         project: 'Kanban Demo',
         priority: TaskProprity.critical,
-      }
+      },
+      {
+        uuid: 'lud0xissi',
+        date: 1604613600000,
+        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        type: TaskType.bug,
+        project: 'Kanban Demo',
+        priority: TaskProprity.trivial,
+      },
     ],
   },
   {
     uuid: 'wewoprlx1',
     date: 1604613600000,
     title: 'In progress',
-    tasks: [],
+    tasks: [
+      {
+        uuid: '98t5ma5pg',
+        date: 1604613600000,
+        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        type: TaskType.bug,
+        project: 'Kanban Demo',
+        priority: TaskProprity.major,
+      },
+      {
+        uuid: 'hc49m900w',
+        date: 1604613600000,
+        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        type: TaskType.design,
+        project: 'Kanban Demo',
+        priority: TaskProprity.major,
+      },
+    ],
   },
   {
     uuid: 'sl0mm9cem',
     date: 1604613600000,
     title: 'In review',
-    tasks: [],
+    tasks: [
+      {
+        uuid: 'otvgpj19o',
+        date: 1604613600000,
+        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        type: TaskType.bug,
+        project: 'Kanban Demo',
+        priority: TaskProprity.blocker,
+      },
+    ],
   },
   {
     uuid: 'z73qbvdv1',
     date: 1604613600000,
     title: 'Done',
-    tasks: [],
+    tasks: [
+      {
+        uuid: 'boc7qorhc',
+        date: 1604613600000,
+        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        type: TaskType.task,
+        project: 'Kanban Demo',
+        priority: TaskProprity.critical,
+      },
+    ],
   }
 ];
 

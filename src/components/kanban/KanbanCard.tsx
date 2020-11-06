@@ -5,17 +5,36 @@ function KanbanCard() {
     <div className="card kanban-card no-shadow">
       <header className="card-header">
         <p className="card-header-title">
-          <span className="tag is-primary">Component</span>
+          <span className="tag is-primary is-light">Component</span>
         </p>
-        <span className="tag is-primary is-light">Primary</span>
+        <div className="tags has-addons">
+          <span className="tag is-info">Priority</span>
+          <span className="tag is-primary">Type</span>
+        </div>
       </header>
       <div className="card-content">
-        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.</div>
-        <div className="my-3">1 Nov 2020</div>
+        <div className="card-side-border"></div>
+        <div className="card-content-body">
+          <div className="card-body-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.</div>
+          <div className="card-body-extra">
+            <div className="task-date small">1 Nov 2020</div>
+            <div className="tag is-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </div>
+          </div>
+        </div>
       </div>
       <footer className="card-footer">
-        <p className="card-footer-item">Previous</p>
-        <p className="card-footer-item">Next</p>
+        <div className="card-footer-item">
+          <button type="button" className="button is-white is-fullwidth is-small">
+          <svg fill="none" height="24" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" className="feather"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+        </div>
+        <div className="card-footer-item">
+          <button type="button" className="button is-white is-fullwidth is-small">
+          <svg fill="none" height="24" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" className="feather"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
       </footer>
     </div>
   )
