@@ -11,7 +11,7 @@ interface Props {
 function KanbanColumn(props: Props) {
   return (
     <div className="column">
-      <div className={`panel has-background-white ${props.type ?? ''}`}>
+      <div className={`panel ${props.type ?? ''}`}>
         <div className="panel-heading">
           <div>{props.title}</div>
           <div className="tag is-white">{props.tasks.length}</div>
