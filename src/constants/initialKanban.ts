@@ -19,7 +19,11 @@ export enum Boards {
   done = "Done",
 }
 
-const initialBoards: Board[] = [
+const initialKanban: ProjectKanban = {
+  uuid: "nigyhcmrs",
+  date: 1604918663862,
+  title: 'Kanban',
+  boards: [
   {
     uuid: 'ntq5y153g',
     date: 1604613600000,
@@ -32,7 +36,6 @@ const initialBoards: Board[] = [
         date: 1604613600000,
         title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         type: TaskType.task,
-        project: 'Kanban',
         priority: TaskProprity.major,
       },
       {
@@ -40,7 +43,6 @@ const initialBoards: Board[] = [
         date: 1604613600000,
         title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         type: TaskType.design,
-        project: 'Kanban',
         priority: TaskProprity.critical,
       },
       {
@@ -48,7 +50,6 @@ const initialBoards: Board[] = [
         date: 1604613600000,
         title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         type: TaskType.bug,
-        project: 'Kanban',
         priority: TaskProprity.trivial,
       },
     ],
@@ -64,7 +65,6 @@ const initialBoards: Board[] = [
         date: 1604613600000,
         title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         type: TaskType.bug,
-        project: 'Kanban',
         priority: TaskProprity.minor,
       },
       {
@@ -72,7 +72,6 @@ const initialBoards: Board[] = [
         date: 1604613600000,
         title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         type: TaskType.design,
-        project: 'Kanban',
         priority: TaskProprity.major,
       },
     ],
@@ -88,7 +87,6 @@ const initialBoards: Board[] = [
         date: 1604613600000,
         title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         type: TaskType.bug,
-        project: 'Kanban',
         priority: TaskProprity.blocker,
       },
     ],
@@ -104,11 +102,11 @@ const initialBoards: Board[] = [
         date: 1604613600000,
         title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         type: TaskType.task,
-        project: 'Kanban',
         priority: TaskProprity.critical,
       },
     ],
   }
-];
+  ]
+};
 
-export default initialBoards;
+export default initialKanban;

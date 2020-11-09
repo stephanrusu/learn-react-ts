@@ -41,7 +41,6 @@ interface Task {
   uuid: number | string,
   date: number | date,
   title: string,
-  project: string
   type: string
   priority: string,
 }
@@ -53,6 +52,13 @@ interface Board {
   color: string,
   allowNew?: boolean,
   tasks: Task[],
+}
+
+interface ProjectKanban {
+  uuid: number | string,
+  date: number | date,
+  title: string,
+  boards: Board[],
 }
 
 type CompleteTodo = (args: ITodo) => void;

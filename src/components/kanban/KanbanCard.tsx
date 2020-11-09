@@ -11,7 +11,7 @@ function KanbanCard({ task }: Props) {
     <div className="card kanban-card no-shadow">
       <header className="card-header">
         <p className="card-header-title">
-          <span className="tag is-primary is-light">{`${task.project}-${task.uuid}`}</span>
+          <span className="tag is-primary is-light">{`${task.uuid}`}</span>
         </p>
         <div className="tags has-addons">
           <span className={`tag is-info is-${task.priority.toLocaleLowerCase()}`}>{task.priority}</span>
@@ -33,12 +33,12 @@ function KanbanCard({ task }: Props) {
       <footer className="card-footer">
         <div className="card-footer-item">
           <button type="button" className="button is-white is-fullwidth is-small">
-          <svg fill="none" height="24" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" className="feather"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            <svg fill="none" height="24" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" className="feather"><polyline points="15 18 9 12 15 6"></polyline></svg>
           </button>
         </div>
         <div className="card-footer-item">
           <button type="button" className="button is-white is-fullwidth is-small">
-          <svg fill="none" height="24" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" className="feather"><polyline points="9 18 15 12 9 6"/></svg>
+            <svg fill="none" height="24" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" className="feather"><polyline points="9 18 15 12 9 6"/></svg>
           </button>
         </div>
       </footer>

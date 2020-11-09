@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import initialBoards from '../constants/initialBoards';
+import initialKanban from '../constants/initialKanban';
 
 const kanbanSlice = createSlice({
   name: 'kanban',
-  initialState: initialBoards,
+  initialState: initialKanban,
   reducers: {}
 });
 

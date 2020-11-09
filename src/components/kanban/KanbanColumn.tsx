@@ -6,6 +6,7 @@ interface Props {
   tasks: Task[],
   allowNew?: boolean,
   type?: string,
+  boardId: string | number,
 }
 
 function KanbanColumn(props: Props) {

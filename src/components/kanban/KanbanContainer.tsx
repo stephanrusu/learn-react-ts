@@ -5,13 +5,13 @@ import { RootState } from '../../store/rootReducer';
 
 function KanbanContainer() {
   const columns = useSelector(
-    (state: RootState) => state.kanban
+    (state: RootState) => state.kanban.boards
   )
   return (
     <div className="columns is-centered kanban-container">
       {
         columns.map((column: Board) =>
-          <KanbanColumn key={column.uuid}
+          <KanbanColumn key={column.uuid} boardId={column.uuid}
             title={column.title} allowNew={column.allowNew}
             type={column.color} tasks={column.tasks}
           />
