@@ -3,27 +3,33 @@ import KanbanCard from './KanbanCard';
 
 interface Props {
   title: string,
-  tasks: Task[],
+  tasks: {
+    [uuid: string] : Task
+  },
   allowNew?: boolean,
   type?: string,
   boardId: string | number,
 }
 
 function KanbanColumn(props: Props) {
+  const listTasksColumn = Object.keys(props.tasks);
+
   return (
     <div className="column">
       <div className={`panel ${props.type ?? ''}`}>
         <div className="panel-heading">
           <div>{props.title}</div>
-          <div className="tag is-white">{props.tasks.length}</div>
+          <div className="tag is-white">{listTasksColumn.length}</div>
         </div>
         {
-          props.tasks.map((task: Task) => (
+          listTasksColumn.map((key: string) => {
+            const task = props.tasks[key];
+            return (
               <div className="panel-block" key={task.uuid}>
                 <KanbanCard task={task} />
               </div>
             )
-          )
+          })
         }
         {
           props.allowNew && (

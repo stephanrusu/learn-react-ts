@@ -32,13 +32,13 @@ interface TimeDate {
 }
 
 interface Project {
-  uuid: number | string,
+  uuid: string,
   date: number | date,
   name: string
 }
 
 interface Task {
-  uuid: number | string,
+  uuid: string,
   date: number | date,
   title: string,
   type: string
@@ -46,19 +46,23 @@ interface Task {
 }
 
 interface Board {
-  uuid: number | string,
+  uuid: string,
   date: number | date,
   title: string,
   color: string,
   allowNew?: boolean,
-  tasks: Task[],
+  tasks: {
+    [uuid: string] : Task
+  },
 }
 
 interface ProjectKanban {
-  uuid: number | string,
+  uuid: string,
   date: number | date,
   title: string,
-  boards: Board[],
+  boards: {
+    [uuid: string] : Board
+  },
 }
 
 type CompleteTodo = (args: ITodo) => void;

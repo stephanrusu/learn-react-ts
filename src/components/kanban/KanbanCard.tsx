@@ -1,17 +1,21 @@
 import { format } from 'date-fns';
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/rootReducer';
 
 interface Props {
   task: Task,
 }
 
-
 function KanbanCard({ task }: Props) {
+  const projectTitle = useSelector(
+    (state: RootState) => state.kanban.title
+  )
   return (
     <div className="card kanban-card no-shadow">
       <header className="card-header">
         <p className="card-header-title">
-          <span className="tag is-primary is-light">{`${task.uuid}`}</span>
+          <span className="tag is-primary is-light">{`${projectTitle}-${task.uuid}`}</span>
         </p>
         <div className="tags has-addons">
           <span className={`tag is-info is-${task.priority.toLocaleLowerCase()}`}>{task.priority}</span>

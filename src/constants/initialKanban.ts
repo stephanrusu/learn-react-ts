@@ -1,112 +1,112 @@
 export enum TaskProprity {
   blocker = 'Blocker',
-  critical = "Critical",
-  major = "Major",
-  minor = "Minor",
-  trivial = "Trivial",
-};
+  critical = 'Critical',
+  major = 'Major',
+  minor = 'Minor',
+  trivial = 'Trivial',
+}
 
 export enum TaskType {
-  bug = "Bug",
-  task = "Task",
-  design = "Design",
+  bug = 'Bug',
+  task = 'Task',
+  design = 'Design',
 }
 
 export enum Boards {
-  toDo = "To Do",
-  inProgress = "In Progress",
-  inReview = "In Review",
-  done = "Done",
+  toDo = 'To Do',
+  inProgress = 'In Progress',
+  inReview = 'In Review',
+  done = 'Done',
 }
 
 const initialKanban: ProjectKanban = {
-  uuid: "nigyhcmrs",
+  uuid: 'nigyhcmrs',
   date: 1604918663862,
   title: 'Kanban',
-  boards: [
-  {
-    uuid: 'ntq5y153g',
-    date: 1604613600000,
-    title: Boards.toDo,
-    color: 'is-link',
-    allowNew: true,
-    tasks: [
-      {
-        uuid: '8lvzs23uf',
-        date: 1604613600000,
-        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        type: TaskType.task,
-        priority: TaskProprity.major,
+  boards: {
+    ntq5y153g: {
+      uuid: 'ntq5y153g',
+      date: 1604613600000,
+      title: Boards.toDo,
+      color: 'is-link',
+      allowNew: true,
+      tasks: {
+        '8lvzs23uf': {
+          uuid: '8lvzs23uf',
+          date: 1604613600000,
+          title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+          type: TaskType.task,
+          priority: TaskProprity.major,
+        },
+        '8e8v16b0a': {
+          uuid: '8e8v16b0a',
+          date: 1604613600000,
+          title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+          type: TaskType.design,
+          priority: TaskProprity.critical,
+        },
+        lud0xissi: {
+          uuid: 'lud0xissi',
+          date: 1604613600000,
+          title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+          type: TaskType.bug,
+          priority: TaskProprity.trivial,
+        },
       },
-      {
-        uuid: '8e8v16b0a',
-        date: 1604613600000,
-        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        type: TaskType.design,
-        priority: TaskProprity.critical,
+    },
+    wewoprlx1: {
+      uuid: 'wewoprlx1',
+      date: 1604613600000,
+      title: Boards.inProgress,
+      color: 'is-info',
+      tasks: {
+        '98t5ma5pg': {
+          uuid: '98t5ma5pg',
+          date: 1604613600000,
+          title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+          type: TaskType.bug,
+          priority: TaskProprity.minor,
+        },
+        hc49m900w: {
+          uuid: 'hc49m900w',
+          date: 1604613600000,
+          title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+          type: TaskType.design,
+          priority: TaskProprity.major,
+        },
       },
-      {
-        uuid: 'lud0xissi',
-        date: 1604613600000,
-        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        type: TaskType.bug,
-        priority: TaskProprity.trivial,
+    },
+    sl0mm9cem: {
+      uuid: 'sl0mm9cem',
+      date: 1604613600000,
+      title: Boards.inReview,
+      color: 'is-primary',
+      tasks: {
+        otvgpj19o: {
+          uuid: 'otvgpj19o',
+          date: 1604613600000,
+          title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+          type: TaskType.bug,
+          priority: TaskProprity.blocker,
+        },
       },
-    ],
+    },
+    z73qbvdv1: {
+      uuid: 'z73qbvdv1',
+      date: 1604613600000,
+      title: Boards.done,
+      color: 'is-success',
+      tasks: {
+        boc7qorhc: {
+          uuid: 'boc7qorhc',
+          date: 1604613600000,
+          title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+          type: TaskType.task,
+          priority: TaskProprity.critical,
+        },
+      },
+    },
   },
-  {
-    uuid: 'wewoprlx1',
-    date: 1604613600000,
-    title: Boards.inProgress,
-    color: 'is-info',
-    tasks: [
-      {
-        uuid: '98t5ma5pg',
-        date: 1604613600000,
-        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        type: TaskType.bug,
-        priority: TaskProprity.minor,
-      },
-      {
-        uuid: 'hc49m900w',
-        date: 1604613600000,
-        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        type: TaskType.design,
-        priority: TaskProprity.major,
-      },
-    ],
-  },
-  {
-    uuid: 'sl0mm9cem',
-    date: 1604613600000,
-    title: Boards.inReview,
-    color: 'is-primary',
-    tasks: [
-      {
-        uuid: 'otvgpj19o',
-        date: 1604613600000,
-        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        type: TaskType.bug,
-        priority: TaskProprity.blocker,
-      },
-    ],
-  },
-  {
-    uuid: 'z73qbvdv1',
-    date: 1604613600000,
-    title: Boards.done,
-    color: 'is-success',
-    tasks: [
-      {
-        uuid: 'boc7qorhc',
-        date: 1604613600000,
-        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        type: TaskType.task,
-        priority: TaskProprity.critical,
-      },
-    ],
-  }
-  ]
 };
 
 export default initialKanban;
