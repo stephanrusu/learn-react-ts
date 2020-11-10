@@ -1,16 +1,43 @@
 import { format } from 'date-fns';
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { addTask, removeTask } from '../../store/kanbanSlice';
 import { RootState } from '../../store/rootReducer';
 
 interface Props {
-  task: Task,
+  taskId: string,
+  boardId: string,
 }
 
-function KanbanCard({ task }: Props) {
+function KanbanCard({ boardId, taskId }: Props) {
+  const dispatch = useDispatch();
   const projectTitle = useSelector(
     (state: RootState) => state.kanban.title
-  )
+  );
+
+  const task = useSelector(
+    (state: RootState) => state.kanban.boards[boardId].tasks[taskId]
+  );
+
+  const boardsOrder = useSelector(
+    (state: RootState) => Object.keys(state.kanban.boards)
+  );
+
+  const boardIndex = boardsOrder.indexOf(boardId);
+  const isBoardFirst = boardIndex === 0;
+  const isBoardLast  = boardIndex === boardsOrder.length - 1;
+
+  const moveTask = (direction: number) => {
+    let newBoardId = boardsOrder[boardIndex + direction];
+
+    dispatch(removeTask({
+      boardId, taskId
+    }));
+    dispatch(addTask({
+      boardId: newBoardId, taskId, task
+    }));
+  }
+
   return (
     <div className="card kanban-card no-shadow">
       <header className="card-header">
@@ -35,16 +62,24 @@ function KanbanCard({ task }: Props) {
         </div>
       </div>
       <footer className="card-footer">
-        <div className="card-footer-item">
-          <button type="button" className="button is-white is-fullwidth is-small">
-            <svg fill="none" height="24" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" className="feather"><polyline points="15 18 9 12 15 6"></polyline></svg>
-          </button>
-        </div>
-        <div className="card-footer-item">
-          <button type="button" className="button is-white is-fullwidth is-small">
-            <svg fill="none" height="24" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" className="feather"><polyline points="9 18 15 12 9 6"/></svg>
-          </button>
-        </div>
+        {
+          !isBoardFirst && (
+            <div className="card-footer-item">
+              <button type="button" className="button is-white is-fullwidth is-small" onClick={() => moveTask(-1)}>
+                <svg fill="none" height="24" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" className="feather"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </button>
+            </div>
+          )
+        }
+        {
+          !isBoardLast && (
+            <div className="card-footer-item">
+              <button type="button" className="button is-white is-fullwidth is-small" onClick={() => moveTask(1)}>
+                <svg fill="none" height="24" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" className="feather"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+            </div>
+          )
+        }
       </footer>
     </div>
   )

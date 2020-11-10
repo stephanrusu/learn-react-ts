@@ -9,7 +9,7 @@ function KanbanContainer() {
   // const columns : { [uuid: string] : Board} = ...
   const columns = useSelector(
     (state: RootState) => state.kanban.boards
-  )
+  );
 
   return (
     <>
@@ -21,7 +21,7 @@ function KanbanContainer() {
             return (
               <KanbanColumn key={column.uuid} boardId={column.uuid}
                 title={column.title} allowNew={column.allowNew}
-                type={column.color} tasks={column.tasks}
+                type={column.color}
               />
             )
           }

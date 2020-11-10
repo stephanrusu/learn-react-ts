@@ -1,18 +1,20 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/rootReducer';
 import KanbanCard from './KanbanCard';
 
 interface Props {
   title: string,
-  tasks: {
-    [uuid: string] : Task
-  },
   allowNew?: boolean,
   type?: string,
-  boardId: string | number,
+  boardId: string,
 }
 
 function KanbanColumn(props: Props) {
-  const listTasksColumn = Object.keys(props.tasks);
+  const tasks = useSelector(
+    (state: RootState) => state.kanban.boards[props.boardId].tasks
+  )
+  const listTasksColumn = Object.keys(tasks);
 
   return (
     <div className="column">
@@ -23,10 +25,10 @@ function KanbanColumn(props: Props) {
         </div>
         {
           listTasksColumn.map((key: string) => {
-            const task = props.tasks[key];
+            const task = tasks[key];
             return (
               <div className="panel-block" key={task.uuid}>
-                <KanbanCard task={task} />
+                <KanbanCard boardId={props.boardId} taskId={task.uuid} />
               </div>
             )
           })

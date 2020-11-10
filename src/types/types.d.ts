@@ -45,6 +45,12 @@ interface Task {
   priority: string,
 }
 
+interface AlterBoard {
+  taskId: string,
+  boardId: string,
+  task?: Task
+}
+
 interface Board {
   uuid: string,
   date: number | date,
