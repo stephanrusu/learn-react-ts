@@ -1,23 +1,16 @@
 import React from 'react';
 import { KanbanTypeFilter } from '../../../store/kanbanFilterTypeSlice';
+import ButtonFilterType from './ButtonFilterType';
 
 function KanbanFilterType() {
   return (
     <div className="filter-group">
       <label className="label">Type</label>
       <div className="buttons has-addons">
-        <button type="button" className="button is-link is-light">
-          {KanbanTypeFilter.all}
-        </button>
-        <button type="button" className="button is-link is-light">
-          {KanbanTypeFilter.bug}
-        </button>
-        <button type="button" className="button is-link is-light">
-          {KanbanTypeFilter.design}
-        </button>
-        <button type="button" className="button is-link is-light">
-          {KanbanTypeFilter.task}
-        </button>
+        <ButtonFilterType filterType={KanbanTypeFilter.all} />
+        <ButtonFilterType filterType={KanbanTypeFilter.bug} />
+        <ButtonFilterType filterType={KanbanTypeFilter.design} />
+        <ButtonFilterType filterType={KanbanTypeFilter.task} />
       </div>
     </div>
   );

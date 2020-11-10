@@ -8,22 +8,22 @@ function ReturnHome() {
       <div className="card-header px-4 py-4">
         <div className="field is-grouped">
           <div className="control">
-            <Link to={ROUTE_ROOT} className="button is-primary">
+            <Link to={ROUTE_ROOT} className="button is-white">
               Home
             </Link>
           </div>
           <div className="control">
-            <Link to={ROUTE_TODO} className="button is-primary">
+            <Link to={ROUTE_TODO} className="button is-white">
               Todo
             </Link>
           </div>
           <div className="control">
-            <Link to={ROUTE_CALENDAR} className="button is-primary">
+            <Link to={ROUTE_CALENDAR} className="button is-white">
               Calendar
             </Link>
           </div>
           <div className="control">
-            <Link to={ROUTE_KANBAN} className="button is-primary">
+            <Link to={ROUTE_KANBAN} className="button is-white">
               Kanban
             </Link>
           </div>
