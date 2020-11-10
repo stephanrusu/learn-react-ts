@@ -1,4 +1,4 @@
-export enum TaskProprity {
+enum TaskProprity {
   blocker = 'Blocker',
   critical = 'Critical',
   major = 'Major',
@@ -6,13 +6,13 @@ export enum TaskProprity {
   trivial = 'Trivial',
 }
 
-export enum TaskType {
+enum TaskType {
   bug = 'Bug',
   task = 'Task',
   design = 'Design',
 }
 
-export enum Boards {
+enum Boards {
   toDo = 'To Do',
   inProgress = 'In Progress',
   inReview = 'In Review',

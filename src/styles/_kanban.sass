@@ -1,6 +1,5 @@
 .kanban-container
   .panel
-
     & .panel-heading
       font-size: 1rem
       font-weight: 500
@@ -123,3 +122,23 @@
         background-color: $critical
       &.is-blocker
         background-color: $blocker
+
+.filter-group
+  display: flex
+  flex-direction: row
+  align-items: center
+
+  & .label
+    padding-right: 1rem
+    margin-bottom: 0
+
+  & .buttons
+    margin-right: 1rem
+
+    &:not(:last-child)
+      margin-bottom: 0
+    &:last-child
+      margin-bottom: 0
+
+    & .button
+      margin-bottom: 0
