@@ -13,7 +13,8 @@ interface Props {
 function KanbanColumn(props: Props) {
   const tasks = useSelector(
     (state: RootState) => state.kanban.boards[props.boardId].tasks
-  )
+  );
+
   const listTasksColumn = Object.keys(tasks);
 
   return (
@@ -24,11 +25,10 @@ function KanbanColumn(props: Props) {
           <div className="tag is-white">{listTasksColumn.length}</div>
         </div>
         {
-          listTasksColumn.map((key: string) => {
-            const task = tasks[key];
+          listTasksColumn.map((uuid: string) => {
             return (
-              <div className="panel-block" key={task.uuid}>
-                <KanbanCard boardId={props.boardId} taskId={task.uuid} />
+              <div className="panel-block" key={uuid}>
+                <KanbanCard boardId={props.boardId} taskId={uuid} />
               </div>
             )
           })

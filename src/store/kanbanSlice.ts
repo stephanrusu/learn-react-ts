@@ -1,6 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import initialKanban from '../constants/initialKanban';
 
+interface AlterTask {
+  taskId: string,
+  boardId: string,
+  task?: Task
+};
+
 const kanbanSlice = createSlice({
   name: 'kanban',
   initialState: initialKanban,
@@ -10,14 +16,14 @@ const kanbanSlice = createSlice({
 
       state.boards[firstBoard].tasks[action.payload.uuid] = action.payload;
     },
-    addTask(state, action: PayloadAction<AlterBoard>) {
+    addTask(state, action: PayloadAction<AlterTask>) {
       const { boardId, taskId, task } = action.payload;
 
       if (task !== undefined) {
         state.boards[boardId].tasks[taskId] = task;
       }
     },
-    removeTask(state, action: PayloadAction<AlterBoard>) {
+    removeTask(state, action: PayloadAction<AlterTask>) {
       const { boardId, taskId } = action.payload;
       delete state.boards[boardId].tasks[taskId];
     },
