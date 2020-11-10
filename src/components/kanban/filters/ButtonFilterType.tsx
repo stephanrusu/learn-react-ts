@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { KanbanTypeFilter, setTypeFilter } from '../../../store/kanbanFilterTypeSlice';
+import { KanbanTypeFilter } from '../../../constants/enums';
+import { setTypeFilter } from '../../../store/kanbanFilterTypeSlice';
 import { RootState } from '../../../store/rootReducer';
 
 interface Props {

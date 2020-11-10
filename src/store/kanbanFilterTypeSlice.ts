@@ -1,20 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-export enum KanbanTypeFilter {
-  all = 'All',
-  bug = 'Bug',
-  task = 'Task',
-  design = 'Design',
-};
-
-export enum KanbanPriorityFilter {
-  all = 'All',
-  blocker = 'Blocker',
-  critical = 'Critical',
-  major = 'Major',
-  minor = 'Minor',
-  trivial = 'Trivial',
-}
+import { KanbanPriorityFilter, KanbanTypeFilter } from '../constants/enums';
 
 const initialState = {
   type: KanbanTypeFilter.all,

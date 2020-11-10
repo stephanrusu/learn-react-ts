@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { KanbanPriorityFilter, KanbanTypeFilter } from '../../constants/enums';
 import { RootState } from '../../store/rootReducer';
 import KanbanCard from './KanbanCard';
 
@@ -10,12 +11,42 @@ interface Props {
   boardId: string,
 }
 
+interface ListTask {
+  [uuid: string] : Task
+}
+
+const applyFilter = (obj:ListTask, predicate:any) =>
+  Object.keys(obj)
+     .filter( key => predicate(obj[key]) )
+    .reduce( (res, key) => Object.assign(res, { [key]: obj[key] }), {} );
+
+const displayFilters = (list: ListTask, priority: KanbanPriorityFilter, type: KanbanTypeFilter) => {
+  let filteredTasks = list;
+
+  if (priority !== KanbanPriorityFilter.all) {
+    filteredTasks = applyFilter(list, (task: Task) => task.priority === priority)
+  }
+
+  if (type !== KanbanTypeFilter.all) {
+    filteredTasks = applyFilter(filteredTasks, (task: Task) => task.type === type)
+  }
+  return filteredTasks;
+}
+
 function KanbanColumn(props: Props) {
   const tasks = useSelector(
     (state: RootState) => state.kanban.boards[props.boardId].tasks
   );
 
-  const listTasksColumn = Object.keys(tasks);
+  const priorityFilter = useSelector(
+    (state: RootState) => state.kanbanFilter.priority
+  );
+
+  const typeFilter = useSelector(
+    (state: RootState) => state.kanbanFilter.type
+  );
+
+  const listTasksColumn = Object.keys(displayFilters(tasks, priorityFilter, typeFilter));
 
   return (
     <div className="column">

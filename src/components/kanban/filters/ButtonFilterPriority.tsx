@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { KanbanPriorityFilter, setPriorityFilter } from '../../../store/kanbanFilterTypeSlice';
+import { KanbanPriorityFilter } from '../../../constants/enums';
+import { setPriorityFilter } from '../../../store/kanbanFilterTypeSlice';
 import { RootState } from '../../../store/rootReducer';
 
 interface Props {

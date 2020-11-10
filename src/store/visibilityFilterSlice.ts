@@ -1,10 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-export enum VisibilityFilter {
-  ShowAll = "SHOW_ALL",
-  ShowCompleted = "SHOW_COMPLETED",
-  ShowActive = "SHOW_ACTIVE",
-};
+import { VisibilityFilter } from '../constants/enums';
 
 const initialState = VisibilityFilter.ShowAll;
 

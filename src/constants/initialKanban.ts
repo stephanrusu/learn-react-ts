@@ -1,23 +1,4 @@
-enum TaskProprity {
-  blocker = 'Blocker',
-  critical = 'Critical',
-  major = 'Major',
-  minor = 'Minor',
-  trivial = 'Trivial',
-}
-
-enum TaskType {
-  bug = 'Bug',
-  task = 'Task',
-  design = 'Design',
-}
-
-enum Boards {
-  toDo = 'To Do',
-  inProgress = 'In Progress',
-  inReview = 'In Review',
-  done = 'Done',
-}
+import { Boards, TaskProprity, TaskType } from "./enums";
 
 const initialKanban: ProjectKanban = {
   uuid: 'nigyhcmrs',

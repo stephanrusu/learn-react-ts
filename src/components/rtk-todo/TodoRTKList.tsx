@@ -2,7 +2,7 @@ import React from 'react';
 import TodoItem from './TodoRTKItem';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/rootReducer';
-import { VisibilityFilter } from '../../store/visibilityFilterSlice';
+import { VisibilityFilter } from '../../constants/enums';
 
 const getVisibleTodos = (todos: ITodo[], filter: VisibilityFilter) => {
   switch (filter) {

@@ -6,8 +6,8 @@ function KanbanFilter() {
   return(
     <div className="card mb-4">
       <div className="card-header px-4 py-4">
-        <KanbanFilterType />
         <KanbanFilterPriority />
+        <KanbanFilterType />
       </div>
     </div>
   );

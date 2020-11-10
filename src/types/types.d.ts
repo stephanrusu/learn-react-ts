@@ -41,8 +41,8 @@ interface Task {
   uuid: string,
   date: number | date,
   title: string,
-  type: string
-  priority: string,
+  type: TaskType,
+  priority: TaskProprity,
 }
 
 interface Board {
