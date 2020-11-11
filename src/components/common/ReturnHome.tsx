@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { ROUTE_CALENDAR, ROUTE_KANBAN, ROUTE_ROOT, ROUTE_TODO } from '../../router/routes';
 
 function ReturnHome() {
@@ -8,24 +8,24 @@ function ReturnHome() {
       <div className="card-header px-4 py-4">
         <div className="field is-grouped">
           <div className="control">
-            <Link to={ROUTE_ROOT} className="button is-white">
+            <NavLink exact to={ROUTE_ROOT} className="button is-white" activeClassName="is-active">
               Home
-            </Link>
+            </NavLink>
           </div>
           <div className="control">
-            <Link to={ROUTE_TODO} className="button is-white">
+            <NavLink exact to={ROUTE_TODO} className="button is-white" activeClassName="is-active">
               Todo
-            </Link>
+            </NavLink>
           </div>
           <div className="control">
-            <Link to={ROUTE_CALENDAR} className="button is-white">
+            <NavLink exact to={ROUTE_CALENDAR} className="button is-white" activeClassName="is-active">
               Calendar
-            </Link>
+            </NavLink>
           </div>
           <div className="control">
-            <Link to={ROUTE_KANBAN} className="button is-white">
+            <NavLink exact to={ROUTE_KANBAN} className="button is-white" activeClassName="is-active">
               Kanban
-            </Link>
+            </NavLink>
           </div>
         </div>
       </div>

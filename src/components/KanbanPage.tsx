@@ -6,9 +6,7 @@ import KanbanContainer from './kanban/KanbanContainer';
 function KanbanPage() {
   return (
     <>
-      <div>
-        <ReturnHome />
-      </div>
+      <ReturnHome />
       <KanbanContainer />
     </>
   );

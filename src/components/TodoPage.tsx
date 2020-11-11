@@ -6,9 +6,7 @@ import TodoContainer from './todo/TodoContainer';
 function TodoPage() {
   return (
     <>
-      <div>
-        <ReturnHome />
-      </div>
+      <ReturnHome />
       <div className="columns is-multiline is-desktop">
         <div className="column is-full-desktop is-half-widescreen">
           <TodoContainer />

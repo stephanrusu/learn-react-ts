@@ -4,8 +4,8 @@ import KanbanFilterType from './KanbanFilterType';
 
 function KanbanFilter() {
   return(
-    <div className="card mb-4">
-      <div className="card-header px-4 py-4">
+    <div className="card-content px-4 py-4">
+      <div className="kanban-filters">
         <KanbanFilterPriority />
         <KanbanFilterType />
       </div>

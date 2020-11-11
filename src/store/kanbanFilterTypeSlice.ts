@@ -3,7 +3,8 @@ import { KanbanPriorityFilter, KanbanTypeFilter } from '../constants/enums';
 
 const initialState = {
   type: KanbanTypeFilter.all,
-  priority: KanbanPriorityFilter.all
+  priority: KanbanPriorityFilter.all,
+  toggle: false,
 };
 
 const kanbanFilterSlice = createSlice({
@@ -15,10 +16,14 @@ const kanbanFilterSlice = createSlice({
     },
     setPriorityFilter(state, action: PayloadAction<KanbanPriorityFilter>) {
       state.priority = action.payload;
+    },
+
+    toggleFilter(state, action: PayloadAction<boolean>) {
+      state.toggle = action.payload
     }
   }
 });
 
-export const { setTypeFilter, setPriorityFilter } = kanbanFilterSlice.actions;
+export const { setTypeFilter, setPriorityFilter, toggleFilter } = kanbanFilterSlice.actions;
 
 export default kanbanFilterSlice.reducer;

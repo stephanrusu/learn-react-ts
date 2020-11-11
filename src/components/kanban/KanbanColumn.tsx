@@ -52,7 +52,10 @@ function KanbanColumn(props: Props) {
     <div className="column">
       <div className={`panel ${props.type ?? ''}`}>
         <div className="panel-heading">
-          <div>{props.title}</div>
+          {/* <button type="button" className="button is-white add-task">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          </button> */}
+          <div className="text">{props.title}</div>
           <div className="tag is-white">{listTasksColumn.length}</div>
         </div>
         {
@@ -64,15 +67,11 @@ function KanbanColumn(props: Props) {
             )
           })
         }
-        {
-          props.allowNew && (
-            <div className="panel-block add-new-task">
-              <button className="button is-link is-light is-fullwidth">
-                + Add new task
-              </button>
-            </div>
-          )
-        }
+        <div className="panel-block add-new-task">
+          <button className="button is-link is-light is-fullwidth">
+            + Add new task
+          </button>
+        </div>
       </div>
     </div>
   )
