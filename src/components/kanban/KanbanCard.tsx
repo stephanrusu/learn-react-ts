@@ -1,6 +1,8 @@
 import { format } from 'date-fns';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link, useLocation } from 'react-router-dom';
+import { ROUTE_KANBAN } from '../../router/routes';
 import { addTask, removeTask } from '../../store/kanbanSlice';
 import { RootState } from '../../store/rootReducer';
 
@@ -11,6 +13,7 @@ interface Props {
 
 function KanbanCard({ boardId, taskId }: Props) {
   const dispatch = useDispatch();
+  let location = useLocation();
   const projectTitle = useSelector(
     (state: RootState) => state.kanban.title
   );
@@ -42,7 +45,12 @@ function KanbanCard({ boardId, taskId }: Props) {
     <div className="card kanban-card no-shadow">
       <header className="card-header">
         <p className="card-header-title">
-          <span className="tag is-primary is-light">{`${projectTitle}-${task.uuid}`}</span>
+          <Link to={{
+            pathname: `${ROUTE_KANBAN}/view/${taskId}`,
+            state: { background: location }
+          }} >
+            <span className="tag is-primary is-light">{`${projectTitle}-${task.uuid}`}</span>
+          </Link>
         </p>
         <div className="tags has-addons">
           <span className={`tag is-info is-${task.priority.toLocaleLowerCase()}`}>{task.priority}</span>
