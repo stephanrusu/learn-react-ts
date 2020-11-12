@@ -5,6 +5,7 @@ import { RootState } from '../../store/rootReducer';
 import { getKeyValue } from '../../utils';
 import KanbanFilter from './filters/KanbanFilter';
 import { toggleFilter } from '../../store/kanbanFilterTypeSlice';
+import KanbanModalContainer from './KanbanModalContainer';
 
 function KanbanContainer() {
   const dispatch = useDispatch();
@@ -48,6 +49,7 @@ function KanbanContainer() {
           )
         }
       </div>
+      <KanbanModalContainer />
     </>
   );
 }

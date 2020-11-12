@@ -67,11 +67,11 @@ function KanbanColumn(props: Props) {
             )
           })
         }
-        <div className="panel-block add-new-task">
-          <button className="button is-link is-light is-fullwidth">
-            + Add new task
-          </button>
-        </div>
+      </div>
+      <div className="add-new-task">
+        <button className="button is-link is-light is-fullwidth">
+          Add new task
+        </button>
       </div>
     </div>
   )
