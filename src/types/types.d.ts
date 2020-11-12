@@ -63,6 +63,10 @@ interface ProjectKanban {
   },
 }
 
+interface RouteParams {
+  [taskId: string]: string
+}
+
 type CompleteTodo = (args: ITodo) => void;
 type AddTodo = (args: string) => void;
 type EditTodo = (args: ITodo) => void;
