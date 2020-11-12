@@ -1,5 +1,3 @@
-// Todo types
-
 interface ITodo {
   text: string,
   complete: boolean,
@@ -41,8 +39,8 @@ interface Task {
   uuid: string,
   date: number | date,
   title: string,
-  type: TaskType,
-  priority: TaskProprity,
+  type: KanbanTypeFilter,
+  priority: KanbanPriorityFilter,
 }
 
 interface Board {

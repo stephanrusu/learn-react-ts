@@ -4,20 +4,6 @@ export enum VisibilityFilter {
   ShowActive = "SHOW_ACTIVE",
 };
 
-export enum TaskProprity {
-  blocker = 'Blocker',
-  critical = 'Critical',
-  major = 'Major',
-  minor = 'Minor',
-  trivial = 'Trivial',
-}
-
-export enum TaskType {
-  bug = 'Bug',
-  task = 'Task',
-  design = 'Design',
-}
-
 export enum Boards {
   toDo = 'To Do',
   inProgress = 'In Progress',
