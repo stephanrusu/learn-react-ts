@@ -13,7 +13,8 @@ interface Props {
 
 function KanbanCard({ boardId, taskId }: Props) {
   const dispatch = useDispatch();
-  let location = useLocation();
+  const location = useLocation();
+
   const projectTitle = useSelector(
     (state: RootState) => state.kanban.title
   );
@@ -47,7 +48,7 @@ function KanbanCard({ boardId, taskId }: Props) {
         <p className="card-header-title">
           <Link to={{
             pathname: `${ROUTE_KANBAN}/view/${taskId}`,
-            state: { background: location }
+            state: { background: location, boardId, taskId }
           }} >
             <span className="tag is-primary is-light">{`${projectTitle}-${task.uuid}`}</span>
           </Link>

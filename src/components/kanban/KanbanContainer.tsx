@@ -6,6 +6,7 @@ import KanbanDisplayTask from './task/KanbanDisplayTask';
 import * as routes from '../../router/routes';
 import NotFoundPage from '../NotFoundPage';
 import KanbanModalContainer from './KanbanModalContainer';
+import KanbanTaskForm from './task/KanbanTaskForm';
 
 function KanbanContainer() {
   const location = useLocation<any>();
@@ -14,6 +15,9 @@ function KanbanContainer() {
   return (
     <>
       <Switch location={background || location}>
+        <Route exact path={[routes.ROUTE_KANBAN_CREATE, routes.ROUTE_KANBAN_EDIT]}>
+          <KanbanTaskForm />
+        </Route>
         <Route exact path={routes.ROUTE_KANBAN_TASK}>
           <KanbanDisplayTask />
         </Route>
@@ -27,11 +31,18 @@ function KanbanContainer() {
 
     {
       background && (
-        <Route exact path={routes.ROUTE_KANBAN_TASK}>
-          <KanbanModalContainer>
-            <KanbanDisplayTask />
-          </KanbanModalContainer>
-        </Route>
+        <>
+          <Route exact path={routes.ROUTE_KANBAN_TASK}>
+            <KanbanModalContainer>
+              <KanbanDisplayTask />
+            </KanbanModalContainer>
+          </Route>
+          <Route exact path={[routes.ROUTE_KANBAN_CREATE, routes.ROUTE_KANBAN_EDIT]}>
+            <KanbanModalContainer>
+              <KanbanTaskForm />
+            </KanbanModalContainer>
+          </Route>
+        </>
       )
     }
     </>

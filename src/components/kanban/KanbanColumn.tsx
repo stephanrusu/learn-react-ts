@@ -1,6 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link, useLocation } from 'react-router-dom';
 import { KanbanPriorityFilter, KanbanTypeFilter } from '../../constants/enums';
+import { ROUTE_KANBAN_CREATE } from '../../router/routes';
 import { RootState } from '../../store/rootReducer';
 import KanbanCard from './KanbanCard';
 
@@ -34,6 +36,8 @@ const displayFilters = (list: ListTask, priority: KanbanPriorityFilter, type: Ka
 }
 
 function KanbanColumn(props: Props) {
+  const location = useLocation();
+
   const tasks = useSelector(
     (state: RootState) => state.kanban.boards[props.boardId].tasks
   );
@@ -69,9 +73,14 @@ function KanbanColumn(props: Props) {
         }
       </div>
       <div className="add-new-task">
-        <button className="button is-info is-light is-fullwidth">
+        <Link to={{
+          pathname: ROUTE_KANBAN_CREATE,
+          state: { background: location }
+        }}
+          className="button is-info is-light is-fullwidth"
+        >
           Add new task
-        </button>
+        </Link>
       </div>
     </div>
   )
