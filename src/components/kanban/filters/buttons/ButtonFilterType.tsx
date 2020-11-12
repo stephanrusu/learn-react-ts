@@ -18,7 +18,7 @@ function ButtonFilterType(props: Props) {
 
   return (
     <button type="button"
-      className={`button is-link is-small is-light ${currentFilterType === props.filterType ? 'is-active' : ''}`}
+      className={`button is-info is-light is-small ${currentFilterType === props.filterType ? 'is-active' : ''}`}
       onClick={() => dispatch(setTypeFilter(props.filterType))}
     >
       {props.filterType}

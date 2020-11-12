@@ -16,7 +16,7 @@ function ButtonFilterPriority(props: Props) {
   );
   return (
     <button type="button"
-      className={`button is-link is-small is-${currentFilterType.toLocaleLowerCase()} ${currentFilterType === props.filterType ? 'is-active' : ''}`}
+      className={`button is-info is-light is-small ${currentFilterType === props.filterType ? 'is-active' : ''}`}
       onClick={() => dispatch(setPriorityFilter(props.filterType))}
     >
       {props.filterType}

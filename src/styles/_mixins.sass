@@ -1,19 +1,19 @@
-@mixin useFilterColors
+@mixin useFilterColors($darkFactor: 0)
   &.is-task
-    background-color: $task
+    background-color: darken($task, $darkFactor)
   &.is-bug
-    background-color: $bug
+    background-color: darken($bug, $darkFactor)
   &.is-design
-    background-color: $design
+    background-color: darken($design, $darkFactor)
 
   &.is-trivial
-    background-color: $trivial
+    background-color: darken($trivial, $darkFactor)
   &.is-minor
-    background-color: $minor
+    background-color: darken($minor, $darkFactor)
   &.is-major
-    background-color: $major
+    background-color: darken($major, $darkFactor)
     color: $black
   &.is-critical
-    background-color: $critical
+    background-color: darken($critical, $darkFactor)
   &.is-blocker
-    background-color: $blocker
+    background-color: darken($blocker, $darkFactor)

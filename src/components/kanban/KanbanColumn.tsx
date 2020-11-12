@@ -69,7 +69,7 @@ function KanbanColumn(props: Props) {
         }
       </div>
       <div className="add-new-task">
-        <button className="button is-link is-light is-fullwidth">
+        <button className="button is-info is-light is-fullwidth">
           Add new task
         </button>
       </div>
