@@ -1,4 +1,5 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
+import classNames from 'classnames';
 
 type Props = {
   addTodo: AddTodo
@@ -27,13 +28,16 @@ function TodoForm(props: Props) {
       setErrorText(true);
     }
   }
+  const inputClassNames = classNames("input", {
+    'is-danger': errorText,
+  });
 
   return (
     <div className="card-header-title">
       <form className="is-full-width" onSubmit={handleSubmit}>
         <div className="field is-grouped">
           <div className="control is-expanded">
-            <input className={`input ${errorText ? 'is-danger' : ''}`} type="text" placeholder="What do you need to do?" value={todoText} onChange={handleChange} />
+            <input className={inputClassNames} type="text" placeholder="What do you need to do?" value={todoText} onChange={handleChange} />
             {
               errorText && <p className="help is-danger">This field is required</p>
             }

@@ -32,6 +32,8 @@
         & .button
           margin-bottom: 0
 
+          @include useFilterColors
+
 
 .kanban-container
   .panel
@@ -150,22 +152,5 @@
           stroke: $grey-200
 
     .tag
-      &.is-task
-        background-color: $task
-      &.is-bug
-        background-color: $bug
-      &.is-design
-        background-color: $design
-
-      &.is-trivial
-        background-color: $trivial
-      &.is-minor
-        background-color: $minor
-      &.is-major
-        background-color: $major
-        color: $black
-      &.is-critical
-        background-color: $critical
-      &.is-blocker
-        background-color: $blocker
+      @include useFilterColors
 

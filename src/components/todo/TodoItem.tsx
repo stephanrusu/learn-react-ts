@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 
 interface TodoItemProps {
   todo: ITodo,
@@ -8,9 +9,12 @@ interface TodoItemProps {
 
 function TodoItem(props: TodoItemProps) {
   const { todo, completeTodo, removeTodo } = props;
+  const todoClassNames = classNames("list-item todo-list-item", {
+    'is-complete': todo.complete
+  });
 
   return (
-    <div className={`list-item todo-list-item ${todo.complete ? 'is-complete' : '' }`}>
+    <div className={todoClassNames}>
       <input id={todo.uuid} type="checkbox" className='item-check' checked={todo.complete}
         onChange={() => completeTodo(todo) }/>
       <label htmlFor={todo.uuid} className='item-label'>

@@ -1,8 +1,9 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { KanbanTypeFilter } from '../../../constants/enums';
-import { setTypeFilter } from '../../../store/kanbanFilterTypeSlice';
-import { RootState } from '../../../store/rootReducer';
+//* use aliases
+import { KanbanTypeFilter } from '../../../../constants/enums';
+import { setTypeFilter } from '../../../../store/kanbanFilterTypeSlice';
+import { RootState } from '../../../../store/rootReducer';
 
 interface Props {
   filterType: KanbanTypeFilter
@@ -14,6 +15,7 @@ function ButtonFilterType(props: Props) {
   const currentFilterType = useSelector(
     (state: RootState) => state.kanbanFilter.type
   );
+
   return (
     <button type="button"
       className={`button is-link is-small is-light ${currentFilterType === props.filterType ? 'is-active' : ''}`}

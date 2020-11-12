@@ -1,4 +1,5 @@
 import React, { Dispatch, SetStateAction } from 'react';
+import classNames from "classnames";
 
 interface TodoControlsProps {
   totalTodos: number,
@@ -17,14 +18,19 @@ interface FilterButtons {
 function TodoControls(props: TodoControlsProps) {
   const { totalTodos, completedTodos, activeFilter, setActiveFilter } = props;
   const filterButtons:FilterButtons = { all: 'All', active: 'Active', completed: 'Completed'};
+
   return (
     <>
       <div className="buttons card-footer-item is-justify-content-start">
         {
           Object.keys(filterButtons).map((value: string, index: number) => {
+            const buttonClassNames = classNames("button is-primary", {
+              "is-active": value === activeFilter
+            });
+
             return (
               <button key={index}
-                className={`button is-primary ${value === activeFilter ? 'is-active' : ''}`}
+                className={buttonClassNames}
                 onClick={() => setActiveFilter(value)}
               >
                 { filterButtons[value] }

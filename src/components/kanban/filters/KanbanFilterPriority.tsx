@@ -1,6 +1,6 @@
 import React from 'react';
 import { KanbanPriorityFilter } from '../../../constants/enums';
-import ButtonFilterPriority from './ButtonFilterPriority';
+import ButtonFilterPriority from './buttons/ButtonFilterPriority';
 
 function KanbanFilterPriority() {
   return (

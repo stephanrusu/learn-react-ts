@@ -1,6 +1,6 @@
 import React from 'react';
 import { KanbanTypeFilter } from '../../../constants/enums';
-import ButtonFilterType from './ButtonFilterType';
+import ButtonFilterType from './buttons/ButtonFilterType';
 
 function KanbanFilterType() {
   return (
