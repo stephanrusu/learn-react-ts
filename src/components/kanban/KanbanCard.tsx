@@ -48,13 +48,13 @@ function KanbanCard({ boardId, taskId }: Props) {
         <p className="card-header-title">
           <Link to={{
             pathname: `${ROUTE_KANBAN}/view/${taskId}`,
-            state: { background: location, boardId, taskId }
+            state: { background: location }
           }} >
             <span className="tag is-primary is-light">{`${projectTitle}-${task.uuid}`}</span>
           </Link>
         </p>
         <div className="tags has-addons">
-          <span className={`tag is-info is-${task.priority.toLocaleLowerCase()}`}>{task.priority}</span>
+          <span className={`tag is-primary is-${task.priority.toLocaleLowerCase()}`}>{task.priority}</span>
           <span className={`tag is-primary is-${task.type.toLowerCase()}`}>{task.type}</span>
         </div>
       </header>

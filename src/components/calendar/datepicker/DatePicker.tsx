@@ -13,7 +13,7 @@ function DatePicker() {
   );
   const dispatch = useDispatch();
 
-  const showMonth = (months: number) => {
+  const showMonth: ShowMonth = (months) => {
     const newShown = addMonths(shown, months).getTime();
 
     dispatch(setShown(newShown));

@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
-import { KanbanPriorityFilter, KanbanTypeFilter } from '../../constants/enums';
 import { ROUTE_KANBAN_CREATE } from '../../router/routes';
 import { RootState } from '../../store/rootReducer';
+import { displayFilters } from '../../utils';
 import KanbanCard from './KanbanCard';
 
 interface Props {
@@ -11,28 +11,6 @@ interface Props {
   allowNew?: boolean,
   type?: string,
   boardId: string,
-}
-
-interface ListTask {
-  [uuid: string] : Task
-}
-
-const applyFilter = (obj:ListTask, predicate:any) =>
-  Object.keys(obj)
-     .filter( key => predicate(obj[key]) )
-    .reduce( (res, key) => Object.assign(res, { [key]: obj[key] }), {} );
-
-const displayFilters = (list: ListTask, priority: KanbanPriorityFilter, type: KanbanTypeFilter) => {
-  let filteredTasks = list;
-
-  if (priority !== KanbanPriorityFilter.all) {
-    filteredTasks = applyFilter(list, (task: Task) => task.priority === priority)
-  }
-
-  if (type !== KanbanTypeFilter.all) {
-    filteredTasks = applyFilter(filteredTasks, (task: Task) => task.type === type)
-  }
-  return filteredTasks;
 }
 
 function KanbanColumn(props: Props) {
@@ -75,7 +53,7 @@ function KanbanColumn(props: Props) {
       <div className="add-new-task">
         <Link to={{
           pathname: ROUTE_KANBAN_CREATE,
-          state: { background: location }
+          state: { background: location, boardId: props.boardId }
         }}
           className="button is-info is-light is-fullwidth"
         >

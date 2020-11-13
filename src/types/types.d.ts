@@ -67,6 +67,11 @@ interface RouteParams {
   [taskId: string]: string
 }
 
+interface ListTask {
+  [uuid: string] : Task
+}
+
+
 type CompleteTodo = (args: ITodo) => void;
 type AddTodo = (args: string) => void;
 type EditTodo = (args: ITodo) => void;

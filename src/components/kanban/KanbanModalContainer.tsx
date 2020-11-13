@@ -1,11 +1,11 @@
 import React, { ReactNode } from 'react';
 import { useHistory } from 'react-router-dom';
-interface Props {
+
+interface ModalProps {
   children: ReactNode
 }
 
-// todo
-function KanbanModalContainer({ children }: Props) {
+function KanbanModalContainer({ children }: ModalProps) {
   let history = useHistory();
   const back = (event: React.MouseEvent<HTMLElement>) => {
     event.stopPropagation();

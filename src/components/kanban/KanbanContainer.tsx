@@ -2,7 +2,7 @@ import React from 'react';
 
 import KanbanBoards from './KanbanBoards';
 import { Route, Switch, useLocation } from 'react-router-dom';
-import KanbanDisplayTask from './task/KanbanDisplayTask';
+import KanbanTaskDisplay from './task/KanbanTaskDisplay';
 import * as routes from '../../router/routes';
 import NotFoundPage from '../NotFoundPage';
 import KanbanModalContainer from './KanbanModalContainer';
@@ -13,13 +13,14 @@ function KanbanContainer() {
   const background = location.state && location.state.background;
 
   return (
+    // * display routes directly on page
     <>
       <Switch location={background || location}>
         <Route exact path={[routes.ROUTE_KANBAN_CREATE, routes.ROUTE_KANBAN_EDIT]}>
           <KanbanTaskForm />
         </Route>
         <Route exact path={routes.ROUTE_KANBAN_TASK}>
-          <KanbanDisplayTask />
+          <KanbanTaskDisplay />
         </Route>
         <Route exact path={routes.ROUTE_KANBAN}>
           <KanbanBoards />
@@ -31,18 +32,19 @@ function KanbanContainer() {
 
     {
       background && (
-        <>
-          <Route exact path={routes.ROUTE_KANBAN_TASK}>
-            <KanbanModalContainer>
-              <KanbanDisplayTask />
-            </KanbanModalContainer>
-          </Route>
+        // * display routes inside modals
+        <Switch>
           <Route exact path={[routes.ROUTE_KANBAN_CREATE, routes.ROUTE_KANBAN_EDIT]}>
             <KanbanModalContainer>
               <KanbanTaskForm />
             </KanbanModalContainer>
           </Route>
-        </>
+          <Route exact path={routes.ROUTE_KANBAN_TASK}>
+            <KanbanModalContainer>
+              <KanbanTaskDisplay />
+            </KanbanModalContainer>
+          </Route>
+        </Switch>
       )
     }
     </>
