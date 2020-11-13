@@ -41,6 +41,7 @@ interface Task {
   title: string,
   type: KanbanTypeFilter,
   priority: KanbanPriorityFilter,
+  description: string,
 }
 
 interface Board {

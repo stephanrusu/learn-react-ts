@@ -11,6 +11,7 @@ interface Props {
 function KanbanTask({ board, taskId }: Props) {
   const projectTitle = useSelector((state: RootState) => state.kanban.title);
   const task = board.tasks[taskId];
+
   return (
     <div className="card kanban-card-display">
       <header className="card-header">
@@ -27,11 +28,11 @@ function KanbanTask({ board, taskId }: Props) {
       </header>
       <div className="card-content">
         <div className="content">
-          <div>{task.title}</div>
+          <div className="card-title">{task.title}</div>
           <small className="has-text-grey-light">{format(new Date(task.date), "dd MMM yyyy")}</small>
         </div>
         <div className="content">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium assumenda libero itaque aliquid molestiae quis iste est! Earum iste dignissimos voluptatum eligendi. Vitae, numquam quas? Dolore praesentium sint adipisci quaerat.
+         {task.description}
         </div>
       </div>
       <footer className="card-footer">

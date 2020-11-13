@@ -61,7 +61,14 @@ function KanbanCard({ boardId, taskId }: Props) {
       <div className="card-content">
         <div className="card-side-border"></div>
         <div className="card-content-body">
-          <div className="card-body-title">{task.title}</div>
+          <div className="card-body-title">
+            <Link to={{
+              pathname: `${ROUTE_KANBAN}/view/${taskId}`,
+              state: { background: location }
+            }} >
+              {task.title}
+            </Link>
+          </div>
           <div className="card-body-extra">
             <div className="task-date small">{format(new Date(task.date), "dd MMM yyyy")}</div>
             <div className="tag is-primary">

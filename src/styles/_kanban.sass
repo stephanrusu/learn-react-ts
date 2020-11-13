@@ -163,14 +163,19 @@
     & .tag
       @include useFilterColors
 
-.kanban-card-display
+.kanban-card-display, .kanban-card-form
   & .card-header
     justify-content: space-between
 
     & .card-header-title
       flex-grow: 0
+
   & .card-content
     padding: 1rem
+
+    .card-title
+      font-weight: 500
+      font-size: 1.25rem
 
   & .tags
     padding: 0 1rem

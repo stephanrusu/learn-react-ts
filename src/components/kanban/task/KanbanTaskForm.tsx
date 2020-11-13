@@ -1,17 +1,23 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import { RootState } from '../../../store/rootReducer';
 
 function KanbanTaskForm() {
-  const { taskId } = useParams<RouteParams>();
+  const location = useLocation<any>();
+  const boardId = location.state && location.state.boardId;
+
+  const board = useSelector(
+    (state: RootState) => state.kanban.boards[boardId]
+  );
+
   return (
-    <div className="card">
+    <div className="card kanban-card-form">
       <header className="card-header">
-        <p className="card-header-title">Form - {taskId}</p>
-        <a href="/" className="card-header-icon" aria-label="more options">
-          <span className="icon">
-            <i className="fas fa-angle-down" aria-hidden="true"></i>
-          </span>
-        </a>
+        <p className="card-header-title">Create task</p>
+        <div className="tags">
+          <span className={`tag ${board.color}`}>{board.title}</span>
+        </div>
       </header>
       <div className="card-content">
         <div className="content">

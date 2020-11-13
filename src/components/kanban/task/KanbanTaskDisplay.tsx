@@ -9,7 +9,6 @@ function KanbanDisplayTask() {
   const { taskId } = useParams<RouteParams>();
   const boards = useSelector((state: RootState) => state.kanban.boards);
 
-
   if (taskId === undefined) {
     return <NotFoundPage />;
   }
