@@ -7,15 +7,15 @@ import { RootState } from '../../../store/rootReducer';
 interface Props {
   taskId: string;
   board: Board;
-  boardsOrder: string[]
 }
 
-function KanbanTask({ board, taskId, boardsOrder }: Props) {
+function KanbanTask({ board, taskId }: Props) {
   const dispatch = useDispatch();
   const projectTitle = useSelector((state: RootState) => state.kanban.title);
   const boards = useSelector((state:RootState) => state.kanban.boards);
+  const boardsOrder = Object.keys(boards);
   const task = board.tasks[taskId];
-  const boardId = board.uuid
+  const boardId = board.uuid;
 
   const boardIndex = boardsOrder.indexOf(boardId);
   const isBoardFirst = boardIndex === 0;
