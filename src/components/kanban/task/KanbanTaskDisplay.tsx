@@ -23,6 +23,7 @@ function KanbanDisplayTask() {
   };
 
   const board = getBoard(taskId);
+  const boardsOrder = Object.keys(boards);
 
   return (
     <>
@@ -30,7 +31,7 @@ function KanbanDisplayTask() {
         board === undefined ? (
           <NotFoundPage />
         ) : (
-          <KanbanTask taskId={taskId} board={board} />
+          <KanbanTask taskId={taskId} board={board} boardsOrder={boardsOrder} />
       )}
     </>
   );

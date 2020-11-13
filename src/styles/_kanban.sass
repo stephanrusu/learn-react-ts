@@ -176,6 +176,30 @@
     .card-title
       font-weight: 500
       font-size: 1.25rem
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+      align-items: center
+
+      .tag
+        padding: 0.5rem
+        height: auto
+
+        .feather
+          width: 20px
+          height: 20px
+
+    .content-actions
+      display: flex
+      flex-direction: row
+
+      .card-action-item
+        flex: 1
+
+        &:first-child
+          margin-right: 0.5rem
+        &:last-child
+          margin-left: 0.5rem
 
   & .tags
     padding: 0 1rem
