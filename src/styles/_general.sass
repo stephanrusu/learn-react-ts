@@ -52,12 +52,15 @@ html, body
     &-end
       justify-content: flex-end
 
-.input
-  box-shadow: none
-  transition: all .5s ease
+.input, .textarea
+  border: 1px solid $input-border
+  box-shadow: 0px 2px 4px rgba($input-shadow, 0.1)
 
+  &:hover
+    box-shadow: 0px 2px 4px rgba($input-shadow, 0.15)
   &:focus
-    box-shadow: none
+    border-color: $blue
+    box-shadow: 0px 2px 4px rgba($input-shadow, 0.2)
 
 .button
   padding: 0.5rem 1rem
@@ -172,6 +175,13 @@ html, body
   &.todo-container
     .card-content
       padding: 0.75rem 0
+
+    .input
+      box-shadow: none
+      transition: all .5s ease
+
+      &:focus
+        box-shadow: none
 
   &.no-shadow
     box-shadow: none

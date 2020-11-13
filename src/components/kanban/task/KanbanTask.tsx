@@ -65,7 +65,7 @@ function KanbanTask({ board, taskId }: Props) {
         {
           !isBoardFirst && (
             <div className="card-action-item">
-              <button type="button" className={`button ${prevBoard.color} is-fullwidth `} onClick={() => moveTask(-1)}>
+              <button type="button" className={`button ${prevBoard.color} is-fullwidth is-light`} onClick={() => moveTask(-1)}>
                 <svg fill="none" height="24" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" className="feather"><polyline points="15 18 9 12 15 6"></polyline></svg>
                 <div>{prevBoard.title}</div>
               </button>
@@ -75,7 +75,7 @@ function KanbanTask({ board, taskId }: Props) {
         {
           !isBoardLast && (
             <div className="card-action-item">
-              <button type="button" className={`button ${nextBoard.color} is-fullwidth`} onClick={() => moveTask(1)}>
+              <button type="button" className={`button ${nextBoard.color} is-fullwidth is-light`} onClick={() => moveTask(1)}>
                 <div>{nextBoard.title}</div>
                 <svg fill="none" height="24" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" className="feather"><polyline points="9 18 15 12 9 6"/></svg>
               </button>
@@ -85,15 +85,12 @@ function KanbanTask({ board, taskId }: Props) {
         </div>
       </div>
       <footer className="card-footer">
-        <a href="/" className="card-footer-item">
-          Save
-        </a>
-        <a href="/" className="card-footer-item">
+        <div className="card-footer-item">
           Edit
-        </a>
-        <a href="/" className="card-footer-item">
+        </div>
+        <div className="card-footer-item">
           Delete
-        </a>
+        </div>
       </footer>
     </div>
   );

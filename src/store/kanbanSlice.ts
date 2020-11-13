@@ -6,15 +6,18 @@ interface AlterTask {
   boardId: string,
   task?: Task
 };
-
+interface NewTask {
+  boardId: string,
+  task: Task
+}
 const kanbanSlice = createSlice({
   name: 'kanban',
   initialState: initialKanban,
   reducers: {
-    addNewTask(state, action: PayloadAction<Task>) {
-      let firstBoard = Object.keys(state.boards)[0];
+    addNewTask(state, action: PayloadAction<NewTask>) {
+      const {boardId, task} = action.payload;
 
-      state.boards[firstBoard].tasks[action.payload.uuid] = action.payload;
+      state.boards[boardId].tasks[task.uuid] = action.payload.task;
     },
     addTask(state, action: PayloadAction<AlterTask>) {
       const { boardId, taskId, task } = action.payload;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { RootState } from '../../../store/rootReducer';
@@ -6,6 +6,9 @@ import { RootState } from '../../../store/rootReducer';
 function KanbanTaskForm() {
   const location = useLocation<any>();
   const boardId = location.state && location.state.boardId;
+
+  const [taskTitle, setTaskTitle] = useState<string>("");
+  const [taskDescription, setTaskDescription] = useState<string>("");
 
   const board = useSelector(
     (state: RootState) => state.kanban.boards[boardId]
@@ -21,17 +24,30 @@ function KanbanTaskForm() {
       </header>
       <div className="card-content">
         <div className="content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-          <br />
+            <div className="field">
+              <label className="label" htmlFor="taskTitle">Title</label>
+              <div className="control">
+                <input className="input" type="text" placeholder="Task title" id="taskTitle"
+                  value={taskTitle} onChange={(e) => setTaskTitle(e.target.value) } />
+              </div>
+            </div>
+            <div className="field">
+              <label className="label" htmlFor="taskDescription">Description</label>
+              <div className="control">
+                <textarea className="textarea" placeholder="Task description" id="taskDescription" rows={3}
+                value={taskDescription} onChange={(e) => setTaskDescription(e.target.value)}
+                ></textarea>
+              </div>
+            </div>
         </div>
       </div>
       <footer className="card-footer">
-        <a href="/" className="card-footer-item">
-          Delete
-        </a>
-        <a href="/" className="card-footer-item">
+        <div className="card-footer-item">
+          Cancel
+        </div>
+        <div className="card-footer-item">
           Save
-        </a>
+        </div>
       </footer>
     </div>
   );
