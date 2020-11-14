@@ -12,16 +12,16 @@ function RouterHandler() {
   return (
     <Router>
       <Switch>
-        <Route path={routes.ROUTE_TODO}>
-          <TodoPage />
-        </Route>
-        <Route path={routes.ROUTE_CALENDAR}>
-          <CalendarPage />
-        </Route>
         <Route path={routes.ROUTE_KANBAN}>
           <KanbanPage />
         </Route>
-        <Route path={routes.ROUTE_ROOT}>
+        <Route exact path={routes.ROUTE_TODO}>
+          <TodoPage />
+        </Route>
+        <Route exact path={routes.ROUTE_CALENDAR}>
+          <CalendarPage />
+        </Route>
+        <Route exact path={routes.ROUTE_ROOT}>
           <HomePage />
         </Route>
         <Route path='*'>

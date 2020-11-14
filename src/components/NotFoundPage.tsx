@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import ReturnHome from './common/ReturnHome';
 
 function NotFoundPage() {
   useEffect(() => {
@@ -10,10 +11,20 @@ function NotFoundPage() {
   });
 
   return (
-    <div className="flex-center position-ref full-height">
-      <div className="code"> 404 </div>
-      <div className="message"> Not found </div>
+    <div className="columns is-centered">
+      <div className="column">
+        <ReturnHome />
+        <div className="card">
+          <div className="card-content">
+            <div className="flex-center position-ref full-height">
+              <div className="code"> 404 </div>
+              <div className="message"> Not found </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
   )
 }
 
