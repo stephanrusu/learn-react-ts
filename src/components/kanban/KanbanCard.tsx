@@ -2,7 +2,7 @@ import { format } from 'date-fns';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
-import { ROUTE_KANBAN } from '../../router/routes';
+import { ROUTE_KANBAN_TASK_SIMPLE } from '../../router/routes';
 import { addTask, removeTask } from '../../store/kanbanSlice';
 import { RootState } from '../../store/rootReducer';
 
@@ -47,7 +47,7 @@ function KanbanCard({ boardId, taskId }: Props) {
       <header className="card-header">
         <p className="card-header-title">
           <Link to={{
-            pathname: `${ROUTE_KANBAN}/view/${taskId}`,
+            pathname: `${ROUTE_KANBAN_TASK_SIMPLE}/${taskId}`,
             state: { background: location }
           }} >
             <span className="tag is-primary is-light">{`${projectTitle}-${task.uuid}`}</span>
@@ -63,7 +63,7 @@ function KanbanCard({ boardId, taskId }: Props) {
         <div className="card-content-body">
           <div className="card-body-title">
             <Link to={{
-              pathname: `${ROUTE_KANBAN}/view/${taskId}`,
+              pathname: `${ROUTE_KANBAN_TASK_SIMPLE}/${taskId}`,
               state: { background: location }
             }} >
               {task.title}

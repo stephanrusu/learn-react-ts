@@ -20,19 +20,14 @@ function KanbanDisplayTask() {
         return board;
       }
     }
+    // if nothing, return first board
+    return boards[0];
   };
 
   const board = getBoard(taskId);
 
   return (
-    <>
-      {
-        board === undefined ? (
-          <NotFoundPage />
-        ) : (
-          <KanbanTask taskId={taskId} board={board} />
-      )}
-    </>
+    <KanbanTask taskId={taskId} board={board} />
   );
 }
 

@@ -1,15 +1,17 @@
 import React, { ReactNode } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 
 interface ModalProps {
   children: ReactNode
 }
 
 function KanbanModalContainer({ children }: ModalProps) {
-  let history = useHistory();
+  const history = useHistory();
+  const location = useLocation<any>();
   const back = (event: React.MouseEvent<HTMLElement>) => {
     event.stopPropagation();
-    history.goBack();
+    // history.goBack();
+    history.push(location.state.background);
   };
 
   return (

@@ -19,3 +19,7 @@ export const displayFilters = (list: ListTask, priority: KanbanPriorityFilter, t
   }
   return filteredTasks;
 }
+
+export const getUuid = () => {
+  return Math.random().toString(36).substr(2, 9)
+}

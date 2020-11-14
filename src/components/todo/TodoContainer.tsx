@@ -3,6 +3,7 @@ import TodoControls from './TodoControls';
 import TodoForm from './TodoForm';
 import TodoList from './TodoList';
 import initialTodos from '../../constants/initialTodos';
+import { getUuid } from '../../utils';
 
 function TodoContainer() {
   const [todos, setTodos] = useState<ITodo[]>(initialTodos);
@@ -26,7 +27,7 @@ function TodoContainer() {
       {
         text: newTodoText,
         complete: false,
-        uuid: Math.random().toString(36).substr(2, 9),
+        uuid: getUuid(),
       },
     ]);
   };

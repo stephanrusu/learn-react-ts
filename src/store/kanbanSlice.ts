@@ -33,7 +33,7 @@ const kanbanSlice = createSlice({
   }
 });
 
-export const { addTask, removeTask } = kanbanSlice.actions;
+export const { addTask, removeTask, addNewTask } = kanbanSlice.actions;
 
 
 export default kanbanSlice.reducer

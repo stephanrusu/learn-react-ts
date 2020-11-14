@@ -1,17 +1,17 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 // import { AppThunk, AppDispatch } from './index';
 import initialTodos from '../constants/initialTodos';
+import { getUuid } from '../utils';
 
 const todoSlice = createSlice({
   name: 'todos',
   initialState: initialTodos,
   reducers: {
     createTodo(state, action: PayloadAction<string>) {
-      // Math.random().toString(36).substr(2, 9)
       state.push({
         text: action.payload,
         complete: false,
-        uuid: Math.random().toString(36).substr(2, 9)
+        uuid: getUuid(),
       });
     },
     toggleTodo(state, action: PayloadAction<ITodo>) {
