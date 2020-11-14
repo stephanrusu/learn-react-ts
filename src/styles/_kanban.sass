@@ -201,6 +201,26 @@
         &:last-child
           margin-left: 0.5rem
 
+      .button
+        &:focus
+          box-shadow: none
+
+        .feather
+          width: 24px
+          height: 24px
+
+        &.is-link .feather
+          stroke: $link
+
+        &.is-info .feather
+          stroke: $info
+
+        &.is-primary .feather
+          stroke: $primary
+
+        &.is-success .feather
+          stroke: $success
+
   & .tags
     padding: 0 1rem
     margin-bottom: 0

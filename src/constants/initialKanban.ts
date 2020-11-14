@@ -43,6 +43,7 @@ const initialKanban: ProjectKanban = {
       date: 1604613600000,
       title: Boards.inProgress,
       color: 'is-info',
+      allowNew: true,
       tasks: {
         '98t5ma5pg': {
           uuid: '98t5ma5pg',
@@ -67,6 +68,7 @@ const initialKanban: ProjectKanban = {
       date: 1604613600000,
       title: Boards.inReview,
       color: 'is-primary',
+      allowNew: true,
       tasks: {
         otvgpj19o: {
           uuid: 'otvgpj19o',

@@ -50,16 +50,20 @@ function KanbanColumn(props: Props) {
           })
         }
       </div>
-      <div className="add-new-task">
-        <Link to={{
-          pathname: ROUTE_KANBAN_CREATE,
-          state: { background: location, boardId: props.boardId }
-        }}
-          className="button is-info is-light is-fullwidth"
-        >
-          Add new task
-        </Link>
-      </div>
+      {
+        props.allowNew && (
+          <div className="add-new-task">
+            <Link to={{
+              pathname: ROUTE_KANBAN_CREATE,
+              state: { background: location, boardId: props.boardId }
+            }}
+              className="button is-info is-light is-fullwidth"
+            >
+              Add new task
+            </Link>
+          </div>
+        )
+      }
     </div>
   )
 }
