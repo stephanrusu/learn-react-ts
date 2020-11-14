@@ -7,6 +7,7 @@ import * as routes from '../../router/routes';
 import NotFoundPage from '../NotFoundPage';
 import KanbanModalContainer from './KanbanModalContainer';
 import KanbanTaskForm from './task/KanbanTaskForm';
+import KanbanProjectSettings from './KanbanProjectSettings';
 
 function KanbanContainer() {
   const location = useLocation<any>();
@@ -21,6 +22,9 @@ function KanbanContainer() {
         </Route>
         <Route exact path={routes.ROUTE_KANBAN_TASK}>
           <KanbanTaskDisplay />
+        </Route>
+        <Route exact path={routes.ROUTE_KANBAN_PROJECT}>
+          <KanbanProjectSettings />
         </Route>
         <Route exact path={routes.ROUTE_KANBAN}>
           <KanbanBoards />
@@ -42,6 +46,11 @@ function KanbanContainer() {
           <Route exact path={routes.ROUTE_KANBAN_TASK}>
             <KanbanModalContainer>
               <KanbanTaskDisplay />
+            </KanbanModalContainer>
+          </Route>
+          <Route exact path={routes.ROUTE_KANBAN_PROJECT}>
+            <KanbanModalContainer>
+              <KanbanProjectSettings />
             </KanbanModalContainer>
           </Route>
         </Switch>

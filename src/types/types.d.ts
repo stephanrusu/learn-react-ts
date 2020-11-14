@@ -59,6 +59,7 @@ interface ProjectKanban {
   uuid: string,
   date: number | date,
   title: string,
+  boardsOrder: string[],
   boards: {
     [uuid: string] : Board
   },

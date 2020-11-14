@@ -4,6 +4,7 @@ export const ROUTE_CALENDAR = `${ROUTE_ROOT}calendar`;
 export const ROUTE_ARTICLE = `${ROUTE_ROOT}article`;
 
 export const ROUTE_KANBAN = `${ROUTE_ROOT}kanban`;
+export const ROUTE_KANBAN_PROJECT = `${ROUTE_KANBAN}/project`;
 export const ROUTE_KANBAN_CREATE = `${ROUTE_KANBAN}/create`;
 export const ROUTE_KANBAN_TASK = `${ROUTE_KANBAN}/view/:taskId`;
 export const ROUTE_KANBAN_EDIT = `${ROUTE_KANBAN}/edit/:taskId`;

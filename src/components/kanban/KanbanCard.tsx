@@ -24,7 +24,7 @@ function KanbanCard({ boardId, taskId }: Props) {
   );
 
   const boardsOrder = useSelector(
-    (state: RootState) => Object.keys(state.kanban.boards)
+    (state: RootState) => state.kanban.boardsOrder
   );
 
   const boardIndex = boardsOrder.indexOf(boardId);

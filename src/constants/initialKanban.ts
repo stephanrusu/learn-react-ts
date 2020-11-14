@@ -4,6 +4,12 @@ const initialKanban: ProjectKanban = {
   uuid: 'nigyhcmrs',
   date: 1604918663862,
   title: 'Kanban',
+  boardsOrder: [
+    "ntq5y153g",
+    "wewoprlx1",
+    "sl0mm9cem",
+    "z73qbvdv1"
+  ],
   boards: {
     ntq5y153g: {
       uuid: 'ntq5y153g',

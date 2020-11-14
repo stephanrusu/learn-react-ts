@@ -11,9 +11,16 @@ interface Props {
 
 function KanbanTask({ board, taskId }: Props) {
   const dispatch = useDispatch();
-  const projectTitle = useSelector((state: RootState) => state.kanban.title);
-  const boards = useSelector((state:RootState) => state.kanban.boards);
-  const boardsOrder = Object.keys(boards);
+  const projectTitle = useSelector(
+    (state: RootState) => state.kanban.title
+  );
+  const boards = useSelector(
+    (state: RootState) => state.kanban.boards
+  );
+  const boardsOrder = useSelector(
+    (state: RootState) => state.kanban.boardsOrder
+  );
+
   const task = board.tasks[taskId];
   const boardId = board.uuid;
 
