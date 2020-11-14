@@ -36,16 +36,20 @@
 
       & .button
         margin-bottom: 0
-        // @include useFilterColors
+        @include useFilterColors
+        color: $white
 
-        // &.is-all
-        //   @extend .is-light
+        &:focus
+          box-shadow: none
 
-        // &.is-active
-        //   @include useFilterColors(15%)
+        &.is-all
+          @extend .is-light
 
-        //   &.is-all
-        //     @extend .is-light
+        &.is-active
+          @include useFilterColors(15%)
+
+          &.is-all
+            @extend .is-light
 
 
 .kanban-container
@@ -238,3 +242,22 @@
     & .tag
       margin-bottom: 0
       @include useFilterColors
+
+.kanban-card-form
+  & .label
+    font-weight: 500
+
+  & .button
+    margin-bottom: 0
+    border-radius: 6px
+
+    &:focus
+      box-shadow: none
+
+    &:not(.is-white)
+      color: $white
+
+    @include useFilterColors
+
+    &.is-active
+      @include useFilterColors(15%)

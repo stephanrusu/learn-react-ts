@@ -70,6 +70,56 @@ function KanbanTaskForm() {
       </header>
       <div className="card-content">
         <div className="content">
+        <div className="field">
+            <label className="label">Type</label>
+            <div className="buttons control">
+              <button type="button"
+                className={`button is-${KanbanTypeFilter.bug.toLowerCase()} is-small ${KanbanTypeFilter.bug === taskType ? 'is-active' : ''}`}
+                onClick={() => setTaskType(KanbanTypeFilter.bug)}
+              >{KanbanTypeFilter.bug}
+              </button>
+              <button type="button"
+                className={`button is-${KanbanTypeFilter.design.toLowerCase()} is-small ${KanbanTypeFilter.design === taskType ? 'is-active' : ''}`}
+                onClick={() => setTaskType(KanbanTypeFilter.design)}
+              >{KanbanTypeFilter.design}
+              </button>
+              <button type="button"
+                className={`button is-${KanbanTypeFilter.task.toLowerCase()} is-small ${KanbanTypeFilter.task === taskType ? 'is-active' : ''}`}
+                onClick={() => setTaskType(KanbanTypeFilter.task)}
+              >{KanbanTypeFilter.task}
+              </button>
+            </div>
+          </div>
+          <div className="field">
+            <label className="label">Priority</label>
+            <div className="buttons control">
+              <button type="button"
+                className={`button is-${KanbanPriorityFilter.blocker.toLowerCase()} is-small ${KanbanPriorityFilter.blocker === taskPriority ? 'is-active' : ''}`}
+                onClick={() => setTaskPriority(KanbanPriorityFilter.blocker)}
+              >{KanbanPriorityFilter.blocker}
+              </button>
+              <button type="button"
+                className={`button is-${KanbanPriorityFilter.critical.toLowerCase()} is-small ${KanbanPriorityFilter.critical === taskPriority ? 'is-active' : ''}`}
+                onClick={() => setTaskPriority(KanbanPriorityFilter.critical)}
+              >{KanbanPriorityFilter.critical}
+              </button>
+              <button type="button"
+                className={`button is-${KanbanPriorityFilter.major.toLowerCase()} is-small ${KanbanPriorityFilter.major === taskPriority ? 'is-active' : ''}`}
+                onClick={() => setTaskPriority(KanbanPriorityFilter.major)}
+              >{KanbanPriorityFilter.major}
+              </button>
+              <button type="button"
+                className={`button is-${KanbanPriorityFilter.minor.toLowerCase()} is-small ${KanbanPriorityFilter.minor === taskPriority ? 'is-active' : ''}`}
+                onClick={() => setTaskPriority(KanbanPriorityFilter.minor)}
+              >{KanbanPriorityFilter.minor}
+              </button>
+              <button type="button"
+                className={`button is-${KanbanPriorityFilter.trivial.toLowerCase()} is-small ${KanbanPriorityFilter.trivial === taskPriority ? 'is-active' : ''}`}
+                onClick={() => setTaskPriority(KanbanPriorityFilter.trivial)}
+              >{KanbanPriorityFilter.trivial}
+              </button>
+            </div>
+          </div>
           <div className="field">
             <label className="label" htmlFor="taskTitle">Title</label>
             <div className="control">
@@ -85,56 +135,7 @@ function KanbanTaskForm() {
               ></textarea>
             </div>
           </div>
-          <div className="field">
-            <label className="label">Type</label>
-            <div className="buttons control">
-              <button type="button"
-                className={`button is-info is-light is-small ${KanbanTypeFilter.bug === taskType ? 'is-active' : ''}`}
-                onClick={() => setTaskType(KanbanTypeFilter.bug)}
-              >{KanbanTypeFilter.bug}
-              </button>
-              <button type="button"
-                className={`button is-info is-light is-small ${KanbanTypeFilter.design === taskType ? 'is-active' : ''}`}
-                onClick={() => setTaskType(KanbanTypeFilter.design)}
-              >{KanbanTypeFilter.design}
-              </button>
-              <button type="button"
-                className={`button is-info is-light is-small ${KanbanTypeFilter.task === taskType ? 'is-active' : ''}`}
-                onClick={() => setTaskType(KanbanTypeFilter.task)}
-              >{KanbanTypeFilter.task}
-              </button>
-            </div>
-          </div>
-          <div className="field">
-            <label className="label">Priority</label>
-            <div className="buttons control">
-              <button type="button"
-                className={`button is-info is-light is-small ${KanbanPriorityFilter.blocker === taskPriority ? 'is-active' : ''}`}
-                onClick={() => setTaskPriority(KanbanPriorityFilter.blocker)}
-              >{KanbanPriorityFilter.blocker}
-              </button>
-              <button type="button"
-                className={`button is-info is-light is-small ${KanbanPriorityFilter.critical === taskPriority ? 'is-active' : ''}`}
-                onClick={() => setTaskPriority(KanbanPriorityFilter.critical)}
-              >{KanbanPriorityFilter.critical}
-              </button>
-              <button type="button"
-                className={`button is-info is-light is-small ${KanbanPriorityFilter.major === taskPriority ? 'is-active' : ''}`}
-                onClick={() => setTaskPriority(KanbanPriorityFilter.major)}
-              >{KanbanPriorityFilter.major}
-              </button>
-              <button type="button"
-                className={`button is-info is-light is-small ${KanbanPriorityFilter.minor === taskPriority ? 'is-active' : ''}`}
-                onClick={() => setTaskPriority(KanbanPriorityFilter.minor)}
-              >{KanbanPriorityFilter.minor}
-              </button>
-              <button type="button"
-                className={`button is-info is-light is-small ${KanbanPriorityFilter.trivial === taskPriority ? 'is-active' : ''}`}
-                onClick={() => setTaskPriority(KanbanPriorityFilter.trivial)}
-              >{KanbanPriorityFilter.trivial}
-              </button>
-            </div>
-          </div>
+
         </div>
       </div>
       <footer className="card-footer">
