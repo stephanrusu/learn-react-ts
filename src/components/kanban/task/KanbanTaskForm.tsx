@@ -5,6 +5,9 @@ import { KanbanPriorityFilter, KanbanTypeFilter } from '../../../constants/enums
 import { RootState } from '../../../store/rootReducer';
 import { addNewTask } from '../../../store/kanbanSlice';
 import { getUuid } from '../../../utils';
+import ButtonFilterTypeForm from './ButtonFilterTypeForm';
+import ButtonFilterPriorityForm from './ButtonFilterPriorityForm';
+import { ROUTE_KANBAN } from '../../../router/routes';
 
 function KanbanTaskForm() {
   const history = useHistory();
@@ -18,8 +21,8 @@ function KanbanTaskForm() {
 
   const [taskTitle, setTaskTitle] = useState<string>("");
   const [taskDescription, setTaskDescription] = useState<string>("");
-  const [taskType, setTaskType] = useState<KanbanTypeFilter|string>("");
-  const [taskPriority, setTaskPriority] = useState<KanbanPriorityFilter|string>("");
+  const [taskType, setTaskType] = useState<KanbanTypeFilter>(KanbanTypeFilter.all);
+  const [taskPriority, setTaskPriority] = useState<KanbanPriorityFilter>(KanbanPriorityFilter.all);
 
   const getBoard = (taskId: string) => {
     // ignore key as there is an uuid inside a board
@@ -32,7 +35,7 @@ function KanbanTaskForm() {
     return boards[0];
   };
   const boardId = location.state && location.state.boardId;
-  const background = location.state !== undefined ? location.state.background : location;
+  // const background = location.state !== undefined ? location.state.background : location;
 
   const board = boardId === undefined ? getBoard(taskId) : boards[boardId];
   useEffect(() => {
@@ -57,7 +60,17 @@ function KanbanTaskForm() {
     };
 
     dispatch(addNewTask({ task: newTask, boardId: board.uuid }));
-    history.push(background);
+    closeForm();
+  }
+
+  const closeForm = () => {
+    const background = location.state && location.state.background;
+
+    if (background === undefined) {
+      history.push(ROUTE_KANBAN);
+    } else {
+      history.goBack();
+    }
   }
 
   return (
@@ -73,51 +86,19 @@ function KanbanTaskForm() {
         <div className="field">
             <label className="label">Type</label>
             <div className="buttons control">
-              <button type="button"
-                className={`button is-${KanbanTypeFilter.bug.toLowerCase()} is-small ${KanbanTypeFilter.bug === taskType ? 'is-active' : ''}`}
-                onClick={() => setTaskType(KanbanTypeFilter.bug)}
-              >{KanbanTypeFilter.bug}
-              </button>
-              <button type="button"
-                className={`button is-${KanbanTypeFilter.design.toLowerCase()} is-small ${KanbanTypeFilter.design === taskType ? 'is-active' : ''}`}
-                onClick={() => setTaskType(KanbanTypeFilter.design)}
-              >{KanbanTypeFilter.design}
-              </button>
-              <button type="button"
-                className={`button is-${KanbanTypeFilter.task.toLowerCase()} is-small ${KanbanTypeFilter.task === taskType ? 'is-active' : ''}`}
-                onClick={() => setTaskType(KanbanTypeFilter.task)}
-              >{KanbanTypeFilter.task}
-              </button>
+              <ButtonFilterTypeForm filterType={KanbanTypeFilter.bug} selectedFilter={taskType} activeAction={setTaskType} />
+              <ButtonFilterTypeForm filterType={KanbanTypeFilter.design} selectedFilter={taskType} activeAction={setTaskType} />
+              <ButtonFilterTypeForm filterType={KanbanTypeFilter.task} selectedFilter={taskType} activeAction={setTaskType} />
             </div>
           </div>
           <div className="field">
             <label className="label">Priority</label>
             <div className="buttons control">
-              <button type="button"
-                className={`button is-${KanbanPriorityFilter.blocker.toLowerCase()} is-small ${KanbanPriorityFilter.blocker === taskPriority ? 'is-active' : ''}`}
-                onClick={() => setTaskPriority(KanbanPriorityFilter.blocker)}
-              >{KanbanPriorityFilter.blocker}
-              </button>
-              <button type="button"
-                className={`button is-${KanbanPriorityFilter.critical.toLowerCase()} is-small ${KanbanPriorityFilter.critical === taskPriority ? 'is-active' : ''}`}
-                onClick={() => setTaskPriority(KanbanPriorityFilter.critical)}
-              >{KanbanPriorityFilter.critical}
-              </button>
-              <button type="button"
-                className={`button is-${KanbanPriorityFilter.major.toLowerCase()} is-small ${KanbanPriorityFilter.major === taskPriority ? 'is-active' : ''}`}
-                onClick={() => setTaskPriority(KanbanPriorityFilter.major)}
-              >{KanbanPriorityFilter.major}
-              </button>
-              <button type="button"
-                className={`button is-${KanbanPriorityFilter.minor.toLowerCase()} is-small ${KanbanPriorityFilter.minor === taskPriority ? 'is-active' : ''}`}
-                onClick={() => setTaskPriority(KanbanPriorityFilter.minor)}
-              >{KanbanPriorityFilter.minor}
-              </button>
-              <button type="button"
-                className={`button is-${KanbanPriorityFilter.trivial.toLowerCase()} is-small ${KanbanPriorityFilter.trivial === taskPriority ? 'is-active' : ''}`}
-                onClick={() => setTaskPriority(KanbanPriorityFilter.trivial)}
-              >{KanbanPriorityFilter.trivial}
-              </button>
+              <ButtonFilterPriorityForm filterType={KanbanPriorityFilter.blocker} selectedFilter={taskPriority} activeAction={setTaskPriority} />
+              <ButtonFilterPriorityForm filterType={KanbanPriorityFilter.critical} selectedFilter={taskPriority} activeAction={setTaskPriority} />
+              <ButtonFilterPriorityForm filterType={KanbanPriorityFilter.major} selectedFilter={taskPriority} activeAction={setTaskPriority} />
+              <ButtonFilterPriorityForm filterType={KanbanPriorityFilter.minor} selectedFilter={taskPriority} activeAction={setTaskPriority} />
+              <ButtonFilterPriorityForm filterType={KanbanPriorityFilter.trivial} selectedFilter={taskPriority} activeAction={setTaskPriority} />
             </div>
           </div>
           <div className="field">
@@ -140,7 +121,7 @@ function KanbanTaskForm() {
       </div>
       <footer className="card-footer">
         <div className="card-footer-item">
-          <button type="button" className="button is-white is-fullwidth" onClick={() => history.push(background)}>
+          <button type="button" className="button is-white is-fullwidth" onClick={() => closeForm()}>
             Cancel
           </button>
         </div>

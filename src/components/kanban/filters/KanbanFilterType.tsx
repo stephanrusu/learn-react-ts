@@ -6,7 +6,7 @@ function KanbanFilterType() {
   return (
     <div className="filter-group">
       <label className="label">Type</label>
-      <div className="buttons has-addons">
+      <div className="buttons">
         <ButtonFilterType filterType={KanbanTypeFilter.all} />
         <ButtonFilterType filterType={KanbanTypeFilter.bug} />
         <ButtonFilterType filterType={KanbanTypeFilter.design} />

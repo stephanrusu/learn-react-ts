@@ -6,7 +6,7 @@ function KanbanFilterPriority() {
   return (
     <div className="filter-group">
       <label className="label">Priority</label>
-      <div className="buttons has-addons">
+      <div className="buttons">
           <ButtonFilterPriority filterType={KanbanPriorityFilter.all} />
           <ButtonFilterPriority filterType={KanbanPriorityFilter.blocker} />
           <ButtonFilterPriority filterType={KanbanPriorityFilter.critical} />
