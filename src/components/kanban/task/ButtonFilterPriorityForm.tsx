@@ -9,12 +9,11 @@ interface Props {
 
 function ButtonFilterPriorityForm(props: Props) {
   return (
-    <button type="button"
-      className={`button is-${props.filterType.toLowerCase()} is-small ${props.selectedFilter === props.filterType ? 'is-active' : ''}`}
-      onClick={() => props.activeAction(props.filterType)}
-    >
-      {props.filterType}
-    </button>
+    <div className={`custom-field ${props.selectedFilter === props.filterType ? 'active' : ''}`}
+      onClick={() => props.activeAction(props.filterType)}>
+      <div className={`toggle radio ${props.selectedFilter === props.filterType ? 'is-active' : ''}`}><div className="toggle-inner"></div></div>
+      <div className="label">{props.filterType}</div>
+    </div>
   );
 };
 

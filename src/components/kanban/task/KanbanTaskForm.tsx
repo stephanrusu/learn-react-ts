@@ -25,19 +25,28 @@ function KanbanTaskForm() {
   const [taskPriority, setTaskPriority] = useState<KanbanPriorityFilter>(KanbanPriorityFilter.all);
 
   const getBoard = (taskId: string) => {
-    // ignore key as there is an uuid inside a board
-    for (const [, board] of Object.entries(boards)) {
-      if (board.tasks[taskId] !== undefined) {
-        return board;
+    const boardsValues = Object.values(boards);
+    const boardsLength = boardsValues.length;
+
+    if (taskId !== undefined) {
+      for (let i = 0; i < boardsLength; i+=1) {
+        const board = boardsValues[i];
+        if (board.tasks[taskId] !== undefined) {
+          return board;
+        }
       }
     }
+
     // if nothing found, return first board
-    return boards[0];
+    return boardsValues[0];
   };
+
   const boardId = location.state && location.state.boardId;
   // const background = location.state !== undefined ? location.state.background : location;
 
   const board = boardId === undefined ? getBoard(taskId) : boards[boardId];
+  console.info(board);
+
   useEffect(() => {
     if (taskId !== undefined && board !== undefined) {
       const task = board.tasks[taskId];
@@ -87,22 +96,24 @@ function KanbanTaskForm() {
       </header>
       <div className="card-content">
         <div className="content">
-        <div className="field">
-            <label className="label">Type</label>
-            <div className="buttons control">
-              <ButtonFilterTypeForm filterType={KanbanTypeFilter.bug} selectedFilter={taskType} activeAction={setTaskType} />
-              <ButtonFilterTypeForm filterType={KanbanTypeFilter.design} selectedFilter={taskType} activeAction={setTaskType} />
-              <ButtonFilterTypeForm filterType={KanbanTypeFilter.task} selectedFilter={taskType} activeAction={setTaskType} />
+          <div className="group-filters">
+            <div className="filter-column">
+              <label className="label">Type</label>
+              <div className="filter-control">
+                <ButtonFilterTypeForm filterType={KanbanTypeFilter.bug} selectedFilter={taskType} activeAction={setTaskType} />
+                <ButtonFilterTypeForm filterType={KanbanTypeFilter.design} selectedFilter={taskType} activeAction={setTaskType} />
+                <ButtonFilterTypeForm filterType={KanbanTypeFilter.task} selectedFilter={taskType} activeAction={setTaskType} />
+              </div>
             </div>
-          </div>
-          <div className="field">
-            <label className="label">Priority</label>
-            <div className="buttons control">
-              <ButtonFilterPriorityForm filterType={KanbanPriorityFilter.blocker} selectedFilter={taskPriority} activeAction={setTaskPriority} />
-              <ButtonFilterPriorityForm filterType={KanbanPriorityFilter.critical} selectedFilter={taskPriority} activeAction={setTaskPriority} />
-              <ButtonFilterPriorityForm filterType={KanbanPriorityFilter.major} selectedFilter={taskPriority} activeAction={setTaskPriority} />
-              <ButtonFilterPriorityForm filterType={KanbanPriorityFilter.minor} selectedFilter={taskPriority} activeAction={setTaskPriority} />
-              <ButtonFilterPriorityForm filterType={KanbanPriorityFilter.trivial} selectedFilter={taskPriority} activeAction={setTaskPriority} />
+            <div className="filter-column">
+              <label className="label">Priority</label>
+              <div className="filter-control">
+                <ButtonFilterPriorityForm filterType={KanbanPriorityFilter.blocker} selectedFilter={taskPriority} activeAction={setTaskPriority} />
+                <ButtonFilterPriorityForm filterType={KanbanPriorityFilter.critical} selectedFilter={taskPriority} activeAction={setTaskPriority} />
+                <ButtonFilterPriorityForm filterType={KanbanPriorityFilter.major} selectedFilter={taskPriority} activeAction={setTaskPriority} />
+                <ButtonFilterPriorityForm filterType={KanbanPriorityFilter.minor} selectedFilter={taskPriority} activeAction={setTaskPriority} />
+                <ButtonFilterPriorityForm filterType={KanbanPriorityFilter.trivial} selectedFilter={taskPriority} activeAction={setTaskPriority} />
+              </div>
             </div>
           </div>
           <div className="field">

@@ -263,3 +263,55 @@
 
     &.is-active
       @include useFilterColors(15%)
+
+.group-filters
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  margin: 0 -1rem
+
+  & .filter-column
+    flex: 1
+    padding: 0 1rem
+
+  & .filter-control
+    display: flex
+    flex-direction: column
+    flex-wrap: wrap
+
+    & .custom-field
+      flex: 1
+      display: flex
+      flex-direction: row
+      align-items: center
+      cursor: pointer
+      padding: 0.5rem
+      border-radius: 4px
+      border: 1px solid $input-border
+      box-shadow: 0px 2px 4px rgba($input-shadow, 0.1)
+      margin-bottom: 1rem
+
+      &:hover
+        box-shadow: 0px 2px 4px rgba($input-shadow, 0.15)
+
+      &:last-child
+        margin-bottom: 0
+
+      .toggle
+        height: 24px
+        &.is-active
+          background-color: $primary-color
+
+      .label
+        padding-left: 1rem
+        font-weight: 400
+        font-size: 1rem
+        color: $grey-500
+        margin-bottom: 0
+
+      &.active
+        border-color: $primary-color
+        box-shadow: 0px 2px 4px rgba($input-shadow, 0.2)
+
+        .label
+          color: $grey-300
