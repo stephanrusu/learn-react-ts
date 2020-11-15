@@ -76,7 +76,11 @@ function KanbanTaskForm() {
   return (
     <div className="card kanban-card-form">
       <header className="card-header">
-        <p className="card-header-title">{taskId !== undefined ? 'Edit task': 'Create task'}</p>
+        <p className="card-header-title">
+          {
+            taskId !== undefined ? `Edit task - ${taskId}`: 'Create task'
+          }
+        </p>
         <div className="tags">
           <span className={`tag ${board.color}`}>{board.title}</span>
         </div>

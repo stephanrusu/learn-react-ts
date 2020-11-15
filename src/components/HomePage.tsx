@@ -10,7 +10,13 @@ function HomePage() {
           <div className="card-header">
             <div className="card-header-title">HomePage</div>
           </div>
-          <div className="card-content">
+          <div className="card-content is-flex">
+            <div className="toggle switch"><div className="toggle-inner"></div></div>
+            <div className="toggle switch is-active"><div className="toggle-inner"></div></div>
+            <div className="toggle radio"><div className="toggle-inner"></div></div>
+            <div className="toggle radio is-active"><div className="toggle-inner"></div></div>
+            <div className="toggle checkbox"><div className="toggle-inner"></div></div>
+            <div className="toggle checkbox is-active"><div className="toggle-inner"></div></div>
           </div>
           <div className="card-footer"></div>
         </div>
