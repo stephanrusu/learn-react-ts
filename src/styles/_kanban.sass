@@ -3,12 +3,23 @@
     padding: 0.75rem 1rem
 
   .list
-    box-shadow: 0 2px 4px rgba(10, 10, 10, 0.1)
+    box-shadow: 0px 2px 4px rgba($input-shadow, 0.1)
 
     & .list-item
       border: 1px solid $grey-800
+      padding: 0.75rem 1rem
+
       &:not(:last-child)
         border-bottom-color: $grey-800
+
+      & .feather
+        stroke: $link
+        width: 16px
+        height: 16px
+
+      & .actions
+        .button
+          padding: 0.5rem
 
 .kanban-header
   .card-header
@@ -311,8 +322,9 @@
 
       .toggle
         height: 24px
+
         &.is-active
-          background-color: $primary-color
+          background-color: $link
 
       .label
         padding-left: 1rem
@@ -322,7 +334,7 @@
         margin-bottom: 0
 
       &.active
-        border-color: $primary-color
+        border-color: $link
         box-shadow: 0px 2px 4px rgba($input-shadow, 0.2)
 
         .label

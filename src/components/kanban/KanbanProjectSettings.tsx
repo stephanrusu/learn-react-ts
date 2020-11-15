@@ -4,6 +4,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { ROUTE_KANBAN } from '../../router/routes';
 import { updateProjectTitle } from '../../store/kanbanSlice';
 import { RootState } from '../../store/rootReducer';
+import KanbanSettingsBoard from './project/KanbanSettingsBoard';
 
 function KanbanProjectSettings() {
   const history = useHistory();
@@ -14,9 +15,9 @@ function KanbanProjectSettings() {
     (state: RootState) => state.kanban.title
   );
 
-  const boards = useSelector(
-    (state: RootState) => state.kanban.boards
-  )
+  const boardsOrder = useSelector(
+    (state: RootState) => state.kanban.boardsOrder
+  );
 
   const [projectTitle, setProjectTitle] = useState<string>(project);
 
@@ -51,10 +52,10 @@ function KanbanProjectSettings() {
           </div>
           <div className="field">
             <label className="label" htmlFor="projectTitle">Boards</label>
-            <div className="control list">
+             <div className="control list">
               {
-                Object.values(boards).map((board: Board) => (
-                  <div key={board.uuid} className="list-item">{board.title}</div>
+                boardsOrder.map((boardId: string) => (
+                  <KanbanSettingsBoard key={boardId} boardId={boardId} />
                 ))
               }
             </div>
