@@ -19,6 +19,7 @@ const kanbanSlice = createSlice({
 
       state.boards[boardId].tasks[task.uuid] = action.payload.task;
     },
+
     addTask(state, action: PayloadAction<AlterTask>) {
       const { boardId, taskId, task } = action.payload;
 
@@ -26,14 +27,19 @@ const kanbanSlice = createSlice({
         state.boards[boardId].tasks[taskId] = task;
       }
     },
+
     removeTask(state, action: PayloadAction<AlterTask>) {
       const { boardId, taskId } = action.payload;
       delete state.boards[boardId].tasks[taskId];
     },
+
+    updateProjectTitle(state, action: PayloadAction<string>) {
+      state.title = action.payload
+    },
   }
 });
 
-export const { addTask, removeTask, addNewTask } = kanbanSlice.actions;
+export const { addTask, removeTask, addNewTask, updateProjectTitle } = kanbanSlice.actions;
 
 
 export default kanbanSlice.reducer
