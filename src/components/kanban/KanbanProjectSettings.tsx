@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
 import { ROUTE_KANBAN } from '../../router/routes';
-import { updateProjectTitle } from '../../store/kanbanSlice';
+import { updateBoardsOrder, updateProjectTitle } from '../../store/kanbanSlice';
 import { RootState } from '../../store/rootReducer';
 import KanbanSettingsBoard from './project/KanbanSettingsBoard';
 
@@ -19,6 +19,8 @@ function KanbanProjectSettings() {
     (state: RootState) => state.kanban.boardsOrder
   );
 
+  const [order, setOrder] = useState<string[]>(boardsOrder);
+
   const [projectTitle, setProjectTitle] = useState<string>(project);
 
   const closeForm = () => {
@@ -33,6 +35,7 @@ function KanbanProjectSettings() {
 
   const updateForm = () => {
     dispatch(updateProjectTitle(projectTitle));
+    dispatch(updateBoardsOrder(order));
     closeForm();
   }
 
@@ -54,8 +57,8 @@ function KanbanProjectSettings() {
             <label className="label" htmlFor="projectTitle">Boards</label>
              <div className="control list">
               {
-                boardsOrder.map((boardId: string) => (
-                  <KanbanSettingsBoard key={boardId} boardId={boardId} />
+                order.map((boardId: string) => (
+                  <KanbanSettingsBoard key={boardId} boardId={boardId} boardsOrder={order} moveBoard={setOrder}/>
                 ))
               }
             </div>

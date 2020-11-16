@@ -1,0 +1,30 @@
+.loader-circular
+  width: 100px
+  height: 100px
+  animation: rotate 3s linear infinite
+  transform-origin: center center
+
+  > .elipse
+    stroke-dasharray: 1, 42
+    stroke-linecap: round
+    animation: dash 3s ease-in-out infinite
+    stroke: $primary
+    stroke-dashoffset: 0
+    stroke-width: 4
+
+
+@keyframes rotate
+  0%
+    transform: rotate(0)
+  100%
+    transform: rotate(360deg)
+
+@keyframes dash
+  0%
+    stroke-dasharray: 1, 42
+
+  50%
+    stroke-dasharray: 31, 10
+
+  100%
+    stroke-dasharray: 1, 42

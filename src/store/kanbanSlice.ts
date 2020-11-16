@@ -36,10 +36,14 @@ const kanbanSlice = createSlice({
     updateProjectTitle(state, action: PayloadAction<string>) {
       state.title = action.payload
     },
+
+    updateBoardsOrder(state, action: PayloadAction<string[]>) {
+      state.boardsOrder = action.payload
+    },
   }
 });
 
-export const { addTask, removeTask, addNewTask, updateProjectTitle } = kanbanSlice.actions;
+export const { addTask, removeTask, addNewTask, updateProjectTitle, updateBoardsOrder } = kanbanSlice.actions;
 
 
 export default kanbanSlice.reducer
