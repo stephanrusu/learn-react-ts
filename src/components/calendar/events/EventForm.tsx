@@ -99,8 +99,10 @@ function EventForm() {
         <div className="field is-flex-inline">
           <label htmlFor="eventAllDay" className='label'>All day</label>
           <div className="control">
-            <input id="eventAllDay" type="checkbox" className="switch is-rtl" checked={allDay} onChange={() => setAllDay(!allDay)}/>
-            <label htmlFor="eventAllDay" className="is-label-empty"></label>
+            <label htmlFor="eventAllDay">
+              <input id="eventAllDay" type="checkbox" className="toggle-input" checked={allDay} onChange={() => setAllDay(!allDay)}/>
+              <div className="toggle switch"><div className="toggle-inner"></div></div>
+            </label>
           </div>
         </div>
         {
