@@ -32,7 +32,9 @@ function KanbanSettingsBoard({boardId, boardsOrder, moveBoard}: Props) {
 
   return (
     <div key={boardId} className="list-item">
-      <div className="text">{board.title}</div>
+      <div className="text">
+        {board.title}
+      </div>
       <div className="actions">
         <div className="buttons">
           {/* <button type="button" className="button is-link is-light is-small">
