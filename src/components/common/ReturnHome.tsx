@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { ROUTE_CALENDAR, ROUTE_KANBAN, ROUTE_ROOT, ROUTE_TODO } from '../../router/routes';
+import { ROUTE_CALENDAR, ROUTE_DATA_TABLE, ROUTE_KANBAN, ROUTE_ROOT, ROUTE_TODO } from '../../router/routes';
 
 function ReturnHome() {
   return (
@@ -25,6 +25,11 @@ function ReturnHome() {
           <div className="control">
             <NavLink exact to={ROUTE_KANBAN} className="button is-white" activeClassName="is-active">
               Kanban
+            </NavLink>
+          </div>
+          <div className="control">
+            <NavLink exact to={ROUTE_DATA_TABLE} className="button is-white" activeClassName="is-active">
+              DataTable
             </NavLink>
           </div>
         </div>

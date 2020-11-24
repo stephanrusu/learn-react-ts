@@ -7,6 +7,7 @@ import HomePage from "../components/HomePage";
 import CalendarPage from '../components/CalendarPage';
 import NotFoundPage from '../components/NotFoundPage';
 import KanbanPage from '../components/KanbanPage';
+import DataTablePage from '../components/DataTablePage';
 
 function RouterHandler() {
   return (
@@ -20,6 +21,9 @@ function RouterHandler() {
         </Route>
         <Route exact path={routes.ROUTE_CALENDAR}>
           <CalendarPage />
+        </Route>
+        <Route exact path={routes.ROUTE_DATA_TABLE}>
+          <DataTablePage />
         </Route>
         <Route exact path={routes.ROUTE_ROOT}>
           <HomePage />

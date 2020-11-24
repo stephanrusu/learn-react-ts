@@ -5,7 +5,7 @@ function KanbanTaskComments() {
     <div className="content">
       <div className="tabs">
         <ul>
-          <li className="is-active"><a>Comments</a></li>
+          <li className="is-active"><span>Comments</span></li>
         </ul>
       </div>
       <div className="tabs-content">

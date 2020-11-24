@@ -10,3 +10,5 @@ export const ROUTE_KANBAN_TASK_SIMPLE = `${ROUTE_KANBAN}/view`;
 export const ROUTE_KANBAN_TASK = `${ROUTE_KANBAN_TASK_SIMPLE}/:taskId`;
 export const ROUTE_KANBAN_EDIT_SIMPLE = `${ROUTE_KANBAN}/edit`;
 export const ROUTE_KANBAN_EDIT = `${ROUTE_KANBAN_EDIT_SIMPLE}/:taskId`;
+
+export const ROUTE_DATA_TABLE = `${ROUTE_ROOT}table`;
