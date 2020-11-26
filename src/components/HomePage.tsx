@@ -8,7 +8,7 @@ function HomePage() {
         <ReturnHome />
         <div className="card">
           <div className="card-header">
-            <div className="card-header-title">HomePage</div>
+            <div className="card-header-title">Home</div>
           </div>
           <div className="card-content">
             <div className="content is-flex is-justify-content-center">

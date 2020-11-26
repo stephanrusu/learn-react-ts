@@ -73,6 +73,16 @@ interface ListTask {
   [uuid: string] : Task
 }
 
+interface Movie {
+  id: number | string,
+  title: string,
+  year: number,
+  runtime: number,
+  genres: string[],
+  director: string,
+  mainActors: string,
+  plot: string,
+}
 
 type CompleteTodo = (args: ITodo) => void;
 type AddTodo = (args: string) => void;

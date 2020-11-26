@@ -6,10 +6,12 @@ interface AlterTask {
   boardId: string,
   task?: Task
 };
+
 interface NewTask {
   boardId: string,
   task: Task
-}
+};
+
 const kanbanSlice = createSlice({
   name: 'kanban',
   initialState: initialKanban,
