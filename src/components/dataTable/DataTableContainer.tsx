@@ -1,6 +1,7 @@
 import React from 'react';
 import DataTableEntries from './DataTableEntries';
 import DataTablePagination from './DataTablePagination';
+import DataTablePaginationInfo from './DataTablePaginationInfo';
 
 function DataTableContainer() {
   return (
@@ -10,8 +11,9 @@ function DataTableContainer() {
           <p className="card-header-title">DataTable</p>
         </div>
       </div>
-      <DataTablePagination />
+      <DataTablePaginationInfo />
       <DataTableEntries />
+      <DataTablePagination />
     </>
   );
 }

@@ -1,9 +1,80 @@
+.card-pagination-info
+  .card-content
+    padding: 0.75rem 1rem
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+
+    .items-page
+      display: flex
+      flex-direction: row
+      align-items: center
+
+      .text-label
+        margin-right: 1rem
+
+    .dropdown
+      .dropdown-menu
+        padding-top: 8px
+
+      .dropdown-content
+        padding: 0.5rem
+        border-top: 4px solid $primary
+        box-shadow: 0 8px 24px -12px rgba(150,160,170,0.4)
+
+        .dropdown-item
+          cursor: pointer
+          padding-left: 0.5rem
+
+          &:hover
+            background-color: $grey-900
+
+          &.is-active
+            background-color: $primary
+            color: $white
+
+      &.is-mobile-modal
+        @include mobile
+          .dropdown-background
+            bottom: 0
+            left: 0
+            position: absolute
+            right: 0
+            top: 0
+            position: fixed
+            background-color: hsla(0,0%,4%,.86)
+            z-index: 40
+            cursor: pointer
+
+          .dropdown-menu
+            position: fixed
+            width: calc(100vw - 40px)
+            max-width: 460px
+            max-height: calc(100vh - 120px)
+            top: 25%
+            left: 50%
+            bottom: auto
+            right: auto
+            transform: translate3d(-50%,-25%,0)
+            white-space: normal
+            overflow-y: auto
+            z-index: 50
+
+            .dropdown-content
+              .dropdown-item
+                padding: 1rem 1.5rem
+
 .card-pagination
   .card-content
     padding: 0.75rem 1rem
+    display: flex
+    flex-direction: row
+    justify-content: space-between
 
   .pagination
     margin-bottom: 0
+    min-width: 30rem
 
   .pagination-action
     background-color: $white
@@ -26,3 +97,15 @@
 
       &.is-current
         background-color: $primary
+
+  .pagination-portal
+    .field
+      .field-label label
+        color: $grey-500
+
+      .field-body
+        flex-grow: 1
+
+      .control-input
+        width: 60px
+        margin-right: 1rem

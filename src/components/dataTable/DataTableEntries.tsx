@@ -8,7 +8,7 @@ function DataTableEntries() {
   );
 
   return (
-    <table className="table is-striped is-hoverable is-fullwidth mt-4 has-mobile-cards">
+    <table className="table is-striped is-hoverable is-fullwidth mt-4 mb-4 has-mobile-cards">
       <thead>
         <tr>
           <th className="">
@@ -62,7 +62,7 @@ function DataTableEntries() {
       </thead>
       <tbody>
         {
-          entries.map((movie: Movie) => (
+          entries.slice(50, 60).map((movie: Movie) => (
             <tr draggable="false" className="" key={movie.id}>
               <td className="">
                 <div className="toggle checkbox">
