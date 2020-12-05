@@ -1,10 +1,11 @@
-import { format } from 'date-fns';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
+import { format } from 'date-fns';
 import { ROUTE_KANBAN_TASK_SIMPLE } from '../../router/routes';
 import { addTask, removeTask } from '../../store/kanbanSlice';
 import { RootState } from '../../store/rootReducer';
+import KanbanSubTask from './KanbanSubTask';
 
 interface Props {
   taskId: string,
@@ -74,6 +75,11 @@ function KanbanCard({ boardId, taskId }: Props) {
             <div className="tag is-primary task-user">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
             </div>
+          </div>
+          <div className="card-body-progress mt-3 mb-2">
+            {
+              task.subTasks.length > 0 && <KanbanSubTask boardId={boardId} taskId={taskId} />
+            }
           </div>
         </div>
       </div>

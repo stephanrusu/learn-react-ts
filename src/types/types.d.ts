@@ -42,6 +42,7 @@ interface Task {
   type: KanbanTypeFilter,
   priority: KanbanPriorityFilter,
   description: string,
+  subTasks: ITodo[],
 }
 
 interface Board {

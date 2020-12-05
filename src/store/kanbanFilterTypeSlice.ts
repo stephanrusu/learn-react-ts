@@ -14,6 +14,7 @@ const kanbanFilterSlice = createSlice({
     setTypeFilter(state, action: PayloadAction<KanbanTypeFilter>) {
       state.type = action.payload;
     },
+
     setPriorityFilter(state, action: PayloadAction<KanbanPriorityFilter>) {
       state.priority = action.payload;
     },

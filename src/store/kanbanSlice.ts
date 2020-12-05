@@ -12,6 +12,12 @@ interface NewTask {
   task: Task
 };
 
+interface AlterSubTask {
+  taskId: string,
+  boardId: string,
+  subTask?: ITodo
+}
+
 const kanbanSlice = createSlice({
   name: 'kanban',
   initialState: initialKanban,
@@ -35,6 +41,19 @@ const kanbanSlice = createSlice({
       delete state.boards[boardId].tasks[taskId];
     },
 
+    toggleSubTask(state, action: PayloadAction<AlterSubTask>) {
+      const { boardId, taskId, subTask } = action.payload;
+
+      if (subTask !== undefined) {
+        let task = state.boards[boardId].tasks[taskId];
+        let selectedSubTask = task.subTasks.find(sub => sub.uuid === subTask.uuid);
+
+        if (selectedSubTask) {
+          selectedSubTask.complete = !selectedSubTask.complete
+        }
+      }
+    },
+
     updateProjectTitle(state, action: PayloadAction<string>) {
       state.title = action.payload
     },
@@ -45,7 +64,7 @@ const kanbanSlice = createSlice({
   }
 });
 
-export const { addTask, removeTask, addNewTask, updateProjectTitle, updateBoardsOrder } = kanbanSlice.actions;
+export const { addTask, removeTask, addNewTask, updateProjectTitle, updateBoardsOrder, toggleSubTask } = kanbanSlice.actions;
 
 
 export default kanbanSlice.reducer

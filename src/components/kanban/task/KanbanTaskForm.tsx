@@ -66,6 +66,7 @@ function KanbanTaskForm() {
       description: taskDescription,
       type: taskType,
       priority: taskPriority,
+      subTasks: []
     };
 
     dispatch(addNewTask({ task: newTask, boardId: board.uuid }));
