@@ -348,6 +348,38 @@
       margin-bottom: 0
       @include useFilterColors
 
+  & .comment-card
+    box-shadow: none
+    border-radius: 0
+
+    & .card-header-title,
+    & .card-footer-item
+      padding: 0.25rem 0.5rem
+
+    & .card-header-title
+      color: $grey-400
+
+    & .card-content
+      padding: 0.75rem
+      background-color: $white
+      box-shadow: 0px 2px 4px rgba($input-shadow, 0.2)
+      transition: background-color 0.2s ease-in
+
+      &:hover
+        background-color: #fdfdfd
+
+
+    & .card-footer
+      border-top: 0
+
+      & .card-footer-item
+        padding-top: 0.5rem
+        justify-content: flex-start
+        font-size: 0.75rem
+
+    & + .comment-card
+      margin-bottom: 0.5rem
+
 .kanban-card-form
   & .label
     font-weight: 500

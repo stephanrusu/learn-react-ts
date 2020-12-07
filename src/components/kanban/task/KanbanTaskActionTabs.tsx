@@ -7,7 +7,7 @@ interface Props {
 }
 
 function KanbanTaskActionTabs(props: Props) {
-  const [activeTab, setActiveTab] = useState<string>('subtasks');
+  const [activeTab, setActiveTab] = useState<string>('comments');
 
   return (
     <div className="content">
