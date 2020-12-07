@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
 import { ROUTE_KANBAN, ROUTE_KANBAN_EDIT_SIMPLE } from '../../../router/routes';
 import { addTask, removeTask } from '../../../store/kanbanSlice';
-import KanbanTaskComments from './KanbanTaskComments';
+import KanbanTaskActionTabs from './KanbanTaskActionTabs';
 
 function KanbanDisplayTask() {
   const { taskId } = useParams<RouteParams>();
@@ -94,7 +94,7 @@ function KanbanDisplayTask() {
           <small className="has-text-grey-light">{format(new Date(task.date), 'dd MMM yyyy')}</small>
         </div>
         <div className="content">{task.description}</div>
-        <KanbanTaskComments />
+        <KanbanTaskActionTabs />
         <div className="content content-actions">
           {!isBoardFirst && (
             <div className="card-action-item">
