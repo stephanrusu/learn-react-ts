@@ -25,6 +25,7 @@ const initialKanban: ProjectKanban = {
           type: KanbanTypeFilter.task,
           priority: KanbanPriorityFilter.major,
           description: 'Carrot cake chocolate bar liquorice muffin. Gummies chocolate donut marzipan lollipop. Cheesecake danish danish pastry cupcake. Powder icing gummi bears. Macaroon cake cookie tiramisu cheesecake toffee marzipan donut. Sweet marshmallow tart tiramisu wafer chocolate. Sweet gingerbread bonbon dessert jujubes sweet chupa chups pastry.',
+          comments: [],
           subTasks: [
             {
               text: "Lorem ipsum dolor sit amet",
@@ -45,6 +46,7 @@ const initialKanban: ProjectKanban = {
           type: KanbanTypeFilter.design,
           priority: KanbanPriorityFilter.critical,
           description: 'Caramels pudding jelly. Sweet wafer toffee halvah macaroon cake croissant gingerbread caramels. Bonbon gummies sesame snaps pudding bonbon powder. Sweet topping wafer. Gummi bears bonbon jelly jelly beans jujubes. Lemon drops topping muffin halvah bonbon icing chocolate cake toffee. Lemon drops bear claw tiramisu lemon drops tootsie roll ice cream cake.',
+          comments: [],
           subTasks: [],
         },
         'lud0xissi': {
@@ -54,6 +56,7 @@ const initialKanban: ProjectKanban = {
           type: KanbanTypeFilter.bug,
           priority: KanbanPriorityFilter.trivial,
           description: 'Carrot cake chocolate bar liquorice muffin. Gummies chocolate donut marzipan lollipop. Cheesecake danish danish pastry cupcake. Powder icing gummi bears. Macaroon cake cookie tiramisu cheesecake toffee marzipan donut. Sweet marshmallow tart tiramisu wafer chocolate. Sweet gingerbread bonbon dessert jujubes sweet chupa chups pastry.',
+          comments: [],
           subTasks: [],
         },
       },
@@ -72,6 +75,7 @@ const initialKanban: ProjectKanban = {
           type: KanbanTypeFilter.bug,
           priority: KanbanPriorityFilter.minor,
           description: 'Carrot cake chocolate bar liquorice muffin. Gummies chocolate donut marzipan lollipop. Cheesecake danish danish pastry cupcake. Powder icing gummi bears. Macaroon cake cookie tiramisu cheesecake toffee marzipan donut. Sweet marshmallow tart tiramisu wafer chocolate. Sweet gingerbread bonbon dessert jujubes sweet chupa chups pastry.',
+          comments: [],
           subTasks: [],
         },
         'hc49m900w': {
@@ -81,6 +85,7 @@ const initialKanban: ProjectKanban = {
           type: KanbanTypeFilter.design,
           priority: KanbanPriorityFilter.major,
           description: 'Carrot cake chocolate bar liquorice muffin. Gummies chocolate donut marzipan lollipop. Cheesecake danish danish pastry cupcake. Powder icing gummi bears. Macaroon cake cookie tiramisu cheesecake toffee marzipan donut. Sweet marshmallow tart tiramisu wafer chocolate. Sweet gingerbread bonbon dessert jujubes sweet chupa chups pastry.',
+          comments: [],
           subTasks: [],
         },
       },
@@ -99,6 +104,7 @@ const initialKanban: ProjectKanban = {
           type: KanbanTypeFilter.bug,
           priority: KanbanPriorityFilter.blocker,
           description: 'Caramels pudding jelly. Sweet wafer toffee halvah macaroon cake croissant gingerbread caramels. Bonbon gummies sesame snaps pudding bonbon powder. Sweet topping wafer. Gummi bears bonbon jelly jelly beans jujubes. Lemon drops topping muffin halvah bonbon icing chocolate cake toffee. Lemon drops bear claw tiramisu lemon drops tootsie roll ice cream cake.',
+          comments: [],
           subTasks: [],
         },
       },
@@ -116,6 +122,7 @@ const initialKanban: ProjectKanban = {
           type: KanbanTypeFilter.task,
           priority: KanbanPriorityFilter.critical,
           description: 'Caramels pudding jelly. Sweet wafer toffee halvah macaroon cake croissant gingerbread caramels. Bonbon gummies sesame snaps pudding bonbon powder. Sweet topping wafer. Gummi bears bonbon jelly jelly beans jujubes. Lemon drops topping muffin halvah bonbon icing chocolate cake toffee. Lemon drops bear claw tiramisu lemon drops tootsie roll ice cream cake.',
+          comments: [],
           subTasks: [],
         },
       },

@@ -5,7 +5,6 @@ import { format } from 'date-fns';
 import { ROUTE_KANBAN_TASK_SIMPLE } from '../../router/routes';
 import { addTask, removeTask } from '../../store/kanbanSlice';
 import { RootState } from '../../store/rootReducer';
-import KanbanSubTask from './KanbanSubTask';
 
 interface Props {
   taskId: string,
@@ -71,15 +70,31 @@ function KanbanCard({ boardId, taskId }: Props) {
             </Link>
           </div>
           <div className="card-body-extra">
-            <div className="task-date small">{format(new Date(task.date), "dd MMM yyyy")}</div>
+            <div className="task-extra-info">
+              <div className="task-date small">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <span className="text">{format(new Date(task.date), "dd MMM yyyy")}</span>
+              </div>
+              {
+                task.subTasks.length > 0 && (
+                  <div className="task-todo small">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-check-square"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                    <span className="text">{task.subTasks.length}</span>
+                  </div>
+                )
+              }
+              {
+                task.comments.length > 0 && (
+                  <div className="task-comments small">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    <span className="text">{task.comments.length}</span>
+                  </div>
+                )
+              }
+            </div>
             <div className="tag is-primary task-user">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
             </div>
-          </div>
-          <div className="card-body-progress mt-3 mb-2">
-            {
-              task.subTasks.length > 0 && <KanbanSubTask boardId={boardId} taskId={taskId} />
-            }
           </div>
         </div>
       </div>

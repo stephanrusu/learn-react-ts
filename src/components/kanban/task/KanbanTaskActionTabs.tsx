@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import TabActionComments from './tabs/TabActionComments';
 import TabActionSubtasks from './tabs/TabActionSubtasks';
-
-function KanbanTaskActionTabs() {
+interface Props {
+  boardId: string,
+  taskId: string
+}
+function KanbanTaskActionTabs(props: Props) {
   const [activeTab, setActiveTab] = useState<string>('subtasks');
 
   return (
@@ -18,8 +21,8 @@ function KanbanTaskActionTabs() {
         </ul>
       </div>
       <div className="tabs-content">
-        <TabActionSubtasks activeTab={activeTab} />
-        <TabActionComments activeTab={activeTab} />
+        <TabActionSubtasks activeTab={activeTab} {...props} />
+        <TabActionComments activeTab={activeTab} {...props} />
       </div>
     </div>
   );

@@ -66,6 +66,7 @@ function KanbanTaskForm() {
       description: taskDescription,
       type: taskType,
       priority: taskPriority,
+      comments: [],
       subTasks: []
     };
 
