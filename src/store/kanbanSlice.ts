@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import initialKanban from '../constants/initialKanban';
+import { getUuid } from '../utils';
 
 interface AlterTask {
   taskId: string,
@@ -11,7 +12,11 @@ interface NewTask {
   boardId: string,
   task: Task
 };
-
+interface NewSubTask {
+  taskId: string,
+  boardId: string,
+  subTaskText: string
+}
 interface AlterSubTask {
   taskId: string,
   boardId: string,
@@ -41,6 +46,17 @@ const kanbanSlice = createSlice({
       delete state.boards[boardId].tasks[taskId];
     },
 
+    createSubTask(state, action: PayloadAction<NewSubTask>) {
+      const { boardId, taskId, subTaskText } = action.payload;
+      let task = state.boards[boardId].tasks[taskId];
+
+      task.subTasks.push({
+        text: subTaskText,
+        complete: false,
+        uuid: getUuid()
+      });
+    },
+
     toggleSubTask(state, action: PayloadAction<AlterSubTask>) {
       const { boardId, taskId, subTask } = action.payload;
 
@@ -54,6 +70,15 @@ const kanbanSlice = createSlice({
       }
     },
 
+    removeSubTask(state, action: PayloadAction<AlterSubTask>) {
+      const { boardId, taskId, subTask } = action.payload;
+
+      if (subTask !== undefined) {
+        let task = state.boards[boardId].tasks[taskId];
+        task.subTasks = task.subTasks.filter(todo => todo.uuid !== subTask.uuid);
+      }
+    },
+
     updateProjectTitle(state, action: PayloadAction<string>) {
       state.title = action.payload
     },
@@ -64,7 +89,9 @@ const kanbanSlice = createSlice({
   }
 });
 
-export const { addTask, removeTask, addNewTask, updateProjectTitle, updateBoardsOrder, toggleSubTask } = kanbanSlice.actions;
+export const {
+  addTask, removeTask, addNewTask, updateProjectTitle, updateBoardsOrder, toggleSubTask, createSubTask, removeSubTask
+} = kanbanSlice.actions;
 
 
 export default kanbanSlice.reducer

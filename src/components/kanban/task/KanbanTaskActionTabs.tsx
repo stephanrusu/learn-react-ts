@@ -5,6 +5,7 @@ interface Props {
   boardId: string,
   taskId: string
 }
+
 function KanbanTaskActionTabs(props: Props) {
   const [activeTab, setActiveTab] = useState<string>('subtasks');
 

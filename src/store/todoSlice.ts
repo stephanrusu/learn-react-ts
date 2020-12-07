@@ -21,7 +21,7 @@ const todoSlice = createSlice({
       }
     },
     removeTodo(state, action: PayloadAction<ITodo>) {
-      return state.filter(todo => todo.uuid === action.payload.uuid);
+      return state.filter(todo => todo.uuid !== action.payload.uuid);
     },
   }
 });
