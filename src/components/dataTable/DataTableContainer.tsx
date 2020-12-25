@@ -10,8 +10,8 @@ function DataTableContainer() {
         <div className="card-header">
           <p className="card-header-title">DataTable</p>
         </div>
+        <DataTablePaginationInfo />
       </div>
-      <DataTablePaginationInfo />
       <DataTableEntries />
       <DataTablePagination />
     </>

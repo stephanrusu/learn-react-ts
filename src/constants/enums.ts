@@ -11,7 +11,6 @@ export enum Boards {
   done = 'Done',
 }
 
-
 export enum KanbanTypeFilter {
   all = 'All',
   bug = 'Bug',
