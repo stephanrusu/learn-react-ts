@@ -6,8 +6,9 @@ import { updateBoardsOrder, updateProjectTitle } from '../../store/kanbanSlice';
 import { RootState } from '../../store/rootReducer';
 import KanbanSettingsBoard from './project/KanbanSettingsBoard';
 
-function KanbanProjectSettings() {
+function KanbanProjectSettings(): React.ReactElement {
   const history = useHistory();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const location = useLocation<any>();
   const dispatch = useDispatch();
 

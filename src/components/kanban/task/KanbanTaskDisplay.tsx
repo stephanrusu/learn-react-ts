@@ -8,8 +8,9 @@ import { ROUTE_KANBAN, ROUTE_KANBAN_EDIT_SIMPLE } from '../../../router/routes';
 import { addTask, removeTask } from '../../../store/kanbanSlice';
 import KanbanTaskActionTabs from './KanbanTaskActionTabs';
 
-function KanbanDisplayTask() {
+function KanbanDisplayTask(): React.ReactElement {
   const { taskId } = useParams<RouteParams>();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const location = useLocation<any>();
   const history = useHistory();
   const dispatch = useDispatch();
@@ -46,7 +47,7 @@ function KanbanDisplayTask() {
   const isBoardLast = boardIndex === boardsOrder.length - 1;
 
   const moveTask = (direction: number) => {
-    let newBoardId = boardsOrder[boardIndex + direction];
+    const newBoardId = boardsOrder[boardIndex + direction];
 
     dispatch(removeTask({ boardId, taskId }));
     dispatch(addTask({ boardId: newBoardId, taskId, task }));
@@ -75,7 +76,6 @@ function KanbanDisplayTask() {
             <div>{task.title}</div>
             <div className="tag is-primary task-user">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -107,7 +107,6 @@ function KanbanDisplayTask() {
                   strokeWidth="2"
                   viewBox="0 0 24 24"
                   width="24"
-                  xmlns="http://www.w3.org/2000/svg"
                   className="feather"
                 >
                   <polyline points="15 18 9 12 15 6"></polyline>
@@ -129,7 +128,6 @@ function KanbanDisplayTask() {
                   strokeWidth="2"
                   viewBox="0 0 24 24"
                   width="24"
-                  xmlns="http://www.w3.org/2000/svg"
                   className="feather"
                 >
                   <polyline points="9 18 15 12 9 6" />

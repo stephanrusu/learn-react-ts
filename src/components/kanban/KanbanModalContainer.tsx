@@ -5,8 +5,9 @@ interface ModalProps {
   children: ReactNode;
 }
 
-function KanbanModalContainer({ children }: ModalProps) {
+function KanbanModalContainer({ children }: ModalProps): React.ReactElement {
   const history = useHistory();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const location = useLocation<any>();
   const back = (event: React.MouseEvent<HTMLElement>) => {
     event.stopPropagation();

@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import { addMonths, format } from 'date-fns';
 import { RootState } from '../../../store/rootReducer';
 import { setShown } from '../../../store/datePickerSlice';
@@ -7,7 +7,7 @@ import Week from './Week';
 import Days from './Days';
 import { useDispatch, useSelector } from 'react-redux';
 
-function DatePicker(): ReactElement {
+function DatePicker(): React.ReactElement {
   const shown = useSelector((state: RootState) => state.datePicker.shown);
   const dispatch = useDispatch();
 

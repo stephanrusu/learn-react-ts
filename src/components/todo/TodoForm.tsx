@@ -5,7 +5,7 @@ type Props = {
   addTodo: AddTodo;
 };
 
-function TodoForm(props: Props) {
+function TodoForm(props: Props): React.ReactElement {
   const [todoText, setTodoText] = useState<string>('');
   const [errorText, setErrorText] = useState<boolean>(false);
 

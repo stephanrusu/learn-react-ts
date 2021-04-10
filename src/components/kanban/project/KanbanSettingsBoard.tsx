@@ -8,7 +8,7 @@ interface Props {
   moveBoard: Dispatch<SetStateAction<string[]>>;
 }
 
-function KanbanSettingsBoard({ boardId, boardsOrder, moveBoard }: Props) {
+function KanbanSettingsBoard({ boardId, boardsOrder, moveBoard }: Props): React.ReactElement {
   const boards = useSelector((state: RootState) => state.kanban.boards);
 
   const board = boards[boardId];

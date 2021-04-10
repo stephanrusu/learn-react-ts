@@ -8,7 +8,7 @@ interface Props {
   taskId: string;
 }
 
-function KanbanSubTask({ boardId, taskId }: Props) {
+function KanbanSubTask({ boardId, taskId }: Props): React.ReactElement {
   const dispatch = useDispatch();
 
   const [collapseTasks, setCollapseTasks] = useState<boolean>(false);

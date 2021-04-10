@@ -9,7 +9,7 @@ interface Props {
   text: string;
 }
 
-function TodoRTKFilterButton({ visibilityFilter, text }: Props) {
+function TodoRTKFilterButton({ visibilityFilter, text }: Props): React.ReactElement {
   const dispatch = useDispatch();
 
   const currentvisibilityFilter = useSelector((state: RootState) => state.visibilityFilter);

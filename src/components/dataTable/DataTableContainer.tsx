@@ -3,7 +3,7 @@ import DataTableEntries from './DataTableEntries';
 import DataTablePagination from './DataTablePagination';
 import DataTablePaginationInfo from './DataTablePaginationInfo';
 
-function DataTableContainer() {
+function DataTableContainer(): React.ReactElement {
   return (
     <>
       <div className="card">

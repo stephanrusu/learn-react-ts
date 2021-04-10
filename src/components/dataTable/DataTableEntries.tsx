@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/rootReducer';
 
-function DataTableEntries() {
+function DataTableEntries(): React.ReactElement {
   const entries = useSelector((state: RootState) => state.dataTable.entries);
 
   return (

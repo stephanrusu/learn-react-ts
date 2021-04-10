@@ -9,7 +9,7 @@ interface Props {
   taskId: string;
 }
 
-function TabActionSubtasks(props: Props) {
+function TabActionSubtasks(props: Props): React.ReactElement {
   const dispatch = useDispatch();
   const task = useSelector((state: RootState) => state.kanban.boards[props.boardId].tasks[props.taskId]);
   const { boardId, taskId } = props;
@@ -63,7 +63,6 @@ function TabActionSubtasks(props: Props) {
               onClick={() => dispatch(removeSubTask({ boardId, taskId, subTask }))}
             >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -97,7 +96,6 @@ function TabActionSubtasks(props: Props) {
             <div className="control">
               <button type="submit" className="button is-primary is-small">
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"

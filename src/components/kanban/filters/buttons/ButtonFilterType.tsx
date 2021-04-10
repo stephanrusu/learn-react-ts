@@ -9,7 +9,7 @@ interface Props {
   filterType: KanbanTypeFilter;
 }
 
-function ButtonFilterType(props: Props) {
+function ButtonFilterType(props: Props): React.ReactElement {
   const dispatch = useDispatch();
 
   const currentFilterType = useSelector((state: RootState) => state.kanbanFilter.type);

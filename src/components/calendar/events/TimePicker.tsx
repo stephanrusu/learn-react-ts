@@ -11,7 +11,7 @@ export enum AmPmType {
   PM = 'PM',
 }
 
-function TimePicker(props: Props) {
+function TimePicker(props: Props): React.ReactElement {
   const [hours, setHours] = useState<number>(12);
   const [minutes, setMinutes] = useState<number>(0);
 

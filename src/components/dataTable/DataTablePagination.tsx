@@ -1,6 +1,6 @@
 import React from 'react';
 
-function DataTablePagination() {
+function DataTablePagination(): React.ReactElement {
   return (
     <div className="card mt-4 card-pagination">
       <div className="card-content">
@@ -15,7 +15,6 @@ function DataTablePagination() {
               strokeWidth="2"
               viewBox="0 0 24 24"
               width="24"
-              xmlns="http://www.w3.org/2000/svg"
               className="feather"
             >
               <polyline points="15 18 9 12 15 6"></polyline>
@@ -31,7 +30,6 @@ function DataTablePagination() {
               strokeWidth="2"
               viewBox="0 0 24 24"
               width="24"
-              xmlns="http://www.w3.org/2000/svg"
               className="feather"
             >
               <polyline points="9 18 15 12 9 6" />
@@ -74,7 +72,7 @@ function DataTablePagination() {
         <div className="pagination-portal">
           <div className="field is-horizontal">
             <div className="field-label is-normal">
-              <label className="label">Go to page</label>
+              <div className="label">Go to page</div>
             </div>
             <div className="field-body">
               <div className="control control-input">

@@ -11,7 +11,7 @@ interface Props {
   boardId: string;
 }
 
-function KanbanCard({ boardId, taskId }: Props) {
+function KanbanCard({ boardId, taskId }: Props): React.ReactElement {
   const dispatch = useDispatch();
   const location = useLocation();
 
@@ -26,7 +26,7 @@ function KanbanCard({ boardId, taskId }: Props) {
   const isBoardLast = boardIndex === boardsOrder.length - 1;
 
   const moveTask = (direction: number) => {
-    let newBoardId = boardsOrder[boardIndex + direction];
+    const newBoardId = boardsOrder[boardIndex + direction];
 
     dispatch(
       removeTask({

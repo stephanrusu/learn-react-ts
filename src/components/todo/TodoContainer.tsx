@@ -5,7 +5,7 @@ import TodoList from './TodoList';
 import initialTodos from '../../constants/initialTodos';
 import { getUuid } from '../../utils';
 
-function TodoContainer() {
+function TodoContainer(): React.ReactElement {
   const [todos, setTodos] = useState<ITodo[]>(initialTodos);
   const [filteredTodos, setFilteredTodos] = useState<ITodo[]>([]);
   const [activeFilter, setActiveFilter] = useState<string>('all');

@@ -9,7 +9,8 @@ import KanbanModalContainer from './KanbanModalContainer';
 import KanbanTaskForm from './task/KanbanTaskForm';
 import KanbanProjectSettings from './KanbanProjectSettings';
 
-function KanbanContainer() {
+function KanbanContainer(): React.ReactElement {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const location = useLocation<any>();
   const background = location.state && location.state.background;
 

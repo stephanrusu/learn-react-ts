@@ -1,9 +1,8 @@
 {
   "extends": [
     "prettier",
-    "prettier/@typescript-eslint",
     "plugin:prettier/recommended",
-    "plugin:jsx-a11y/recommended",
+    // "plugin:jsx-a11y/recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended"
   ],
@@ -15,7 +14,7 @@
       "jsx": true
     }
   },
-  "plugins": ["react-hooks", "@typescript-eslint", "prettier", "jsx-a11y"],
+  "plugins": ["react-hooks", "@typescript-eslint", "prettier" /*"jsx-a11y"*/],
   "globals": {
     "context": "readonly"
   },
@@ -27,7 +26,7 @@
         "singleQuote": true,
         "semi": true,
         "trailingComma": "all",
-        "printWidth": 120,
+        "printWidth": 140,
         "tabWidth": 2,
         "endOfLine": "auto"
       }

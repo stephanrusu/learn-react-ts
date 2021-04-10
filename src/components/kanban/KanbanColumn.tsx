@@ -13,7 +13,7 @@ interface Props {
   boardId: string;
 }
 
-function KanbanColumn(props: Props) {
+function KanbanColumn(props: Props): React.ReactElement {
   const location = useLocation();
 
   const tasks = useSelector((state: RootState) => state.kanban.boards[props.boardId].tasks);

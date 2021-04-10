@@ -1,6 +1,6 @@
 import React from 'react';
 
-function EventItem() {
+function EventItem(): React.ReactElement {
   return (
     <div className="item event-item media">
       <div className="media-header">Event item</div>

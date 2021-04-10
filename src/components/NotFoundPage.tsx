@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import ReturnHome from './common/ReturnHome';
 
-function NotFoundPage() {
+function NotFoundPage(): React.ReactElement {
   useEffect(() => {
     document.body.classList.add('not-found-page');
 

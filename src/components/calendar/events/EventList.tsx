@@ -8,7 +8,7 @@ const getEventsForPick = (events: IEvent[], pick: number) => {
   return events.filter((event) => isSameDay(new Date(event.startDate), new Date(pick)));
 };
 
-function EventList() {
+function EventList(): React.ReactElement {
   const events = useSelector((state: RootState) => getEventsForPick(state.events, state.datePicker.picked));
 
   return (

@@ -5,7 +5,7 @@ import { onPick } from '../../../store/datePickerSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { format } from 'date-fns';
 
-function EventDisplay() {
+function EventDisplay(): React.ReactElement {
   const pickedDate = useSelector((state: RootState) => state.datePicker.picked);
   const dispatch = useDispatch();
   const today = new Date().getTime();

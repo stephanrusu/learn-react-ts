@@ -2,7 +2,7 @@ import React from 'react';
 import ReturnHome from './common/ReturnHome';
 import KanbanContainer from './kanban/KanbanContainer';
 
-function KanbanPage() {
+function KanbanPage(): React.ReactElement {
   return (
     <>
       <ReturnHome />

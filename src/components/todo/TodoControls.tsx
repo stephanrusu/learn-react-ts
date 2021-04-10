@@ -15,7 +15,7 @@ interface FilterButtons {
   [key: string]: string;
 }
 
-function TodoControls(props: TodoControlsProps) {
+function TodoControls(props: TodoControlsProps): React.ReactElement {
   const { totalTodos, completedTodos, activeFilter, setActiveFilter } = props;
   const filterButtons: FilterButtons = { all: 'All', active: 'Active', completed: 'Completed' };
 

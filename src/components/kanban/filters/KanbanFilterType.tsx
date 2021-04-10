@@ -2,10 +2,10 @@ import React from 'react';
 import { KanbanTypeFilter } from '../../../constants/enums';
 import ButtonFilterType from './buttons/ButtonFilterType';
 
-function KanbanFilterType() {
+function KanbanFilterType(): React.ReactElement {
   return (
     <div className="filter-group">
-      <label className="label">Type</label>
+      <div className="label">Type</div>
       <div className="buttons">
         <ButtonFilterType filterType={KanbanTypeFilter.all} />
         <ButtonFilterType filterType={KanbanTypeFilter.bug} />

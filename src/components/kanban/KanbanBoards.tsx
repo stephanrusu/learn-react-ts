@@ -9,7 +9,7 @@ import KanbanColumn from './KanbanColumn';
 import { Link, useLocation } from 'react-router-dom';
 import { ROUTE_KANBAN_PROJECT } from '../../router/routes';
 
-function KanbanBoards() {
+function KanbanBoards(): React.ReactElement {
   const location = useLocation();
   const dispatch = useDispatch();
   // const columns : { [uuid: string] : Board} = ...

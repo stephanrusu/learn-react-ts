@@ -17,7 +17,7 @@ const getVisibleTodos = (todos: ITodo[], filter: VisibilityFilter) => {
   }
 };
 
-function TodoRTKList() {
+function TodoRTKList(): React.ReactElement {
   const todos = useSelector((state: RootState) => getVisibleTodos(state.todos, state.visibilityFilter));
 
   return (

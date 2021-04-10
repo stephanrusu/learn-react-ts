@@ -4,7 +4,7 @@ import { RootState } from '../../store/rootReducer';
 import { VisibilityFilter } from '../../constants/enums';
 import TodoRTKFilterButton from './TodoRTKFilterButton';
 
-function TodoRTKControls() {
+function TodoRTKControls(): React.ReactElement {
   const todos = useSelector((state: RootState) => state.todos);
 
   const completedTodos = todos.filter((todo: ITodo) => todo.complete);

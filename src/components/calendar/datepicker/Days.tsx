@@ -25,7 +25,7 @@ const hasEvents = (date: Date, events: IEvent[]) => {
   return listEvents.length > 0;
 };
 
-const Days = (): JSX.Element => {
+const Days = (): React.ReactElement => {
   const { shown, picked } = useSelector((state: RootState) => state.datePicker);
 
   const events = useSelector((state: RootState) => state.events);

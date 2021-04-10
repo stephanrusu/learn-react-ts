@@ -6,7 +6,7 @@ interface TodoItemProps {
   todo: ITodo;
 }
 
-function TodoItem(props: TodoItemProps) {
+function TodoItem(props: TodoItemProps): React.ReactElement {
   const { todo } = props;
 
   const dispatch = useDispatch();

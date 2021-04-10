@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { ROUTE_CALENDAR, ROUTE_DATA_TABLE, ROUTE_KANBAN, ROUTE_ROOT, ROUTE_TODO } from '../../router/routes';
 
-function ReturnHome() {
+function ReturnHome(): React.ReactElement {
   return (
     <div className="card mb-4">
       <div className="card-header px-4 py-4">

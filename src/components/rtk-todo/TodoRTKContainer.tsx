@@ -3,7 +3,7 @@ import TodoRTKForm from './TodoRTKForm';
 import TodoRTKList from './TodoRTKList';
 import TodoRTKControls from './TodoRTKControls';
 
-function TodoRTKContainer() {
+function TodoRTKContainer(): React.ReactElement {
   return (
     <>
       <div className="card">

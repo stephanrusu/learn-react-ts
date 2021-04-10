@@ -7,7 +7,7 @@ interface Props {
   activeAction: Dispatch<SetStateAction<KanbanPriorityFilter>>;
 }
 
-function ButtonFilterPriorityForm(props: Props) {
+function ButtonFilterPriorityForm(props: Props): React.ReactElement {
   return (
     <div
       className={`custom-field ${props.selectedFilter === props.filterType ? 'active' : ''}`}

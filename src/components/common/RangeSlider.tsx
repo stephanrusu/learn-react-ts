@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { Range, getTrackBackground } from 'react-range';
 
@@ -8,7 +9,7 @@ interface Props {
   max: number;
   sliderChange?: (args: number[]) => void;
 }
-function RangeSlider(propsParent: Props) {
+function RangeSlider(propsParent: Props): React.ReactElement {
   const [values, setValues] = useState<number[]>([...propsParent.default]);
 
   return (
@@ -37,6 +38,7 @@ function RangeSlider(propsParent: Props) {
         >
           <div
             className="range-slider-track"
+            // eslint-disable-next-line react/prop-types
             ref={props.ref}
             style={{
               height: '4px',
@@ -60,6 +62,7 @@ function RangeSlider(propsParent: Props) {
           {...props}
           className="range-slider-thumb"
           style={{
+            // eslint-disable-next-line react/prop-types
             ...props.style,
             height: '24px',
             width: '36px',

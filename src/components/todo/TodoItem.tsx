@@ -7,7 +7,7 @@ interface TodoItemProps {
   removeTodo: RemoveTodo;
 }
 
-function TodoItem(props: TodoItemProps) {
+function TodoItem(props: TodoItemProps): React.ReactElement {
   const { todo, completeTodo, removeTodo } = props;
   const todoClassNames = classNames('list-item todo-list-item', {
     'is-complete': todo.complete,

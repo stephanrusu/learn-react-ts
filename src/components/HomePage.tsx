@@ -1,7 +1,7 @@
 import React from 'react';
 import ReturnHome from './common/ReturnHome';
 
-function HomePage() {
+function HomePage(): React.ReactElement {
   return (
     <div className="columns is-centered">
       <div className="column">

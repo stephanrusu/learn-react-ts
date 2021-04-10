@@ -3,7 +3,7 @@ import ReturnHome from './common/ReturnHome';
 import TodoRTKContainer from './rtk-todo/TodoRTKContainer';
 import TodoContainer from './todo/TodoContainer';
 
-function TodoPage() {
+function TodoPage(): React.ReactElement {
   return (
     <>
       <ReturnHome />

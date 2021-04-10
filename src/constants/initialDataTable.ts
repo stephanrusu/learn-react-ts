@@ -557,7 +557,7 @@ export const initialDataTable: Movie[] = [
     director: 'Peter Jackson',
     mainActors: 'Ian McKellen, Martin Freeman, Richard Armitage, Ken Stott',
     plot:
-      'The dwarves, along with Bilbo Baggins and Gandalf the Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring.',
+      'The dwarves, along with Bilbo Baggins and Gandalf the Grey, continue their quest to reclaim Erebor, their homelandfrom Smaug. Bilbo Baggins is in possession of a mysterious and magical ring.',
   },
   {
     id: 'l9bhcdab3',
@@ -815,7 +815,7 @@ export const initialDataTable: Movie[] = [
     director: 'Gore Verbinski',
     mainActors: 'Johnny Depp, Geoffrey Rush, Orlando Bloom, Keira Knightley',
     plot:
-      'Blacksmith Will Turner teams up with eccentric pirate "Captain" Jack Sparrow to save his love, the governor\'s daughter, from Jack\'s former pirate allies, who are now undead.',
+      'Blacksmith Will Turner teams up with eccentric pirate "Captain" Jack Sparrow to save his love, the governor\'s daughterfrom Jack\'s former pirate allies, who are now undead.',
   },
   {
     id: 'baqejysx0',
@@ -879,7 +879,7 @@ export const initialDataTable: Movie[] = [
     director: 'Martin Scorsese',
     mainActors: 'Leonardo DiCaprio, Jonah Hill, Margot Robbie, Matthew McConaughey',
     plot:
-      'Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.',
+      'Based on the true story of Jordan Belfortfrom his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.',
   },
   {
     id: '85yojv8z0',
@@ -1207,7 +1207,7 @@ export const initialDataTable: Movie[] = [
     genres: ['Drama'],
     director: 'Richard Linklater',
     mainActors: 'Ellar Coltrane, Patricia Arquette, Elijah Smith, Lorelei Linklater',
-    plot: 'The life of Mason, from early childhood to his arrival at college.',
+    plot: 'The life of Masonfrom early childhood to his arrival at college.',
   },
   {
     id: 'le6s51gza',

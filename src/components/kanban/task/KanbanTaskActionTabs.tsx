@@ -6,7 +6,7 @@ interface Props {
   taskId: string;
 }
 
-function KanbanTaskActionTabs(props: Props) {
+function KanbanTaskActionTabs(props: Props): React.ReactElement {
   const [activeTab, setActiveTab] = useState<string>('');
 
   return (

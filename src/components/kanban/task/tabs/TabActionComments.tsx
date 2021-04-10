@@ -5,7 +5,7 @@ interface Props {
   activeTab: string;
 }
 
-function TabActionComments(props: Props) {
+function TabActionComments(props: Props): React.ReactElement {
   return (
     <div className={`${props.activeTab !== 'comments' ? 'is-hidden' : ''}`}>
       <div className="card comment-card">

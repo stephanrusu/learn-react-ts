@@ -3,7 +3,7 @@ import DatePicker from './datepicker/DatePicker';
 import EventDisplay from './events/EventDisplay';
 import EventForm from './events/EventForm';
 
-function CalendarContainer() {
+function CalendarContainer(): React.ReactElement {
   const [toggleForm, setToggleForm] = useState<boolean>(false);
 
   return (

@@ -8,7 +8,7 @@ interface Props {
   filterType: KanbanPriorityFilter;
 }
 
-function ButtonFilterPriority(props: Props) {
+function ButtonFilterPriority(props: Props): React.ReactElement {
   const dispatch = useDispatch();
 
   const currentFilterType = useSelector((state: RootState) => state.kanbanFilter.priority);

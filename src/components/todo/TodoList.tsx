@@ -7,7 +7,7 @@ interface TodoListProps {
   removeTodo: RemoveTodo;
 }
 
-function TodoList(props: TodoListProps) {
+function TodoList(props: TodoListProps): React.ReactElement {
   const { todos, completeTodo, removeTodo } = props;
   return (
     <div className="list todo-list">

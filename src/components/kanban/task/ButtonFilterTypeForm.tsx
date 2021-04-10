@@ -7,7 +7,7 @@ interface Props {
   activeAction: Dispatch<SetStateAction<KanbanTypeFilter>>;
 }
 
-function ButtonFilterTypeForm(props: Props) {
+function ButtonFilterTypeForm(props: Props): React.ReactElement {
   return (
     <div
       className={`custom-field ${props.selectedFilter === props.filterType ? 'active' : ''}`}

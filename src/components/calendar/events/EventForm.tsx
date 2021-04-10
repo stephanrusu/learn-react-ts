@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { format, getHours, getMinutes, getTime, set, startOfDay } from 'date-fns';
 import TimePicker, { AmPmType } from './TimePicker';
 
-function EventForm() {
+function EventForm(): React.ReactElement {
   const pickedDate = useSelector((state: RootState) => state.datePicker.picked);
   const dispatch = useDispatch();
   const today = new Date().getTime();
@@ -29,9 +29,12 @@ function EventForm() {
   }, [pickedDate]);
 
   const updatePickedDate = (oldDate: number, pickDate: number) => {
-    let oldHours = getHours(oldDate);
-    let oldMinutes = getMinutes(oldDate);
-    let newDate = set(startOfDay(pickDate), { hours: oldHours, minutes: oldMinutes });
+    const oldHours = getHours(oldDate);
+    const oldMinutes = getMinutes(oldDate);
+    const newDate = set(startOfDay(pickDate), {
+      hours: oldHours,
+      minutes: oldMinutes,
+    });
 
     return newDate.getTime();
   };
@@ -60,7 +63,10 @@ function EventForm() {
       newHours = date.time.hours + 12;
     }
 
-    let newDate = set(baseDate, { hours: newHours, minutes: date.time.minutes });
+    const newDate = set(baseDate, {
+      hours: newHours,
+      minutes: date.time.minutes,
+    });
     return getTime(newDate);
   };
 

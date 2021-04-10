@@ -2,10 +2,10 @@ import React from 'react';
 import { KanbanPriorityFilter } from '../../../constants/enums';
 import ButtonFilterPriority from './buttons/ButtonFilterPriority';
 
-function KanbanFilterPriority() {
+function KanbanFilterPriority(): React.ReactElement {
   return (
     <div className="filter-group">
-      <label className="label">Priority</label>
+      <div className="label">Priority</div>
       <div className="buttons">
         <ButtonFilterPriority filterType={KanbanPriorityFilter.all} />
         <ButtonFilterPriority filterType={KanbanPriorityFilter.blocker} />

@@ -9,9 +9,10 @@ import ButtonFilterTypeForm from './ButtonFilterTypeForm';
 import ButtonFilterPriorityForm from './ButtonFilterPriorityForm';
 import { ROUTE_KANBAN } from '../../../router/routes';
 
-function KanbanTaskForm() {
+function KanbanTaskForm(): React.ReactElement {
   const history = useHistory();
   const dispatch = useDispatch();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const location = useLocation<any>();
 
   const { taskId } = useParams<RouteParams>();
@@ -43,7 +44,6 @@ function KanbanTaskForm() {
   // const background = location.state !== undefined ? location.state.background : location;
 
   const board = boardId === undefined ? getBoard(taskId) : boards[boardId];
-  console.info(board);
 
   useEffect(() => {
     if (taskId !== undefined && board !== undefined) {

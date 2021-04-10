@@ -9,7 +9,7 @@ import NotFoundPage from '../components/NotFoundPage';
 import KanbanPage from '../components/KanbanPage';
 import DataTablePage from '../components/DataTablePage';
 
-function RouterHandler() {
+function RouterHandler(): React.ReactElement {
   return (
     <Router>
       <Switch>
