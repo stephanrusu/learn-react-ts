@@ -1,89 +1,89 @@
 interface ITodo {
-  text: string,
-  complete: boolean,
-  uuid: string
-};
+  text: string;
+  complete: boolean;
+  uuid: string;
+}
 
 interface IPickDate {
-  shown: number | date,
-  picked: number | date
-};
+  shown: number | date;
+  picked: number | date;
+}
 
 interface IEvent {
-  startDate: number | string,
-  endDate: number | string,
-  uuid: string,
-  allDay: boolean,
-  title: string,
-  description: string
+  startDate: number | string;
+  endDate: number | string;
+  uuid: string;
+  allDay: boolean;
+  title: string;
+  description: string;
 }
 
 interface TimeSlider {
-  hours: number,
-  minutes: number,
-  ampm?: string
+  hours: number;
+  minutes: number;
+  ampm?: string;
 }
 
 interface TimeDate {
-  type: string,
-  time: TimeSlider
+  type: string;
+  time: TimeSlider;
 }
 
 interface Project {
-  uuid: string,
-  date: number | date,
-  name: string
+  uuid: string;
+  date: number | date;
+  name: string;
 }
 
 interface Task {
-  uuid: string,
-  date: number | date,
-  title: string,
-  type: KanbanTypeFilter,
-  priority: KanbanPriorityFilter,
-  description: string,
-  subTasks: ITodo[],
-  comments: string[],
+  uuid: string;
+  date: number | date;
+  title: string;
+  type: KanbanTypeFilter;
+  priority: KanbanPriorityFilter;
+  description: string;
+  subTasks: ITodo[];
+  comments: string[];
 }
 
 interface Board {
-  uuid: string,
-  date: number | date,
-  title: string,
-  color: string,
-  allowNew?: boolean,
+  uuid: string;
+  date: number | date;
+  title: string;
+  color: string;
+  allowNew?: boolean;
   tasks: {
-    [uuid: string] : Task
-  },
+    [uuid: string]: Task;
+  };
 }
 
 interface ProjectKanban {
-  uuid: string,
-  date: number | date,
-  title: string,
-  boardsOrder: string[],
+  uuid: string;
+  date: number | date;
+  title: string;
+  boardsOrder: string[];
   boards: {
-    [uuid: string] : Board
-  },
+    [uuid: string]: Board;
+  };
 }
 
 interface RouteParams {
-  [taskId: string]: string
+  [taskId: string]: string;
 }
 
 interface ListTask {
-  [uuid: string] : Task
+  [uuid: string]: Task;
 }
 
 interface Movie {
-  id: number | string,
-  title: string,
-  year: number,
-  runtime: number,
-  genres: string[],
-  director: string,
-  mainActors: string,
-  plot: string,
+  id: number | string;
+  title: string;
+  year: number;
+  runtime: number;
+  genres: string[];
+  director: string;
+  mainActors: string;
+  plot: string;
 }
 
 type CompleteTodo = (args: ITodo) => void;

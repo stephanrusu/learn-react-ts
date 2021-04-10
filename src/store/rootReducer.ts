@@ -14,7 +14,7 @@ const rootReducer = combineReducers({
   events: eventReducer,
   kanban: kanbanReducer,
   kanbanFilter: kanbanFilterReducer,
-  dataTable: dataTableReducer
+  dataTable: dataTableReducer,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 interface ModalProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
 function KanbanModalContainer({ children }: ModalProps) {
@@ -17,12 +17,10 @@ function KanbanModalContainer({ children }: ModalProps) {
   return (
     <div className="modal is-active">
       <div className="modal-background" onClick={back}></div>
-      <div className="modal-content">
-        {children}
-      </div>
+      <div className="modal-content">{children}</div>
       <button className="modal-close is-large" aria-label="close" onClick={back}></button>
     </div>
   );
-};
+}
 
 export default KanbanModalContainer;

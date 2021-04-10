@@ -20,9 +20,9 @@ const kanbanFilterSlice = createSlice({
     },
 
     toggleFilter(state, action: PayloadAction<boolean>) {
-      state.toggle = action.payload
-    }
-  }
+      state.toggle = action.payload;
+    },
+  },
 });
 
 export const { setTypeFilter, setPriorityFilter, toggleFilter } = kanbanFilterSlice.actions;

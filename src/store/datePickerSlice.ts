@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 const initialState = {
   shown: new Date().getTime(),
   picked: new Date().getTime(),
-}
+};
 
 const datePickerSlice = createSlice({
   name: 'datePicker',
@@ -18,8 +18,8 @@ const datePickerSlice = createSlice({
     onPick(state, action: PayloadAction<IPickDate>) {
       state.shown = action.payload.shown;
       state.picked = action.payload.shown;
-    }
-  }
+    },
+  },
 });
 
 export const { setShown, setPicked, onPick } = datePickerSlice.actions;

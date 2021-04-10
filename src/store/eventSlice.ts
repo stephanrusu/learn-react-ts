@@ -7,10 +7,10 @@ const eventSlice = createSlice({
   reducers: {
     createEvent(state, action: PayloadAction<IEvent>) {
       state.push(action.payload);
-    }
-  }
+    },
+  },
 });
 
 export const { createEvent } = eventSlice.actions;
 
-export default eventSlice.reducer
+export default eventSlice.reducer;

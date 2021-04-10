@@ -6,24 +6,23 @@ import { setTypeFilter } from '../../../../store/kanbanFilterTypeSlice';
 import { RootState } from '../../../../store/rootReducer';
 
 interface Props {
-  filterType: KanbanTypeFilter
+  filterType: KanbanTypeFilter;
 }
 
 function ButtonFilterType(props: Props) {
   const dispatch = useDispatch();
 
-  const currentFilterType = useSelector(
-    (state: RootState) => state.kanbanFilter.type
-  );
+  const currentFilterType = useSelector((state: RootState) => state.kanbanFilter.type);
 
   return (
-    <button type="button"
+    <button
+      type="button"
       className={`button is-${props.filterType.toLowerCase()} is-small ${currentFilterType === props.filterType ? 'is-active' : ''}`}
       onClick={() => dispatch(setTypeFilter(props.filterType))}
     >
       {props.filterType}
     </button>
   );
-};
+}
 
 export default ButtonFilterType;

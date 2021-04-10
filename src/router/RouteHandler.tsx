@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import * as routes from './routes';
 
-import TodoPage from "../components/TodoPage";
-import HomePage from "../components/HomePage";
+import TodoPage from '../components/TodoPage';
+import HomePage from '../components/HomePage';
 import CalendarPage from '../components/CalendarPage';
 import NotFoundPage from '../components/NotFoundPage';
 import KanbanPage from '../components/KanbanPage';
@@ -28,12 +28,12 @@ function RouterHandler() {
         <Route exact path={routes.ROUTE_ROOT}>
           <HomePage />
         </Route>
-        <Route path='*'>
+        <Route path="*">
           <NotFoundPage />
         </Route>
       </Switch>
     </Router>
-  )
+  );
 }
 
 export default RouterHandler;

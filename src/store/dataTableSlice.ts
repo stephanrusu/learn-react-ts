@@ -11,4 +11,4 @@ const dataTableSlice = createSlice({
   reducers: {},
 });
 
-export default dataTableSlice.reducer
+export default dataTableSlice.reducer;

@@ -15,17 +15,16 @@ const todoSlice = createSlice({
       });
     },
     toggleTodo(state, action: PayloadAction<ITodo>) {
-      let todo = state.find(todo => todo.uuid === action.payload.uuid);
+      const todo = state.find((todo) => todo.uuid === action.payload.uuid);
       if (todo) {
         todo.complete = !todo.complete;
       }
     },
     removeTodo(state, action: PayloadAction<ITodo>) {
-      return state.filter(todo => todo.uuid !== action.payload.uuid);
+      return state.filter((todo) => todo.uuid !== action.payload.uuid);
     },
-  }
+  },
 });
-
 
 // async option to write create todo method
 // export const createTodo = (

@@ -29,13 +29,12 @@ function KanbanContainer() {
         <Route exact path={routes.ROUTE_KANBAN}>
           <KanbanBoards />
         </Route>
-        <Route path='*'>
+        <Route path="*">
           <NotFoundPage />
         </Route>
       </Switch>
 
-    {
-      background && (
+      {background && (
         // * display routes inside modals
         <Switch>
           <Route exact path={[routes.ROUTE_KANBAN_CREATE, routes.ROUTE_KANBAN_EDIT]}>
@@ -54,8 +53,7 @@ function KanbanContainer() {
             </KanbanModalContainer>
           </Route>
         </Switch>
-      )
-    }
+      )}
     </>
   );
 }

@@ -29,8 +29,7 @@ export const initialDataTable: Movie[] = [
     genres: ['Crime', 'Drama'],
     director: 'Frank Darabont',
     mainActors: 'Tim Robbins, Morgan Freeman, Bob Gunton, William Sadler',
-    plot:
-      'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.',
+    plot: 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.',
   },
   {
     id: 'vbhshs2fi',
@@ -40,8 +39,7 @@ export const initialDataTable: Movie[] = [
     genres: ['Adventure', 'Comedy'],
     director: 'Peter Faiman',
     mainActors: 'Paul Hogan, Linda Kozlowski, John Meillon, David Gulpilil',
-    plot:
-      'An American reporter goes to the Australian outback to meet an eccentric crocodile poacher and invites him to New York City.',
+    plot: 'An American reporter goes to the Australian outback to meet an eccentric crocodile poacher and invites him to New York City.',
   },
   {
     id: 'rn87pvqxm',
@@ -83,8 +81,7 @@ export const initialDataTable: Movie[] = [
     genres: ['Mystery', 'Thriller'],
     director: 'Christopher Nolan',
     mainActors: 'Guy Pearce, Carrie-Anne Moss, Joe Pantoliano, Mark Boone Junior',
-    plot:
-      "A man juggles searching for his wife's murderer and keeping his short-term memory loss from being an obstacle.",
+    plot: "A man juggles searching for his wife's murderer and keeping his short-term memory loss from being an obstacle.",
   },
   {
     id: 'smbt0p0ln',
@@ -269,8 +266,7 @@ export const initialDataTable: Movie[] = [
     genres: ['Drama', 'Western'],
     director: 'Quentin Tarantino',
     mainActors: 'Jamie Foxx, Christoph Waltz, Leonardo DiCaprio, Kerry Washington',
-    plot:
-      'With the help of a German bounty hunter, a freed slave sets out to rescue his wife from a brutal Mississippi plantation owner.',
+    plot: 'With the help of a German bounty hunter, a freed slave sets out to rescue his wife from a brutal Mississippi plantation owner.',
   },
   {
     id: '1lfjl1mhs',
@@ -291,8 +287,7 @@ export const initialDataTable: Movie[] = [
     genres: ['Drama', 'Romance'],
     director: 'Sam Mendes',
     mainActors: 'Kevin Spacey, Annette Bening, Thora Birch, Wes Bentley',
-    plot:
-      "A sexually frustrated suburban father has a mid-life crisis after becoming infatuated with his daughter's best friend.",
+    plot: "A sexually frustrated suburban father has a mid-life crisis after becoming infatuated with his daughter's best friend.",
   },
   {
     id: 'd0pwk9oaa',
@@ -378,8 +373,7 @@ export const initialDataTable: Movie[] = [
     genres: ['Mystery', 'Thriller'],
     director: 'Martin Scorsese',
     mainActors: 'Leonardo DiCaprio, Mark Ruffalo, Ben Kingsley, Max von Sydow',
-    plot:
-      'In 1954, a U.S. marshal investigates the disappearance of a murderess who escaped from a hospital for the criminally insane.',
+    plot: 'In 1954, a U.S. marshal investigates the disappearance of a murderess who escaped from a hospital for the criminally insane.',
   },
   {
     id: '32b9dld83',
@@ -541,8 +535,7 @@ export const initialDataTable: Movie[] = [
     genres: ['Comedy', 'Drama', 'Romance'],
     director: 'Michel Hazanavicius',
     mainActors: 'Jean Dujardin, Bérénice Bejo, John Goodman, James Cromwell',
-    plot:
-      'A silent movie star meets a young dancer, but the arrival of talking pictures sends their careers in opposite directions.',
+    plot: 'A silent movie star meets a young dancer, but the arrival of talking pictures sends their careers in opposite directions.',
   },
   {
     id: 'bums5yhq1',
@@ -726,8 +719,7 @@ export const initialDataTable: Movie[] = [
     genres: ['Adventure', 'Biography', 'Drama'],
     director: 'Frank Marshall',
     mainActors: 'Ethan Hawke, Vincent Spano, Josh Hamilton, Bruce Ramsay',
-    plot:
-      'Uruguayan rugby team stranded in the snow swept Andes are forced to use desperate measures to survive after a plane crash.',
+    plot: 'Uruguayan rugby team stranded in the snow swept Andes are forced to use desperate measures to survive after a plane crash.',
   },
   {
     id: 'qwtgyx9qk',
@@ -737,8 +729,7 @@ export const initialDataTable: Movie[] = [
     genres: ['Drama', 'Romance', 'War'],
     director: 'Michael Curtiz',
     mainActors: 'Humphrey Bogart, Ingrid Bergman, Paul Henreid, Claude Rains',
-    plot:
-      'In Casablanca, Morocco in December 1941, a cynical American expatriate meets a former lover, with unforeseen complications.',
+    plot: 'In Casablanca, Morocco in December 1941, a cynical American expatriate meets a former lover, with unforeseen complications.',
   },
   {
     id: 'g76gvocry',
@@ -770,8 +761,7 @@ export const initialDataTable: Movie[] = [
     genres: ['Crime', 'Drama'],
     director: 'Tony Kaye',
     mainActors: "Edward Norton, Edward Furlong, Beverly D'Angelo, Jennifer Lien",
-    plot:
-      'A former neo-nazi skinhead tries to prevent his younger brother from going down the same wrong path that he did.',
+    plot: 'A former neo-nazi skinhead tries to prevent his younger brother from going down the same wrong path that he did.',
   },
   {
     id: 'v560o9quu',
@@ -814,8 +804,7 @@ export const initialDataTable: Movie[] = [
     genres: ['Crime', 'Drama', 'Thriller'],
     director: 'Paul Haggis',
     mainActors: 'Karina Arroyave, Dato Bakhtadze, Sandra Bullock, Don Cheadle',
-    plot:
-      'Los Angeles citizens with vastly separate lives collide in interweaving stories of race, loss and redemption.',
+    plot: 'Los Angeles citizens with vastly separate lives collide in interweaving stories of race, loss and redemption.',
   },
   {
     id: 'hdcl1gcp6',
@@ -847,8 +836,7 @@ export const initialDataTable: Movie[] = [
     genres: ['Drama', 'Mystery', 'Thriller'],
     director: 'Chan-wook Park',
     mainActors: 'Min-sik Choi, Ji-tae Yu, Hye-jeong Kang, Dae-han Ji',
-    plot:
-      'After being kidnapped and imprisoned for 15 years, Oh Dae-Su is released, only to find that he must find his captor in 5 days.',
+    plot: 'After being kidnapped and imprisoned for 15 years, Oh Dae-Su is released, only to find that he must find his captor in 5 days.',
   },
   {
     id: '4frforlfr',
@@ -858,8 +846,7 @@ export const initialDataTable: Movie[] = [
     genres: ['Drama', 'Romance'],
     director: 'Lasse Hallström',
     mainActors: 'Alfred Molina, Carrie-Anne Moss, Aurelien Parent Koenig, Antonio Gil',
-    plot:
-      'A woman and her daughter open a chocolate shop in a small French village that shakes up the rigid morality of the community.',
+    plot: 'A woman and her daughter open a chocolate shop in a small French village that shakes up the rigid morality of the community.',
   },
   {
     id: 'dwd0z9ran',
@@ -913,8 +900,7 @@ export const initialDataTable: Movie[] = [
     genres: ['Drama', 'Film-Noir', 'Romance'],
     director: 'Billy Wilder',
     mainActors: 'William Holden, Gloria Swanson, Erich von Stroheim, Nancy Olson',
-    plot:
-      'A hack screenwriter writes a screenplay for a former silent-film star who has faded into Hollywood obscurity.',
+    plot: 'A hack screenwriter writes a screenplay for a former silent-film star who has faded into Hollywood obscurity.',
   },
   {
     id: '6mbnkhcbc',
@@ -968,8 +954,7 @@ export const initialDataTable: Movie[] = [
     genres: ['Action', 'Adventure', 'Mystery'],
     director: 'Joseph Kosinski',
     mainActors: 'Tom Cruise, Morgan Freeman, Olga Kurylenko, Andrea Riseborough',
-    plot:
-      "A veteran assigned to extract Earth's remaining resources begins to question what he knows about his mission and himself.",
+    plot: "A veteran assigned to extract Earth's remaining resources begins to question what he knows about his mission and himself.",
   },
   {
     id: 'rj84kr2g8',
@@ -990,8 +975,7 @@ export const initialDataTable: Movie[] = [
     genres: ['Drama', 'Sci-Fi', 'Thriller'],
     director: 'Andrew Niccol',
     mainActors: 'Ethan Hawke, Uma Thurman, Gore Vidal, Xander Berkeley',
-    plot:
-      'A genetically inferior man assumes the identity of a superior one in order to pursue his lifelong dream of space travel.',
+    plot: 'A genetically inferior man assumes the identity of a superior one in order to pursue his lifelong dream of space travel.',
   },
   {
     id: 'i2kh0t4ag',
@@ -1076,8 +1060,7 @@ export const initialDataTable: Movie[] = [
     genres: ['Drama', 'Thriller'],
     director: 'J.A. Bayona',
     mainActors: 'Naomi Watts, Ewan McGregor, Tom Holland, Samuel Joslin',
-    plot:
-      'The story of a tourist family in Thailand caught in the destruction and chaotic aftermath of the 2004 Indian Ocean tsunami.',
+    plot: 'The story of a tourist family in Thailand caught in the destruction and chaotic aftermath of the 2004 Indian Ocean tsunami.',
   },
   {
     id: 'rdgy1vf1u',
@@ -1119,8 +1102,7 @@ export const initialDataTable: Movie[] = [
     genres: ['Biography', 'Drama', 'Romance'],
     director: 'Julie Taymor',
     mainActors: 'Salma Hayek, Mía Maestro, Alfred Molina, Antonio Banderas',
-    plot:
-      'A biography of artist Frida Kahlo, who channeled the pain of a crippling injury and her tempestuous marriage into her work.',
+    plot: 'A biography of artist Frida Kahlo, who channeled the pain of a crippling injury and her tempestuous marriage into her work.',
   },
   {
     id: 'tw5ztnxzc',
@@ -1152,8 +1134,7 @@ export const initialDataTable: Movie[] = [
     genres: ['Action', 'Drama', 'History'],
     director: 'Edward Zwick',
     mainActors: 'Ken Watanabe, Tom Cruise, William Atherton, Chad Lindberg',
-    plot:
-      'An American military advisor embraces the Samurai culture he was hired to destroy after he is captured in battle.',
+    plot: 'An American military advisor embraces the Samurai culture he was hired to destroy after he is captured in battle.',
   },
   {
     id: '2pfkgrbab',
@@ -1163,8 +1144,7 @@ export const initialDataTable: Movie[] = [
     genres: ['Drama', 'Mystery', 'Thriller'],
     director: 'Roman Polanski',
     mainActors: 'Jack Nicholson, Faye Dunaway, John Huston, Perry Lopez',
-    plot:
-      'A private detective hired to expose an adulterer finds himself caught up in a web of deceit, corruption and murder.',
+    plot: 'A private detective hired to expose an adulterer finds himself caught up in a web of deceit, corruption and murder.',
   },
   {
     id: 'tzoedkiwl',
@@ -1174,8 +1154,7 @@ export const initialDataTable: Movie[] = [
     genres: ['Comedy', 'Drama'],
     director: 'John Michael McDonagh',
     mainActors: "Brendan Gleeson, Chris O'Dowd, Kelly Reilly, Aidan Gillen",
-    plot:
-      'After he is threatened during a confession, a good-natured priest must battle the dark forces closing in around him.',
+    plot: 'After he is threatened during a confession, a good-natured priest must battle the dark forces closing in around him.',
   },
   {
     id: 'zxkr3x52n',
@@ -1185,8 +1164,7 @@ export const initialDataTable: Movie[] = [
     genres: ['Drama', 'Romance'],
     director: 'Richard Linklater',
     mainActors: 'Ethan Hawke, Julie Delpy, Vernon Dobtcheff, Louise Lemoine Torrès',
-    plot:
-      "Nine years after Jesse and Celine first met, they encounter each other again on the French leg of Jesse's book tour.",
+    plot: "Nine years after Jesse and Celine first met, they encounter each other again on the French leg of Jesse's book tour.",
   },
   {
     id: '9gw43my4d',
@@ -1239,8 +1217,7 @@ export const initialDataTable: Movie[] = [
     genres: ['Crime', 'Drama'],
     director: 'Sidney Lumet',
     mainActors: 'Martin Balsam, John Fiedler, Lee J. Cobb, E.G. Marshall',
-    plot:
-      'A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.',
+    plot: 'A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.',
   },
   {
     id: 'rh6h3wyx4',
@@ -1250,8 +1227,7 @@ export const initialDataTable: Movie[] = [
     genres: ['Biography', 'Drama', 'Thriller'],
     director: 'Morten Tyldum',
     mainActors: 'Benedict Cumberbatch, Keira Knightley, Matthew Goode, Rory Kinnear',
-    plot:
-      'During World War II, mathematician Alan Turing tries to crack the enigma code with help from fellow mathematicians.',
+    plot: 'During World War II, mathematician Alan Turing tries to crack the enigma code with help from fellow mathematicians.',
   },
   {
     id: 'zs759pmkk',
@@ -1335,8 +1311,7 @@ export const initialDataTable: Movie[] = [
     genres: ['Action', 'Comedy', 'Crime'],
     director: 'Doug Liman',
     mainActors: 'Brad Pitt, Angelina Jolie, Vince Vaughn, Adam Brody',
-    plot:
-      'A bored married couple is surprised to learn that they are both assassins hired by competing agencies to kill each other.',
+    plot: 'A bored married couple is surprised to learn that they are both assassins hired by competing agencies to kill each other.',
   },
   {
     id: 'pmez1ft2j',
@@ -1412,8 +1387,7 @@ export const initialDataTable: Movie[] = [
     genres: ['Drama', 'Romance'],
     director: 'Baz Luhrmann',
     mainActors: 'Lisa Adam, Frank Aldridge, Amitabh Bachchan, Steve Bisley',
-    plot:
-      'A writer and wall street trader, Nick, finds himself drawn to the past and lifestyle of his millionaire neighbor, Jay Gatsby.',
+    plot: 'A writer and wall street trader, Nick, finds himself drawn to the past and lifestyle of his millionaire neighbor, Jay Gatsby.',
   },
   {
     id: 'nalgjh3zy',

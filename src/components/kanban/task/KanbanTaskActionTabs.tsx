@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import TabActionComments from './tabs/TabActionComments';
 import TabActionSubtasks from './tabs/TabActionSubtasks';
 interface Props {
-  boardId: string,
-  taskId: string
+  boardId: string;
+  taskId: string;
 }
 
 function KanbanTaskActionTabs(props: Props) {
@@ -27,6 +27,6 @@ function KanbanTaskActionTabs(props: Props) {
       </div>
     </div>
   );
-};
+}
 
 export default KanbanTaskActionTabs;

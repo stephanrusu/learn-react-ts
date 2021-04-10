@@ -19,14 +19,30 @@ function TodoPage() {
             <div className="card-content">
               <div className="content">
                 <div className="is-flex">
-                  <div className="toggle switch"><div className="toggle-inner"></div></div>
-                  <div className="toggle switch is-active"><div className="toggle-inner"></div></div>
-                  <div className="toggle switch is-indeterminate"><div className="toggle-inner"></div></div>
-                  <div className="toggle radio"><div className="toggle-inner"></div></div>
-                  <div className="toggle radio is-active"><div className="toggle-inner"></div></div>
-                  <div className="toggle checkbox"><div className="toggle-inner"></div></div>
-                  <div className="toggle checkbox is-active"><div className="toggle-inner"></div></div>
-                  <div className="toggle checkbox is-indeterminate"><div className="toggle-inner"></div></div>
+                  <div className="toggle switch">
+                    <div className="toggle-inner"></div>
+                  </div>
+                  <div className="toggle switch is-active">
+                    <div className="toggle-inner"></div>
+                  </div>
+                  <div className="toggle switch is-indeterminate">
+                    <div className="toggle-inner"></div>
+                  </div>
+                  <div className="toggle radio">
+                    <div className="toggle-inner"></div>
+                  </div>
+                  <div className="toggle radio is-active">
+                    <div className="toggle-inner"></div>
+                  </div>
+                  <div className="toggle checkbox">
+                    <div className="toggle-inner"></div>
+                  </div>
+                  <div className="toggle checkbox is-active">
+                    <div className="toggle-inner"></div>
+                  </div>
+                  <div className="toggle checkbox is-indeterminate">
+                    <div className="toggle-inner"></div>
+                  </div>
                 </div>
               </div>
             </div>

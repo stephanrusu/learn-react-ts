@@ -9,6 +9,6 @@ function DataTablePage() {
       <DataTableContainer />
     </>
   );
-};
+}
 
 export default DataTablePage;

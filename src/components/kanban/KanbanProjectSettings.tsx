@@ -11,13 +11,9 @@ function KanbanProjectSettings() {
   const location = useLocation<any>();
   const dispatch = useDispatch();
 
-  const project = useSelector(
-    (state: RootState) => state.kanban.title
-  );
+  const project = useSelector((state: RootState) => state.kanban.title);
 
-  const boardsOrder = useSelector(
-    (state: RootState) => state.kanban.boardsOrder
-  );
+  const boardsOrder = useSelector((state: RootState) => state.kanban.boardsOrder);
 
   const [order, setOrder] = useState<string[]>(boardsOrder);
 
@@ -31,13 +27,13 @@ function KanbanProjectSettings() {
     } else {
       history.goBack();
     }
-  }
+  };
 
   const updateForm = () => {
     dispatch(updateProjectTitle(projectTitle));
     dispatch(updateBoardsOrder(order));
     closeForm();
-  }
+  };
 
   return (
     <div className="card project-settings">
@@ -47,26 +43,34 @@ function KanbanProjectSettings() {
       <div className="card-content">
         <div className="content">
           <div className="field">
-            <label className="label" htmlFor="projectTitle">Title</label>
+            <label className="label" htmlFor="projectTitle">
+              Title
+            </label>
             <div className="control">
-              <input className="input" type="text" placeholder="Task title" id="projectTitle"
-                value={projectTitle} onChange={(e) => setProjectTitle(e.target.value) } />
+              <input
+                className="input"
+                type="text"
+                placeholder="Task title"
+                id="projectTitle"
+                value={projectTitle}
+                onChange={(e) => setProjectTitle(e.target.value)}
+              />
             </div>
           </div>
           <div className="field">
-            <label className="label" htmlFor="projectTitle">Boards</label>
-             <div className="control list">
-              {
-                order.map((boardId: string) => (
-                  <KanbanSettingsBoard key={boardId} boardId={boardId} boardsOrder={order} moveBoard={setOrder}/>
-                ))
-              }
+            <label className="label" htmlFor="projectTitle">
+              Boards
+            </label>
+            <div className="control list">
+              {order.map((boardId: string) => (
+                <KanbanSettingsBoard key={boardId} boardId={boardId} boardsOrder={order} moveBoard={setOrder} />
+              ))}
             </div>
           </div>
         </div>
       </div>
       <footer className="card-footer">
-       <div className="card-footer-item">
+        <div className="card-footer-item">
           <button type="button" className="button is-white is-fullwidth" onClick={() => closeForm()}>
             Cancel
           </button>
@@ -79,6 +83,6 @@ function KanbanProjectSettings() {
       </footer>
     </div>
   );
-};
+}
 
 export default KanbanProjectSettings;

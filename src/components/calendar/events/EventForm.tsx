@@ -15,8 +15,8 @@ function EventForm() {
   const [startDate, setStartDate] = useState<number>(startOfDay(pickedDate).getTime());
   const [endDate, setEndDate] = useState<number>(startOfDay(pickedDate).getTime());
 
-  const [title, setTitle] = useState<string>("");
-  const [description, setDescription] = useState<string>("");
+  const [title, setTitle] = useState<string>('');
+  const [description, setDescription] = useState<string>('');
 
   useEffect(() => {
     let newDate = updatePickedDate(startDate, pickedDate);
@@ -29,26 +29,25 @@ function EventForm() {
   }, [pickedDate]);
 
   const updatePickedDate = (oldDate: number, pickDate: number) => {
-
     let oldHours = getHours(oldDate);
     let oldMinutes = getMinutes(oldDate);
     let newDate = set(startOfDay(pickDate), { hours: oldHours, minutes: oldMinutes });
 
     return newDate.getTime();
-  }
+  };
 
   const handleDate = (date: TimeDate) => {
     switch (date.type) {
-      case "start":
+      case 'start':
         setStartDate(setDate(startDate, date));
         break;
-      case "end":
+      case 'end':
         setEndDate(setDate(endDate, date));
         break;
       default:
         break;
     }
-  }
+  };
 
   const setDate = (baseDate: number, date: TimeDate) => {
     let newHours = date.time.hours;
@@ -61,13 +60,13 @@ function EventForm() {
       newHours = date.time.hours + 12;
     }
 
-    let newDate = set(baseDate, { hours: newHours, minutes: date.time.minutes});
+    let newDate = set(baseDate, { hours: newHours, minutes: date.time.minutes });
     return getTime(newDate);
-  }
+  };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-  }
+  };
 
   return (
     <div className="event-form">
@@ -75,57 +74,77 @@ function EventForm() {
         <div className="field mt-4">
           <div className="control date-control">
             <span>{format(pickedDate, 'PPPP')}</span>
-            <button
-              type="button"
-              className="button is-primary"
-              onClick={() => dispatch(onPick({ shown: today, picked: today }))}
-            >
+            <button type="button" className="button is-primary" onClick={() => dispatch(onPick({ shown: today, picked: today }))}>
               Today
             </button>
           </div>
         </div>
         <div className="field">
-          <label className="label" htmlFor="eventTitle">Title</label>
+          <label className="label" htmlFor="eventTitle">
+            Title
+          </label>
           <div className="control">
-            <input className="input" id="eventTitle" type="text" placeholder="Keep it short" value={title} onChange={(e) => setTitle(e.target.value) }/>
+            <input
+              className="input"
+              id="eventTitle"
+              type="text"
+              placeholder="Keep it short"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
           </div>
         </div>
         <div className="field">
-          <label className="label" htmlFor="eventDescription">Description</label>
+          <label className="label" htmlFor="eventDescription">
+            Description
+          </label>
           <div className="control">
-            <textarea className="textarea" id="eventDescription" placeholder="Sky's the limit" rows={2} value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
+            <textarea
+              className="textarea"
+              id="eventDescription"
+              placeholder="Sky's the limit"
+              rows={2}
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            ></textarea>
           </div>
         </div>
         <div className="field is-flex-inline">
-          <label htmlFor="eventAllDay" className='label'>All day</label>
+          <label htmlFor="eventAllDay" className="label">
+            All day
+          </label>
           <div className="control">
             <label htmlFor="eventAllDay">
-              <input id="eventAllDay" type="checkbox" className="toggle-input" checked={allDay} onChange={() => setAllDay(!allDay)}/>
-              <div className="toggle switch"><div className="toggle-inner"></div></div>
+              <input id="eventAllDay" type="checkbox" className="toggle-input" checked={allDay} onChange={() => setAllDay(!allDay)} />
+              <div className="toggle switch">
+                <div className="toggle-inner"></div>
+              </div>
             </label>
           </div>
         </div>
-        {
-          !allDay && (
-            <>
-              <div className="field">
-                <label className="label" htmlFor="startDate">Start time</label>
-                <div className="control">
-                  <TimePicker updateDate={(value: TimeDate) => handleDate(value)} type="start" />
-                </div>
+        {!allDay && (
+          <>
+            <div className="field">
+              <label className="label" htmlFor="startDate">
+                Start time
+              </label>
+              <div className="control">
+                <TimePicker updateDate={(value: TimeDate) => handleDate(value)} type="start" />
               </div>
-              <div className="field">
-                <label className="label" htmlFor="endDate">End time</label>
-                <div className="control">
-                  <TimePicker updateDate={(value: TimeDate) => handleDate(value)} type="end" />
-                </div>
+            </div>
+            <div className="field">
+              <label className="label" htmlFor="endDate">
+                End time
+              </label>
+              <div className="control">
+                <TimePicker updateDate={(value: TimeDate) => handleDate(value)} type="end" />
               </div>
-            </>
-          )
-        }
+            </div>
+          </>
+        )}
         <div className="field">
           <div className="control">
-            <button type='submit' className="button is-primary">
+            <button type="submit" className="button is-primary">
               Save
             </button>
           </div>

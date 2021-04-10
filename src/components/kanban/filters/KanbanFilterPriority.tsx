@@ -16,6 +16,6 @@ function KanbanFilterPriority() {
       </div>
     </div>
   );
-};
+}
 
 export default KanbanFilterPriority;

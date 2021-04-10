@@ -2,8 +2,8 @@ import React, { useState, ChangeEvent, FormEvent } from 'react';
 import classNames from 'classnames';
 
 type Props = {
-  addTodo: AddTodo
-}
+  addTodo: AddTodo;
+};
 
 function TodoForm(props: Props) {
   const [todoText, setTodoText] = useState<string>('');
@@ -27,8 +27,8 @@ function TodoForm(props: Props) {
     } else {
       setErrorText(true);
     }
-  }
-  const inputClassNames = classNames("input", {
+  };
+  const inputClassNames = classNames('input', {
     'is-danger': errorText,
   });
 
@@ -38,19 +38,31 @@ function TodoForm(props: Props) {
         <div className="field is-grouped">
           <div className="control is-expanded">
             <input className={inputClassNames} type="text" placeholder="What do you need to do?" value={todoText} onChange={handleChange} />
-            {
-              errorText && <p className="help is-danger">This field is required</p>
-            }
+            {errorText && <p className="help is-danger">This field is required</p>}
           </div>
           <div className="control">
-            <button type='submit' className="button is-primary">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            <button type="submit" className="button is-primary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="feather feather-plus"
+              >
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
             </button>
           </div>
         </div>
       </form>
     </div>
-  )
+  );
 }
 
 export default TodoForm;

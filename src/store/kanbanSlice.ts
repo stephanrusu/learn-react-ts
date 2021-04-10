@@ -3,24 +3,24 @@ import initialKanban from '../constants/initialKanban';
 import { getUuid } from '../utils';
 
 interface AlterTask {
-  taskId: string,
-  boardId: string,
-  task?: Task
-};
+  taskId: string;
+  boardId: string;
+  task?: Task;
+}
 
 interface NewTask {
-  boardId: string,
-  task: Task
-};
+  boardId: string;
+  task: Task;
+}
 interface NewSubTask {
-  taskId: string,
-  boardId: string,
-  subTaskText: string
+  taskId: string;
+  boardId: string;
+  subTaskText: string;
 }
 interface AlterSubTask {
-  taskId: string,
-  boardId: string,
-  subTask?: ITodo
+  taskId: string;
+  boardId: string;
+  subTask?: ITodo;
 }
 
 const kanbanSlice = createSlice({
@@ -28,7 +28,7 @@ const kanbanSlice = createSlice({
   initialState: initialKanban,
   reducers: {
     addNewTask(state, action: PayloadAction<NewTask>) {
-      const {boardId, task} = action.payload;
+      const { boardId, task } = action.payload;
 
       state.boards[boardId].tasks[task.uuid] = action.payload.task;
     },
@@ -48,12 +48,12 @@ const kanbanSlice = createSlice({
 
     createSubTask(state, action: PayloadAction<NewSubTask>) {
       const { boardId, taskId, subTaskText } = action.payload;
-      let task = state.boards[boardId].tasks[taskId];
+      const task = state.boards[boardId].tasks[taskId];
 
       task.subTasks.push({
         text: subTaskText,
         complete: false,
-        uuid: getUuid()
+        uuid: getUuid(),
       });
     },
 
@@ -61,11 +61,11 @@ const kanbanSlice = createSlice({
       const { boardId, taskId, subTask } = action.payload;
 
       if (subTask !== undefined) {
-        let task = state.boards[boardId].tasks[taskId];
-        let selectedSubTask = task.subTasks.find(sub => sub.uuid === subTask.uuid);
+        const task = state.boards[boardId].tasks[taskId];
+        const selectedSubTask = task.subTasks.find((sub) => sub.uuid === subTask.uuid);
 
         if (selectedSubTask) {
-          selectedSubTask.complete = !selectedSubTask.complete
+          selectedSubTask.complete = !selectedSubTask.complete;
         }
       }
     },
@@ -74,24 +74,30 @@ const kanbanSlice = createSlice({
       const { boardId, taskId, subTask } = action.payload;
 
       if (subTask !== undefined) {
-        let task = state.boards[boardId].tasks[taskId];
-        task.subTasks = task.subTasks.filter(todo => todo.uuid !== subTask.uuid);
+        const task = state.boards[boardId].tasks[taskId];
+        task.subTasks = task.subTasks.filter((todo) => todo.uuid !== subTask.uuid);
       }
     },
 
     updateProjectTitle(state, action: PayloadAction<string>) {
-      state.title = action.payload
+      state.title = action.payload;
     },
 
     updateBoardsOrder(state, action: PayloadAction<string[]>) {
-      state.boardsOrder = action.payload
+      state.boardsOrder = action.payload;
     },
-  }
+  },
 });
 
 export const {
-  addTask, removeTask, addNewTask, updateProjectTitle, updateBoardsOrder, toggleSubTask, createSubTask, removeSubTask
+  addTask,
+  removeTask,
+  addNewTask,
+  updateProjectTitle,
+  updateBoardsOrder,
+  toggleSubTask,
+  createSubTask,
+  removeSubTask,
 } = kanbanSlice.actions;
 
-
-export default kanbanSlice.reducer
+export default kanbanSlice.reducer;

@@ -15,12 +15,10 @@ function KanbanTaskForm() {
   const location = useLocation<any>();
 
   const { taskId } = useParams<RouteParams>();
-  const boards = useSelector(
-    (state: RootState) => state.kanban.boards
-  );
+  const boards = useSelector((state: RootState) => state.kanban.boards);
 
-  const [taskTitle, setTaskTitle] = useState<string>("");
-  const [taskDescription, setTaskDescription] = useState<string>("");
+  const [taskTitle, setTaskTitle] = useState<string>('');
+  const [taskDescription, setTaskDescription] = useState<string>('');
   const [taskType, setTaskType] = useState<KanbanTypeFilter>(KanbanTypeFilter.all);
   const [taskPriority, setTaskPriority] = useState<KanbanPriorityFilter>(KanbanPriorityFilter.all);
 
@@ -29,7 +27,7 @@ function KanbanTaskForm() {
     const boardsLength = boardsValues.length;
 
     if (taskId !== undefined) {
-      for (let i = 0; i < boardsLength; i+=1) {
+      for (let i = 0; i < boardsLength; i += 1) {
         const board = boardsValues[i];
         if (board.tasks[taskId] !== undefined) {
           return board;
@@ -67,12 +65,12 @@ function KanbanTaskForm() {
       type: taskType,
       priority: taskPriority,
       comments: [],
-      subTasks: []
+      subTasks: [],
     };
 
     dispatch(addNewTask({ task: newTask, boardId: board.uuid }));
     closeForm();
-  }
+  };
 
   const closeForm = () => {
     const background = location.state && location.state.background;
@@ -82,16 +80,12 @@ function KanbanTaskForm() {
     } else {
       history.goBack();
     }
-  }
+  };
 
   return (
     <div className="card kanban-card-form">
       <header className="card-header">
-        <p className="card-header-title">
-          {
-            taskId !== undefined ? `Edit task - ${taskId}`: 'Create task'
-          }
-        </p>
+        <p className="card-header-title">{taskId !== undefined ? `Edit task - ${taskId}` : 'Create task'}</p>
         <div className="tags">
           <span className={`tag ${board.color}`}>{board.title}</span>
         </div>
@@ -110,30 +104,64 @@ function KanbanTaskForm() {
             <div className="filter-column">
               <label className="label">Priority</label>
               <div className="filter-control">
-                <ButtonFilterPriorityForm filterType={KanbanPriorityFilter.blocker} selectedFilter={taskPriority} activeAction={setTaskPriority} />
-                <ButtonFilterPriorityForm filterType={KanbanPriorityFilter.critical} selectedFilter={taskPriority} activeAction={setTaskPriority} />
-                <ButtonFilterPriorityForm filterType={KanbanPriorityFilter.major} selectedFilter={taskPriority} activeAction={setTaskPriority} />
-                <ButtonFilterPriorityForm filterType={KanbanPriorityFilter.minor} selectedFilter={taskPriority} activeAction={setTaskPriority} />
-                <ButtonFilterPriorityForm filterType={KanbanPriorityFilter.trivial} selectedFilter={taskPriority} activeAction={setTaskPriority} />
+                <ButtonFilterPriorityForm
+                  filterType={KanbanPriorityFilter.blocker}
+                  selectedFilter={taskPriority}
+                  activeAction={setTaskPriority}
+                />
+                <ButtonFilterPriorityForm
+                  filterType={KanbanPriorityFilter.critical}
+                  selectedFilter={taskPriority}
+                  activeAction={setTaskPriority}
+                />
+                <ButtonFilterPriorityForm
+                  filterType={KanbanPriorityFilter.major}
+                  selectedFilter={taskPriority}
+                  activeAction={setTaskPriority}
+                />
+                <ButtonFilterPriorityForm
+                  filterType={KanbanPriorityFilter.minor}
+                  selectedFilter={taskPriority}
+                  activeAction={setTaskPriority}
+                />
+                <ButtonFilterPriorityForm
+                  filterType={KanbanPriorityFilter.trivial}
+                  selectedFilter={taskPriority}
+                  activeAction={setTaskPriority}
+                />
               </div>
             </div>
           </div>
           <div className="field">
-            <label className="label" htmlFor="taskTitle">Title</label>
+            <label className="label" htmlFor="taskTitle">
+              Title
+            </label>
             <div className="control">
-              <input className="input" type="text" placeholder="Task title" id="taskTitle"
-                value={taskTitle} onChange={(e) => setTaskTitle(e.target.value) } />
+              <input
+                className="input"
+                type="text"
+                placeholder="Task title"
+                id="taskTitle"
+                value={taskTitle}
+                onChange={(e) => setTaskTitle(e.target.value)}
+              />
             </div>
           </div>
           <div className="field">
-            <label className="label" htmlFor="taskDescription">Description</label>
+            <label className="label" htmlFor="taskDescription">
+              Description
+            </label>
             <div className="control">
-              <textarea className="textarea" placeholder="Task description" id="taskDescription" rows={3}
-              value={taskDescription} onChange={(e) => setTaskDescription(e.target.value)}
+              <textarea
+                className="textarea"
+                placeholder="Task description"
+                id="taskDescription"
+                rows={3}
+                value={taskDescription}
+                onChange={(e) => setTaskDescription(e.target.value)}
               ></textarea>
             </div>
           </div>
-
         </div>
       </div>
       <footer className="card-footer">

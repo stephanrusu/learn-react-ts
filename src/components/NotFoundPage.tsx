@@ -7,7 +7,7 @@ function NotFoundPage() {
 
     return () => {
       document.body.classList.remove('not-found-page');
-    }
+    };
   });
 
   return (
@@ -24,8 +24,7 @@ function NotFoundPage() {
         </div>
       </div>
     </div>
-
-  )
+  );
 }
 
 export default NotFoundPage;

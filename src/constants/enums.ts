@@ -1,8 +1,8 @@
 export enum VisibilityFilter {
-  ShowAll = "SHOW_ALL",
-  ShowCompleted = "SHOW_COMPLETED",
-  ShowActive = "SHOW_ACTIVE",
-};
+  ShowAll = 'SHOW_ALL',
+  ShowCompleted = 'SHOW_COMPLETED',
+  ShowActive = 'SHOW_ACTIVE',
+}
 
 export enum Boards {
   toDo = 'To Do',
@@ -16,7 +16,7 @@ export enum KanbanTypeFilter {
   bug = 'Bug',
   task = 'Task',
   design = 'Design',
-};
+}
 
 export enum KanbanPriorityFilter {
   all = 'All',

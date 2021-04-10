@@ -7,26 +7,20 @@ import { displayFilters } from '../../utils';
 import KanbanCard from './KanbanCard';
 
 interface Props {
-  title: string,
-  allowNew?: boolean,
-  type?: string,
-  boardId: string,
+  title: string;
+  allowNew?: boolean;
+  type?: string;
+  boardId: string;
 }
 
 function KanbanColumn(props: Props) {
   const location = useLocation();
 
-  const tasks = useSelector(
-    (state: RootState) => state.kanban.boards[props.boardId].tasks
-  );
+  const tasks = useSelector((state: RootState) => state.kanban.boards[props.boardId].tasks);
 
-  const priorityFilter = useSelector(
-    (state: RootState) => state.kanbanFilter.priority
-  );
+  const priorityFilter = useSelector((state: RootState) => state.kanbanFilter.priority);
 
-  const typeFilter = useSelector(
-    (state: RootState) => state.kanbanFilter.type
-  );
+  const typeFilter = useSelector((state: RootState) => state.kanbanFilter.type);
 
   const listTasksColumn = Object.keys(displayFilters(tasks, priorityFilter, typeFilter));
 
@@ -35,37 +29,34 @@ function KanbanColumn(props: Props) {
       <div className={`panel ${props.type ?? ''}`}>
         <div className="panel-heading">
           {/* <button type="button" className="button is-white add-task">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
           </button> */}
           <div className="text">{props.title}</div>
           <div className="tag is-white">{listTasksColumn.length}</div>
         </div>
-        {
-          listTasksColumn.map((uuid: string) => {
-            return (
-              <div className="panel-block" key={uuid}>
-                <KanbanCard boardId={props.boardId} taskId={uuid} />
-              </div>
-            )
-          })
-        }
+        {listTasksColumn.map((uuid: string) => {
+          return (
+            <div className="panel-block" key={uuid}>
+              <KanbanCard boardId={props.boardId} taskId={uuid} />
+            </div>
+          );
+        })}
       </div>
-      {
-        props.allowNew && (
-          <div className="add-new-task">
-            <Link to={{
+      {props.allowNew && (
+        <div className="add-new-task">
+          <Link
+            to={{
               pathname: ROUTE_KANBAN_CREATE,
-              state: { background: location, boardId: props.boardId }
+              state: { background: location, boardId: props.boardId },
             }}
-              className="button is-info is-light is-fullwidth"
-            >
-              Add new task
-            </Link>
-          </div>
-        )
-      }
+            className="button is-info is-light is-fullwidth"
+          >
+            Add new task
+          </Link>
+        </div>
+      )}
     </div>
-  )
+  );
 }
 
 export default KanbanColumn;

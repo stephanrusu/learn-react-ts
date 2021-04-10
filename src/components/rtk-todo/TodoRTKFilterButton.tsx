@@ -5,23 +5,24 @@ import { RootState } from '../../store/rootReducer';
 import { VisibilityFilter } from '../../constants/enums';
 
 interface Props {
-  visibilityFilter: VisibilityFilter,
-  text: string
+  visibilityFilter: VisibilityFilter;
+  text: string;
 }
 
-function TodoRTKFilterButton({visibilityFilter, text} : Props) {
+function TodoRTKFilterButton({ visibilityFilter, text }: Props) {
   const dispatch = useDispatch();
 
-  const currentvisibilityFilter = useSelector(
-    (state: RootState) => state.visibilityFilter
-  );
+  const currentvisibilityFilter = useSelector((state: RootState) => state.visibilityFilter);
 
   return (
-    <button type="button" className={`button is-primary ${currentvisibilityFilter === visibilityFilter ? 'is-active': ''}`}
-      onClick={() => dispatch(setVisibilityFilter(visibilityFilter))}>
+    <button
+      type="button"
+      className={`button is-primary ${currentvisibilityFilter === visibilityFilter ? 'is-active' : ''}`}
+      onClick={() => dispatch(setVisibilityFilter(visibilityFilter))}
+    >
       {text}
     </button>
-  )
+  );
 }
 
 export default TodoRTKFilterButton;

@@ -97,11 +97,7 @@ function KanbanDisplayTask() {
         <div className="content content-actions">
           {!isBoardFirst && (
             <div className="card-action-item">
-              <button
-                type="button"
-                className={`button ${prevBoard.color} is-fullwidth is-light`}
-                onClick={() => moveTask(-1)}
-              >
+              <button type="button" className={`button ${prevBoard.color} is-fullwidth is-light`} onClick={() => moveTask(-1)}>
                 <svg
                   fill="none"
                   height="24"
@@ -122,11 +118,7 @@ function KanbanDisplayTask() {
           )}
           {!isBoardLast && (
             <div className="card-action-item">
-              <button
-                type="button"
-                className={`button ${nextBoard.color} is-fullwidth is-light`}
-                onClick={() => moveTask(1)}
-              >
+              <button type="button" className={`button ${nextBoard.color} is-fullwidth is-light`} onClick={() => moveTask(1)}>
                 <div>{nextBoard.title}</div>
                 <svg
                   fill="none"
@@ -150,17 +142,20 @@ function KanbanDisplayTask() {
       </div>
       <footer className="card-footer">
         <div className="card-footer-item">
-          <Link to={{
-            pathname: `${ROUTE_KANBAN_EDIT_SIMPLE}/${taskId}`,
-            state: {
-              background: backLocation
-            }
-          }} className="button is-white is-fullwidth">
+          <Link
+            to={{
+              pathname: `${ROUTE_KANBAN_EDIT_SIMPLE}/${taskId}`,
+              state: {
+                background: backLocation,
+              },
+            }}
+            className="button is-white is-fullwidth"
+          >
             Edit
           </Link>
         </div>
         <div className="card-footer-item">
-          <button type="button" className="button is-white is-fullwidth" onClick={() => dispatch(removeTask({ boardId,taskId }))}>
+          <button type="button" className="button is-white is-fullwidth" onClick={() => dispatch(removeTask({ boardId, taskId }))}>
             Delete
           </button>
         </div>

@@ -3,7 +3,7 @@ import KanbanFilterPriority from './KanbanFilterPriority';
 import KanbanFilterType from './KanbanFilterType';
 
 function KanbanFilter() {
-  return(
+  return (
     <div className="card-content px-4 py-4">
       <div className="kanban-filters">
         <KanbanFilterPriority />
@@ -11,6 +11,6 @@ function KanbanFilter() {
       </div>
     </div>
   );
-};
+}
 
 export default KanbanFilter;
