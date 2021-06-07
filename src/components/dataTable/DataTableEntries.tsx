@@ -3,8 +3,12 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../store/rootReducer';
 
 function DataTableEntries(): React.ReactElement {
-  const entries = useSelector((state: RootState) => state.dataTable.entries);
-
+  const entries = useSelector((state: RootState) =>
+    state.dataTable.entries.slice(
+      (state.dataTable.currentPage - 1) * state.dataTable.itemsPerPage,
+      state.dataTable.currentPage * state.dataTable.itemsPerPage,
+    ),
+  );
   return (
     <table className="table is-striped is-hoverable is-fullwidth mt-4 mb-4 has-mobile-cards">
       <thead>
@@ -89,7 +93,7 @@ function DataTableEntries(): React.ReactElement {
         </tr>
       </thead>
       <tbody>
-        {entries.slice(50, 60).map((movie: Movie) => (
+        {entries.map((movie: Movie) => (
           <tr draggable="false" className="" key={movie.id}>
             <td className="">
               <div className="toggle checkbox">
