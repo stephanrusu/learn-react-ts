@@ -149,7 +149,7 @@ function DataTablePagination({ children }: PaginationProps): React.ReactElement 
       <div className="card mt-4 card-pagination">
         <div className="card-content">
           <nav className="pagination is-centered" role="navigation" aria-label="pagination">
-            <button className="pagination-action pagination-previous" aria-label="Previous page" disabled={!hasPrev} onClick={() => prev}>
+            <button className="pagination-action pagination-previous" aria-label="Previous page" disabled={!hasPrev} onClick={() => prev()}>
               <svg
                 fill="none"
                 height="24"

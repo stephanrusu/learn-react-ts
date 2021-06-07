@@ -13,7 +13,7 @@ function DataTableEntries(): React.ReactElement {
     <table className="table is-striped is-hoverable is-fullwidth mt-4 mb-4 has-mobile-cards">
       <thead>
         <tr>
-          <th className="">
+          <th className="fixed-header-checkbox">
             <div className="th-wrap is-numeric">
               <div className="is-relative">
                 <div className="toggle checkbox">
@@ -64,7 +64,7 @@ function DataTableEntries(): React.ReactElement {
               </div>
             </div>
           </th>
-          <th className="">
+          <th className="fixed-header-year">
             <div className="th-wrap">
               <div className="is-relative">Year</div>
               <div className="filter-icon tag">
