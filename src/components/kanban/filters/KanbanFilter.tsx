@@ -4,7 +4,7 @@ import KanbanFilterType from './KanbanFilterType';
 
 function KanbanFilter(): React.ReactElement {
   return (
-    <div className="card-content px-4 py-4">
+    <div className="card-content px-4 py-4 kanban-filters-content">
       <div className="kanban-filters">
         <KanbanFilterPriority />
         <KanbanFilterType />

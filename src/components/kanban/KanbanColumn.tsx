@@ -8,7 +8,7 @@ import KanbanCard from './KanbanCard';
 
 interface Props {
   title: string;
-  allowNew?: boolean;
+  allowNew?: boolean | undefined;
   type?: string;
   boardId: string;
 }
