@@ -98,13 +98,13 @@ button, input, optgroup, select, textarea
     transition: color .15s ease
     cursor: pointer
 
-    &::before,
-    &::after
+    &:before,
+    &:after
       display: block
       position: absolute
       content: ''
 
-    &::before
+    &:before
       top: 0
       left: 0
       height: 24px
@@ -113,7 +113,7 @@ button, input, optgroup, select, textarea
       border: 1px solid $grey-700
       border-radius: 4px
 
-    &::after
+    &:after
       top: 6px
       left: 6px
       opacity: 0
@@ -144,10 +144,10 @@ button, input, optgroup, select, textarea
     & .item-strike
       transform: scaleX(1)
 
-    &::before
+    &:before
       border-color: $primary-color
 
-    &::after
+    &:after
       opacity: 1
       transform: rotate(-45deg) scale(1)
 
