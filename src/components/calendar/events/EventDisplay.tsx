@@ -1,7 +1,7 @@
 import React from 'react';
 import EventList from './EventList';
 import { RootState } from '../../../store/rootReducer';
-import { onPick } from '../../../store/datePickerSlice';
+import { onPick } from '../../../store/slices/datePickerSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { format } from 'date-fns';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store/rootReducer';
 import { getKeyValue } from '../../utils';
-import { toggleFilter } from '../../store/kanbanFilterTypeSlice';
+import { toggleFilter } from '../../store/slices/kanbanFilterTypeSlice';
 
 import KanbanFilter from './filters/KanbanFilter';
 import KanbanColumn from './KanbanColumn';

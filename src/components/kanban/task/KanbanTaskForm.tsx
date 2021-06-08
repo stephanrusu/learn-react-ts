@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useLocation, useParams } from 'react-router-dom';
 import { KanbanPriorityFilter, KanbanTypeFilter } from '../../../constants/enums';
 import { RootState } from '../../../store/rootReducer';
-import { addNewTask } from '../../../store/kanbanSlice';
+import { addNewTask } from '../../../store/slices/kanbanSlice';
 import { getUuid } from '../../../utils';
 import ButtonFilterTypeForm from './ButtonFilterTypeForm';
 import ButtonFilterPriorityForm from './ButtonFilterPriorityForm';

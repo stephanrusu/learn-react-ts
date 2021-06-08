@@ -1,6 +1,6 @@
 import React, { FormEvent, useEffect, useState } from 'react';
 import { RootState } from '../../../store/rootReducer';
-import { onPick } from '../../../store/datePickerSlice';
+import { onPick } from '../../../store/slices/datePickerSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { format, getHours, getMinutes, getTime, set, startOfDay } from 'date-fns';
 import TimePicker, { AmPmType } from './TimePicker';

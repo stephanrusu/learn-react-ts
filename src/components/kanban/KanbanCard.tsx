@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
 import { format } from 'date-fns';
 import { ROUTE_KANBAN_TASK_SIMPLE } from '../../router/routes';
-import { addTask, removeTask } from '../../store/kanbanSlice';
+import { addTask, removeTask } from '../../store/slices/kanbanSlice';
 import { RootState } from '../../store/rootReducer';
 
 interface Props {

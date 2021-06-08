@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { initialDataTable } from '../constants/initialDataTable';
+import { initialDataTable } from '../../constants/initialDataTable';
 
 const initialState = {
   entries: initialDataTable,

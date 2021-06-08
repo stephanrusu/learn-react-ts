@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { RootState } from '../../../store/rootReducer';
-import { onPick } from '../../../store/datePickerSlice';
+import { onPick } from '../../../store/slices/datePickerSlice';
 import { addDays, format, getUnixTime, isSameDay, isSameMonth, isToday, startOfMonth, startOfWeek } from 'date-fns';
 import { useDispatch, useSelector } from 'react-redux';
 

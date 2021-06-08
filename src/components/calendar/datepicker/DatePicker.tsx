@@ -1,7 +1,7 @@
 import React from 'react';
 import { addMonths, format } from 'date-fns';
 import { RootState } from '../../../store/rootReducer';
-import { setShown } from '../../../store/datePickerSlice';
+import { setShown } from '../../../store/slices/datePickerSlice';
 
 import Week from './Week';
 import Days from './Days';

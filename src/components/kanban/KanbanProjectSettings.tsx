@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
 import { ROUTE_KANBAN } from '../../router/routes';
-import { updateBoardsOrder, updateProjectTitle } from '../../store/kanbanSlice';
+import { updateBoardsOrder, updateProjectTitle } from '../../store/slices/kanbanSlice';
 import { RootState } from '../../store/rootReducer';
 import KanbanSettingsBoard from './project/KanbanSettingsBoard';
 

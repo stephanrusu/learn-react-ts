@@ -1,7 +1,7 @@
 import React, { ChangeEvent, ReactNode, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store/rootReducer';
-import { updateCurrentPage, updateItemsPerPage } from '../../store/dataTableSlice';
+import { updateCurrentPage, updateItemsPerPage } from '../../store/slices/dataTableSlice';
 
 interface PaginationProps {
   children: ReactNode;

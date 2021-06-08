@@ -1,11 +1,11 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import datePickerReducer from './datePickerSlice';
-import todosReducer from './todoSlice';
-import visibilityFilterReducer from './visibilityFilterSlice';
-import eventReducer from './eventSlice';
-import kanbanReducer from './kanbanSlice';
-import kanbanFilterReducer from './kanbanFilterTypeSlice';
-import dataTableReducer from './dataTableSlice';
+import datePickerReducer from './slices/datePickerSlice';
+import todosReducer from './slices/todoSlice';
+import visibilityFilterReducer from './slices/visibilityFilterSlice';
+import eventReducer from './slices/eventSlice';
+import kanbanReducer from './slices/kanbanSlice';
+import kanbanFilterReducer from './slices/kanbanFilterTypeSlice';
+import dataTableReducer from './slices/dataTableSlice';
 
 const rootReducer = combineReducers({
   todos: todosReducer,

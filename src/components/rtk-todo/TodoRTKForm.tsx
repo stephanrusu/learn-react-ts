@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { useDispatch } from 'react-redux';
-import { createTodo } from '../../store/todoSlice';
+import { createTodo } from '../../store/slices/todoSlice';
 
 function TodoRTKForm(): React.ReactElement {
   const [todoText, setTodoText] = useState<string>('');

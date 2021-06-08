@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 // import { AppThunk, AppDispatch } from './index';
-import initialTodos from '../constants/initialTodos';
-import { getUuid } from '../utils';
+import initialTodos from '../../constants/initialTodos';
+import { getUuid } from '../../utils';
 
 const todoSlice = createSlice({
   name: 'todos',

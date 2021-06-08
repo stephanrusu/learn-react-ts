@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 //* use aliases
 import { KanbanTypeFilter } from '../../../../constants/enums';
-import { setTypeFilter } from '../../../../store/kanbanFilterTypeSlice';
+import { setTypeFilter } from '../../../../store/slices/kanbanFilterTypeSlice';
 import { RootState } from '../../../../store/rootReducer';
 
 interface Props {

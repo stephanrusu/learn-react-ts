@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store/rootReducer';
-import { toggleSubTask } from '../../store/kanbanSlice';
+import { toggleSubTask } from '../../store/slices/kanbanSlice';
 
 interface Props {
   boardId: string;

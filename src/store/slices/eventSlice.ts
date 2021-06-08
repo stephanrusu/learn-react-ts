@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import initialEvents from '../constants/initialEvents';
+import initialEvents from '../../constants/initialEvents';
 
 const eventSlice = createSlice({
   name: 'events',

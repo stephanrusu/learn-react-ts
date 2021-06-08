@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { KanbanPriorityFilter, KanbanTypeFilter } from '../constants/enums';
+import { KanbanPriorityFilter, KanbanTypeFilter } from '../../constants/enums';
 
 const initialState = {
   type: KanbanTypeFilter.all,

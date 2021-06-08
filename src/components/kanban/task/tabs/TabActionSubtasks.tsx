@@ -1,6 +1,6 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { createSubTask, removeSubTask, toggleSubTask } from '../../../../store/kanbanSlice';
+import { createSubTask, removeSubTask, toggleSubTask } from '../../../../store/slices/kanbanSlice';
 import { RootState } from '../../../../store/rootReducer';
 
 interface Props {

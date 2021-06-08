@@ -5,7 +5,7 @@ import { format } from 'date-fns';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
 import { ROUTE_KANBAN, ROUTE_KANBAN_EDIT_SIMPLE } from '../../../router/routes';
-import { addTask, removeTask } from '../../../store/kanbanSlice';
+import { addTask, removeTask } from '../../../store/slices/kanbanSlice';
 import KanbanTaskActionTabs from './KanbanTaskActionTabs';
 
 function KanbanDisplayTask(): React.ReactElement {

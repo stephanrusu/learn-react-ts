@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import initialKanban from '../constants/initialKanban';
-import { getUuid } from '../utils';
+import initialKanban from '../../constants/initialKanban';
+import { getUuid } from '../../utils';
 
 interface AlterTask {
   taskId: string;
@@ -89,15 +89,7 @@ const kanbanSlice = createSlice({
   },
 });
 
-export const {
-  addTask,
-  removeTask,
-  addNewTask,
-  updateProjectTitle,
-  updateBoardsOrder,
-  toggleSubTask,
-  createSubTask,
-  removeSubTask,
-} = kanbanSlice.actions;
+export const { addTask, removeTask, addNewTask, updateProjectTitle, updateBoardsOrder, toggleSubTask, createSubTask, removeSubTask } =
+  kanbanSlice.actions;
 
 export default kanbanSlice.reducer;

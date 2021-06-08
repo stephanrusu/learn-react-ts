@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setVisibilityFilter } from '../../store/visibilityFilterSlice';
+import { setVisibilityFilter } from '../../store/slices/visibilityFilterSlice';
 import { RootState } from '../../store/rootReducer';
 import { VisibilityFilter } from '../../constants/enums';
 
