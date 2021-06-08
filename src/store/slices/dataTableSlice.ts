@@ -1,8 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { initialDataTable } from '../../constants/initialDataTable';
+
+const emptyArray: Movie[] = [];
 
 const initialState = {
-  entries: initialDataTable,
+  entries: emptyArray,
   currentPage: 1,
   itemsPerPage: 10,
 };
