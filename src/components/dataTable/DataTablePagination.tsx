@@ -27,11 +27,17 @@ function DataTablePagination({ children }: PaginationProps): React.ReactElement 
     const page = parseInt(gotoText, 10);
     if (isNaN(page)) return;
     if (currentPage === page) return;
+
     if (totalPages < page) {
       dispatch(updateCurrentPage(totalPages));
-    } else {
-      dispatch(updateCurrentPage(page));
+      return;
     }
+    if (page < 1) {
+      dispatch(updateCurrentPage(1));
+      return;
+    }
+
+    dispatch(updateCurrentPage(page));
   };
 
   const hasPrev = (): boolean => {

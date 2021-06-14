@@ -9,7 +9,7 @@ function DataTableContainer(): React.ReactElement {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetch('http://localhost:3003/movies')
+    fetch('http://localhost:3004/movies')
       .then((res) => res.json())
       .then(
         (result) => {
