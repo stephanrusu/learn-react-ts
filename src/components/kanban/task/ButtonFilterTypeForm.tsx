@@ -1,10 +1,10 @@
-import React, { Dispatch, SetStateAction } from 'react';
+import React from 'react';
 import { KanbanTypeFilter } from '../../../constants/enums';
 
 interface Props {
   selectedFilter: KanbanTypeFilter;
   filterType: KanbanTypeFilter;
-  activeAction: Dispatch<SetStateAction<KanbanTypeFilter>>;
+  activeAction: (type: KanbanTypeFilter) => void;
 }
 
 function ButtonFilterTypeForm(props: Props): React.ReactElement {

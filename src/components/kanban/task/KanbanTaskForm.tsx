@@ -23,6 +23,9 @@ function KanbanTaskForm(): React.ReactElement {
   const [taskType, setTaskType] = useState<KanbanTypeFilter>(KanbanTypeFilter.all);
   const [taskPriority, setTaskPriority] = useState<KanbanPriorityFilter>(KanbanPriorityFilter.all);
 
+  const [taskTypeDropdown, setTaskTypeDropdown] = useState<boolean>(false);
+  const [taskPriorityDropdown, setTaskPriorityDropdown] = useState<boolean>(false);
+
   const getBoard = (taskId: string) => {
     const boardsValues = Object.values(boards);
     const boardsLength = boardsValues.length;
@@ -82,6 +85,11 @@ function KanbanTaskForm(): React.ReactElement {
     }
   };
 
+  const updateTaskType = (type: KanbanTypeFilter) => {
+    setTaskType(type);
+    setTaskTypeDropdown(false);
+  };
+
   return (
     <div className="card kanban-card-form">
       <header className="card-header">
@@ -95,40 +103,88 @@ function KanbanTaskForm(): React.ReactElement {
           <div className="group-filters">
             <div className="filter-column">
               <label className="label">Type</label>
-              <div className="filter-control">
-                <ButtonFilterTypeForm filterType={KanbanTypeFilter.bug} selectedFilter={taskType} activeAction={setTaskType} />
-                <ButtonFilterTypeForm filterType={KanbanTypeFilter.design} selectedFilter={taskType} activeAction={setTaskType} />
-                <ButtonFilterTypeForm filterType={KanbanTypeFilter.task} selectedFilter={taskType} activeAction={setTaskType} />
+              <div className="dropdown-container">
+                <div className="dropdown-toggle" onClick={() => setTaskTypeDropdown(!taskTypeDropdown)}>
+                  <span>{taskType}</span>
+                  <div className="icon-toggle">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="feather feather-chevron-down"
+                    >
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </div>
+                </div>
+                {taskTypeDropdown && (
+                  <div className="dropdown-select">
+                    <div className="filter-control">
+                      <ButtonFilterTypeForm filterType={KanbanTypeFilter.bug} selectedFilter={taskType} activeAction={updateTaskType} />
+                      <ButtonFilterTypeForm filterType={KanbanTypeFilter.design} selectedFilter={taskType} activeAction={updateTaskType} />
+                      <ButtonFilterTypeForm filterType={KanbanTypeFilter.task} selectedFilter={taskType} activeAction={updateTaskType} />
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
             <div className="filter-column">
               <label className="label">Priority</label>
-              <div className="filter-control">
-                <ButtonFilterPriorityForm
-                  filterType={KanbanPriorityFilter.blocker}
-                  selectedFilter={taskPriority}
-                  activeAction={setTaskPriority}
-                />
-                <ButtonFilterPriorityForm
-                  filterType={KanbanPriorityFilter.critical}
-                  selectedFilter={taskPriority}
-                  activeAction={setTaskPriority}
-                />
-                <ButtonFilterPriorityForm
-                  filterType={KanbanPriorityFilter.major}
-                  selectedFilter={taskPriority}
-                  activeAction={setTaskPriority}
-                />
-                <ButtonFilterPriorityForm
-                  filterType={KanbanPriorityFilter.minor}
-                  selectedFilter={taskPriority}
-                  activeAction={setTaskPriority}
-                />
-                <ButtonFilterPriorityForm
-                  filterType={KanbanPriorityFilter.trivial}
-                  selectedFilter={taskPriority}
-                  activeAction={setTaskPriority}
-                />
+              <div className="dropdown-container">
+                <div className="dropdown-toggle" onClick={() => setTaskPriorityDropdown(!taskPriorityDropdown)}>
+                  <span>{taskPriority}</span>
+                  <div className="icon-toggle">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="feather feather-chevron-down"
+                    >
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </div>
+                </div>
+                {taskPriorityDropdown && (
+                  <div className="dropdown-select">
+                    <div className="filter-control">
+                      <ButtonFilterPriorityForm
+                        filterType={KanbanPriorityFilter.blocker}
+                        selectedFilter={taskPriority}
+                        activeAction={setTaskPriority}
+                      />
+                      <ButtonFilterPriorityForm
+                        filterType={KanbanPriorityFilter.critical}
+                        selectedFilter={taskPriority}
+                        activeAction={setTaskPriority}
+                      />
+                      <ButtonFilterPriorityForm
+                        filterType={KanbanPriorityFilter.major}
+                        selectedFilter={taskPriority}
+                        activeAction={setTaskPriority}
+                      />
+                      <ButtonFilterPriorityForm
+                        filterType={KanbanPriorityFilter.minor}
+                        selectedFilter={taskPriority}
+                        activeAction={setTaskPriority}
+                      />
+                      <ButtonFilterPriorityForm
+                        filterType={KanbanPriorityFilter.trivial}
+                        selectedFilter={taskPriority}
+                        activeAction={setTaskPriority}
+                      />
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>

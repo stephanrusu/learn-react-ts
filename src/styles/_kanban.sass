@@ -54,13 +54,17 @@
     align-items: center
     flex: 1 1 50%
 
+    &:first-child
+      padding-right: 2rem
+
     & .label
       padding-right: 1rem
       margin-bottom: 0
       font-weight: 500
 
     & .buttons
-      margin-right: 1rem
+      // margin-right: 1rem
+      width: 100%
 
       &:not(:last-child)
         margin-bottom: 0
@@ -73,6 +77,7 @@
         border-radius: 6px
         @include useFilterColors
         color: $white
+        flex: 1
 
         &:focus
           box-shadow: none
@@ -427,18 +432,23 @@
       cursor: pointer
       padding: 0.5rem
       border-radius: 4px
-      border: 1px solid $input-border
-      box-shadow: 0px 2px 4px rgba($input-shadow, 0.1)
-      margin-bottom: 1rem
+      border: 0
+      box-shadow: 0
+      margin-bottom: 0.5rem
+      transition: background .24 ease-in
 
       &:hover
-        box-shadow: 0px 2px 4px rgba($input-shadow, 0.15)
+        // box-shadow: 0px 2px 4px rgba($input-shadow, 0.15)
+        background-color: $link-light
 
       &:last-child
         margin-bottom: 0
 
       .toggle
         height: 24px
+
+        &:hover
+          background-color: $grey-900
 
         &.is-active
           background-color: $link
@@ -452,7 +462,8 @@
 
       &.active
         border-color: $link
-        box-shadow: 0px 2px 4px rgba($input-shadow, 0.2)
+        // box-shadow: 0px 2px 4px rgba($input-shadow, 0.2)
+        background-color: $link-light
 
         .label
           color: $grey-300

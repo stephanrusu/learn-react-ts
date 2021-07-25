@@ -1,27 +1,46 @@
 import React, { useState } from 'react';
 import TabActionComments from './tabs/TabActionComments';
+import TabActionDescription from './tabs/TabActionDescription';
 import TabActionSubtasks from './tabs/TabActionSubtasks';
 interface Props {
   boardId: string;
   taskId: string;
 }
-
 function KanbanTaskActionTabs(props: Props): React.ReactElement {
-  const [activeTab, setActiveTab] = useState<string>('');
+  const [activeTab, setActiveTab] = useState<string>('description');
+
+  const tabActions = [
+    {
+      id: 'description',
+      title: 'Description',
+    },
+    {
+      id: 'subtasks',
+      title: 'Subtasks',
+    },
+    {
+      id: 'comments',
+      title: 'Comments',
+    },
+  ];
 
   return (
     <div className="content">
       <div className="tabs">
         <ul>
-          <li className={`tab-item ${activeTab === 'subtasks' ? 'is-active' : ''}`} onClick={() => setActiveTab('subtasks')}>
-            <span className="tab-link">Sub tasks</span>
-          </li>
-          <li className={`tab-item ${activeTab === 'comments' ? 'is-active' : ''}`} onClick={() => setActiveTab('comments')}>
-            <span className="tab-link">Comments</span>
-          </li>
+          {tabActions.map((tabEntry) => (
+            <li
+              key="tabEntry.id"
+              className={`tab-item ${activeTab === tabEntry.id ? 'is-active' : ''}`}
+              onClick={() => setActiveTab(tabEntry.id)}
+            >
+              <span className="tab-link">{tabEntry.title}</span>
+            </li>
+          ))}
         </ul>
       </div>
       <div className="tabs-content">
+        <TabActionDescription activeTab={activeTab} {...props} />
         <TabActionSubtasks activeTab={activeTab} {...props} />
         <TabActionComments activeTab={activeTab} {...props} />
       </div>

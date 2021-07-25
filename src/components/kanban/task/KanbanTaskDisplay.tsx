@@ -93,7 +93,7 @@ function KanbanDisplayTask(): React.ReactElement {
           </div>
           <small className="has-text-grey-light">{format(new Date(task.date), 'dd MMM yyyy')}</small>
         </div>
-        <div className="content">{task.description}</div>
+        <KanbanTaskActionTabs taskId={taskId} boardId={boardId} />
         <div className="content content-actions">
           {!isBoardFirst && (
             <div className="card-action-item">
@@ -136,7 +136,6 @@ function KanbanDisplayTask(): React.ReactElement {
             </div>
           )}
         </div>
-        <KanbanTaskActionTabs taskId={taskId} boardId={boardId} />
       </div>
       <footer className="card-footer">
         <div className="card-footer-item">

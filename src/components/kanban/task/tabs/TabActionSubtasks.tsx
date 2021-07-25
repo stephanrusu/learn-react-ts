@@ -11,8 +11,8 @@ interface Props {
 
 function TabActionSubtasks(props: Props): React.ReactElement {
   const dispatch = useDispatch();
-  const task = useSelector((state: RootState) => state.kanban.boards[props.boardId].tasks[props.taskId]);
   const { boardId, taskId } = props;
+  const task = useSelector((state: RootState) => state.kanban.boards[boardId].tasks[taskId]);
 
   const [todoText, setTodoText] = useState<string>('');
   const [errorText, setErrorText] = useState<boolean>(false);
